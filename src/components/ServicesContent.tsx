@@ -38,7 +38,7 @@ const packages = [
         description: "Une assurance indispensable pour votre activité en ligne. Sécurité, mises à jour et disponibilité garanties.",
         features: ["Hébergement Premium & SSL", "Sauvegardes Quotidiennes", "Mises à jour de Sécurité", "Monitoring Serveur 24/7", "1h d'intervention / mois", "Support Technique Prioritaire"],
         cta: "Protéger mon site",
-        link: "/contact",
+        link: "/maintenance-site-web",
         icon: <Shield className="w-5 h-5" />,
         isPopular: false
     }
