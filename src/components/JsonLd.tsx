@@ -65,7 +65,7 @@ const JsonLd = () => {
             },
             "sameAs": [
                 "https://www.linkedin.com/in/ambroise-boutrin/",
-                "https://github.com/xeanoob"
+                "https://github.com/ambroise-boutrin"
             ]
         },
         {
@@ -89,7 +89,7 @@ const JsonLd = () => {
             },
             "sameAs": [
                 "https://www.linkedin.com/in/ambroise-boutrin/",
-                "https://github.com/xeanoob",
+                "https://github.com/ambroise-boutrin",
                 "https://twitter.com/ambroise_b"
             ],
             "knowsAbout": ["Next.js", "React", "Node.js", "Développement Web", "Applications Métier", "E-commerce", "SEO", "Architecture Logicielle"]

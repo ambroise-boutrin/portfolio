@@ -58,7 +58,7 @@ export const projects: Project[] = [
         mainTech: "Next.js / Tailwind",
         color: "bg-[#2d6a4f]",
         textColor: "text-white",
-        github: "https://github.com/xeanoob/enemicrostation",
+        github: "https://github.com/ambroise-boutrin/enemicrostation",
         demo: "https://enemicrostation.vercel.app",
         logo: null,
         invertLogo: false,
@@ -112,7 +112,7 @@ export const projects: Project[] = [
         mainTech: "Node.js / JavaScript",
         color: "bg-[#3b8526]",
         textColor: "text-white",
-        github: "https://github.com/xeanoob/serverminecraft",
+        github: "https://github.com/ambroise-boutrin/serverminecraft",
         demo: null,
         logo: null,
         invertLogo: false,
@@ -265,7 +265,7 @@ export const projects: Project[] = [
             },
             {
                 step: "2. Fichier de Configuration (config.json)",
-                content: "Créez un fichier `config.json` pour déclarer les dépôts Git que Hound devra indexer. Voici un exemple basique :\n\n```json\n{\n  \"max-concurrent-indexers\": 2,\n  \"dbpath\": \"data\",\n  \"repos\": {\n    \"Portfolio\": {\n      \"url\": \"https://github.com/xeanoob/portfolio.git\"\n    }\n  }\n}\n```"
+                content: "Créez un fichier `config.json` pour déclarer les dépôts Git que Hound devra indexer. Voici un exemple basique :\n\n```json\n{\n  \"max-concurrent-indexers\": 2,\n  \"dbpath\": \"data\",\n  \"repos\": {\n    \"Portfolio\": {\n      \"url\": \"https://github.com/ambroise-boutrin/portfolio.git\"\n    }\n  }\n}\n```"
             },
             {
                 step: "3. Fichier Docker Compose",
@@ -405,7 +405,7 @@ export const projects: Project[] = [
         mainTech: "Next.js / Stripe",
         color: "bg-[#111]",
         textColor: "text-white",
-        github: "https://github.com/xeanoob", // Placeholder if private
+        github: "https://github.com/ambroise-boutrin", // Placeholder if private
         demo: "https://garanches.vercel.app/",
         logo: "/images/garanches.webp",
         invertLogo: true,
@@ -466,7 +466,7 @@ export const projects: Project[] = [
         mainTech: "Next.js / Framer Motion",
         color: "bg-[#050505]",
         textColor: "text-white",
-        github: "https://github.com/xeanoob/nomad",
+        github: "https://github.com/ambroise-boutrin/nomad",
         demo: "https://nomad-beige-phi.vercel.app/",
         logo: "/images/nomadelogo.webp",
         invertLogo: true,
@@ -690,7 +690,7 @@ export const projects: Project[] = [
         mainTech: "CodeIgniter 4 / PHP",
         color: "bg-[#1a1a2e]",
         textColor: "text-white",
-        github: "https://github.com/xeanoob/GSBcompterendu",
+        github: "https://github.com/ambroise-boutrin/GSBcompterendu",
         demo: null,
         logo: "/images/gsb_logo.webp",
         invertLogo: false,
@@ -744,7 +744,7 @@ export const projects: Project[] = [
         mainTech: "Next.js / Tailwind",
         color: "bg-[#f5e6e0]",
         textColor: "text-[#1a1a1a]",
-        github: "https://github.com/xeanoob/alunisson",
+        github: "https://github.com/ambroise-boutrin/alunisson",
         demo: "https://alunisson.eu",
         logo: null,
         invertLogo: false,

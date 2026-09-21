@@ -32,7 +32,7 @@ export default function Footer() {
                 </div>
 
                 <div className="flex gap-4 text-sm font-medium items-center justify-center md:justify-end order-3 text-[var(--foreground)]">
-                    <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" aria-label="Github" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Github size={18} /></a>
+                    <a href="https://github.com/ambroise-boutrin" target="_blank" rel="noopener noreferrer" aria-label="Github" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Github size={18} /></a>
                     <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Linkedin size={18} /></a>
                     <a href="mailto:boutrinambroise@gmail.com" aria-label="Email" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Mail size={18} /></a>
                 </div>

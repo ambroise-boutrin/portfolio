@@ -103,7 +103,7 @@ export default function Hero() {
 
                 {/* Réseaux Sociaux */}
                 <div className="mt-8 flex gap-6 text-[var(--text-secondary)] justify-center pb-4">
-                    <a href="https://github.com/xeanoob" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
+                    <a href="https://github.com/ambroise-boutrin" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
                         <Github size={24} />
                     </a>
                     <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">

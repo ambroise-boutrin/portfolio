@@ -128,8 +128,8 @@ export default function Navbar() {
                         >
                             <p className="text-sm font-mono uppercase text-[var(--text-secondary)] mb-2">Socials</p>
                             <div className="flex gap-4">
-                                <a href="https://github.com" className="text-[var(--foreground)] text-lg underline">GitHub</a>
-                                <a href="https://linkedin.com" className="text-[var(--foreground)] text-lg underline">LinkedIn</a>
+                                <a href="https://github.com/ambroise-boutrin" className="text-[var(--foreground)] text-lg underline">GitHub</a>
+                                <a href="https://www.linkedin.com/in/ambroise-boutrin/" className="text-[var(--foreground)] text-lg underline">LinkedIn</a>
                             </div>
                         </motion.div>
                     </motion.div>
