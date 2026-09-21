@@ -36,10 +36,7 @@ export default function Navbar() {
                         { name: "Accueil", path: "/" },
                         { name: "Services", path: "/services" },
                         { name: "Projets", path: "/projets" },
-                        { name: "Compétences", path: "/competences" },
-                        { name: "Parcours", path: "/parcours" },
-                        { name: "Certifications", path: "/certifications" },
-                        { name: "Veille", path: "/veille" }
+                        { name: "À propos", path: "/a-propos" }
                     ].map((item) => {
                         const isActive = pathname === item.path;
                         return (
@@ -61,10 +58,6 @@ export default function Navbar() {
                     })}
 
                     <div className="w-px h-4 bg-[var(--border-color)] mx-2"></div>
-
-                    <a href="/images/fichiers/CV_Ambroise_Boutrin_MIAGE.pdf" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors px-2">
-                        CV
-                    </a>
 
                     <TransitionLink href="/contact" className="px-5 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-80 transition-opacity ml-2">
                         Contact
@@ -105,10 +98,7 @@ export default function Navbar() {
                                 { name: "Accueil", path: "/" },
                                 { name: "Services", path: "/services" },
                                 { name: "Projets", path: "/projets" },
-                                { name: "Compétences", path: "/competences" },
-                                { name: "Parcours", path: "/parcours" },
-                                { name: "Certifications", path: "/certifications" },
-                                { name: "Veille", path: "/veille" },
+                                { name: "À propos", path: "/a-propos" },
                                 { name: "Contact", path: "/contact" }
                             ].map((item, i) => (
                                 <motion.div

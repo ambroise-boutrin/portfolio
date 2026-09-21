@@ -36,17 +36,16 @@ const ProjectCard = ({ project, index }: any) => {
         <motion.div
             layout
             initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
+            animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.5), ease: [0.16, 1, 0.3, 1] }}
             className="w-full flex flex-col group h-full"
         >
             <div
                 className={`flex flex-col relative w-full h-full rounded-[2rem] p-6 md:p-8 shadow-xl hover:shadow-2xl border border-[var(--border-color)] transition-all duration-500 overflow-hidden ${isLightBg ? 'bg-[var(--bg-secondary)] text-[var(--foreground)]' : `${project.color} ${project.textColor}`}`}
             >
                 {/* Clickable Overlay */}
-                <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-20 cursor-pointer" aria-label={`Voir le détail du projet ${project.title}`} />
+                <Link href={`/projets/${project.slug}`} className="absolute inset-0 z-50 cursor-pointer" aria-label={`Voir le détail du projet ${project.title}`} />
 
                 {/* Card Image Cover Header */}
                 <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-6 bg-black/5 border border-white/10">
@@ -139,9 +138,9 @@ export default function ProjectsContent() {
         } else if (sortOrder === "za") {
             result.sort((a, b) => b.title.localeCompare(a.title));
         } else if (sortOrder === "oldest") {
-            result.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+            result.sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
         } else {
-            result.sort((a, b) => parseInt(b.id) - parseInt(a.id));
+            result.sort((a, b) => (parseInt(b.id) || 0) - (parseInt(a.id) || 0));
         }
 
         return result;
@@ -278,7 +277,7 @@ export default function ProjectsContent() {
             {/* Projects Asymmetric Grid */}
             <div className="container mx-auto px-6 mt-16 max-w-[1400px]">
                 <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    <AnimatePresence mode="popLayout">
+                    <AnimatePresence>
                         {filteredAndSortedProjects.length > 0 ? (
                             filteredAndSortedProjects.map((project, i) => (
                                 <ProjectCard key={project.id} index={i} project={project} />

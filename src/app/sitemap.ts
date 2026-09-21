@@ -33,16 +33,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/a-propos`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/competences`,
             lastModified: lastMod,
             changeFrequency: 'yearly',
             priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/parcours`,
-            lastModified: lastMod,
-            changeFrequency: 'yearly',
-            priority: 0.5,
         },
         {
             url: `${baseUrl}/certifications`,
@@ -61,12 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: lastMod,
             changeFrequency: 'weekly',
             priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/cv`,
-            lastModified: lastMod,
-            changeFrequency: 'monthly',
-            priority: 0.5,
         },
         ...projectUrls,
     ]

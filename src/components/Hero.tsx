@@ -71,13 +71,13 @@ export default function Hero() {
                 </h1>
 
                 <h2 ref={subtitleRef} className="text-xl md:text-3xl font-light mb-6 text-[var(--foreground)] mt-4 max-w-3xl">
-                    Je transforme vos idées complexes en <span className="font-semibold text-[var(--text-secondary)]">applications</span> et <span className="font-semibold text-[var(--text-secondary)]">solutions digitales</span> performantes.
+                    Développeur Web Freelance à Orléans | Des sites performants pour générer plus de <span className="font-semibold text-[var(--text-secondary)]">chiffre d'affaires</span>.
                 </h2>
 
                 {/* Localisation */}
                 <div className="flex items-center gap-2 text-[var(--foreground)] text-sm font-medium uppercase tracking-wide mb-6">
                     <MapPin size={16} />
-                    <span>Étudiant L3 MIAGE & Développeur Fullstack - Orléans, France</span>
+                    <span>Orléans, France</span>
                 </div>
 
                 {/* Boutons d'action */}

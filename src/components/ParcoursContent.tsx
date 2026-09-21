@@ -36,7 +36,7 @@ const timeline = [
     {
         year: "2024",
         date: "Septembre 2024 - Juin 2026",
-        title: "BTS SIO Option SLAM",
+        title: "BTS SIO Option SLAM (Obtenu)",
         company: "Lycée Benjamin Franklin",
         type: "edu",
         description: "Brevet de Technicien Supérieur en Services Informatiques aux Organisations, option Solutions Logicielles et Applications Métiers.",

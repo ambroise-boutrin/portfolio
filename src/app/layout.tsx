@@ -8,9 +8,9 @@ import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.ambroise-boutrin.fr'),
-  title: "Ambroise Boutrin | Étudiant L3 MIAGE & Développeur Fullstack - Orléans",
-  description: "Futur étudiant en L3 MIAGE à l'Université d'Orléans. Développeur Fullstack Junior spécialisé dans le développement d'applications, l'intégration d'APIs et l'automatisation de processus.",
-  keywords: ["Développeur Web Orléans", "Agence Web Orléans", "Création de site internet Orléans", "Application Web sur mesure", "Next.js Orléans", "Freelance React Orléans", "Ambroise Boutrin"],
+  title: "Ambroise Boutrin | Développeur Web B2B & Freelance Next.js - Orléans",
+  description: "Développeur web freelance expert B2B. Je transforme des problématiques complexes en outils digitaux ultra-performants (Next.js, Node.js) avec un vrai ROI.",
+  keywords: ["Développeur Web Orléans", "Freelance Next.js", "Création application métier", "Développeur React Orléans", "Agence Web Orléans", "Expert B2B Web", "Ambroise Boutrin"],
   openGraph: {
     type: 'website',
     locale: 'fr_FR',

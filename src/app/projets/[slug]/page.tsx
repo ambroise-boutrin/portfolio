@@ -1,5 +1,5 @@
 import { projects } from "@/data/projects";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, AlertTriangle, Lightbulb, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Zoom from 'react-medium-image-zoom';
@@ -56,7 +56,15 @@ const renderContent = (content: string) => {
                 </div>
             );
         }
-        return <p key={index} className="whitespace-pre-wrap leading-relaxed">{part}</p>;
+        const formatText = (text: string) => {
+            const boldRegex = /\*\*(.*?)\*\*/g;
+            const segments = text.split(boldRegex);
+            return segments.map((segment, i) => {
+                if (i % 2 === 1) return <strong key={i} className="text-[var(--foreground)] font-bold">{segment}</strong>;
+                return segment;
+            });
+        };
+        return <p key={index} className="whitespace-pre-wrap leading-relaxed mb-6">{formatText(part)}</p>;
     });
 };
 
@@ -114,11 +122,91 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             {/* Content Section */}
             <section className="px-6 pb-32 container mx-auto max-w-4xl">
 
-                {/* Compétences BTS SIO mobilisées */}
+                {/* Long Description */}
+                {project.longDescription && (
+                    <div className="mb-16 text-lg text-[var(--text-secondary)]">
+                        {renderContent(project.longDescription)}
+                    </div>
+                )}
+
+                {/* Case Study / Étude de cas */}
+                {project.caseStudy && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">
+                            Étude de Cas
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            {/* Problem */}
+                            <div className="p-8 rounded-3xl bg-red-500/5 border border-red-500/20 relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                                    <AlertTriangle size={80} className="text-red-500" />
+                                </div>
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6 text-red-500">
+                                        <AlertTriangle size={24} />
+                                    </div>
+                                    <h3 className="font-bold text-xl text-[var(--foreground)] mb-6">{project.caseStudy.problem.title}</h3>
+                                    <ul className="space-y-4">
+                                        {project.caseStudy.problem.items.map((item: string, i: number) => (
+                                            <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)] text-sm leading-relaxed">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-2"></span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Solution */}
+                            <div className="p-8 rounded-3xl bg-blue-500/5 border border-blue-500/20 relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                                    <Lightbulb size={80} className="text-blue-500" />
+                                </div>
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6 text-blue-500">
+                                        <Lightbulb size={24} />
+                                    </div>
+                                    <h3 className="font-bold text-xl text-[var(--foreground)] mb-6">{project.caseStudy.solution.title}</h3>
+                                    <ul className="space-y-4">
+                                        {project.caseStudy.solution.items.map((item: string, i: number) => (
+                                            <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)] text-sm leading-relaxed">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 mt-2"></span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* Result */}
+                            <div className="p-8 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 relative overflow-hidden group">
+                                <div className="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition-opacity">
+                                    <TrendingUp size={80} className="text-emerald-500" />
+                                </div>
+                                <div className="relative z-10">
+                                    <div className="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 text-emerald-500">
+                                        <TrendingUp size={24} />
+                                    </div>
+                                    <h3 className="font-bold text-xl text-[var(--foreground)] mb-6">{project.caseStudy.result.title}</h3>
+                                    <ul className="space-y-4">
+                                        {project.caseStudy.result.items.map((item: string, i: number) => (
+                                            <li key={i} className="flex items-start gap-3 text-[var(--text-secondary)] text-sm leading-relaxed">
+                                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></span>
+                                                <span>{item}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Compétences / Points Clés */}
                 {project.competences && project.competences.length > 0 && (
                     <div className="mb-20">
                         <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">
-                            Compétences BTS SIO mobilisées
+                            Points Clés du Projet
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             {project.competences.map((comp: any, i: number) => (
@@ -192,6 +280,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                             <video 
                                 src={(project as any).video} 
                                 controls 
+                                muted
                                 className="w-full h-full object-contain"
                                 preload="metadata"
                             >

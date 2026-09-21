@@ -1,215 +1,245 @@
 "use client";
 
-import { Download, Mail, MapPin, Phone, Globe } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Zap, Target, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
-export default function CVPage() {
+const steps = [
+    { title: "Cadrage strict", desc: "Avant de coder, nous définissons vos objectifs, votre cible et le cahier des charges. Pas de mauvaises surprises, tout est validé.", icon: "01" },
+    { title: "Transparence totale", desc: "Vous avez accès à un espace de suivi de projet. Vous êtes impliqué à chaque étape via des points réguliers. Vous gardez le contrôle.", icon: "02" },
+    { title: "Livraison et Formation", desc: "La livraison inclut systématiquement une formation pour vous rendre autonome sur la gestion de votre outil.", icon: "03" }
+];
+
+export default function AboutPage() {
     return (
-        <main className="min-h-screen bg-[var(--background)] pt-32 pb-20 px-6 transition-colors duration-300">
-            <div className="max-w-4xl mx-auto bg-[var(--bg-secondary)] shadow-2xl shadow-black/20 rounded-none md:rounded-3xl overflow-hidden print:shadow-none print:max-w-none border border-[var(--border-color)]">
+        <main className="bg-[var(--background)] min-h-screen pb-24 transition-colors duration-300">
+            {/* Hero Section */}
+            <header className="bg-[var(--background)] text-[var(--foreground)] pt-32 pb-20 md:pb-32 mb-16 md:mb-24 border-b border-[var(--border-color)] relative overflow-hidden">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--foreground),transparent)] opacity-[0.03] pointer-events-none"></div>
 
-                {/* Header */}
-                <div className="bg-[var(--foreground)] text-[var(--background)] p-10 md:p-16 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 transition-colors duration-300 print:bg-white print:text-black print:p-0 print:border-b">
-                    <div>
-                        <h1 className="text-4xl md:text-6xl font-serif font-bold mb-2">Ambroise Boutrin</h1>
-                        <p className="text-xl opacity-80 font-light uppercase tracking-widest">Étudiant L3 MIAGE | Développeur Fullstack Junior</p>
-                    </div>
-                    <div className="flex flex-col items-start md:items-end gap-3 text-sm">
-                        <a href="mailto:boutrinambroise@gmail.com" className="flex items-center gap-2 hover:opacity-70 transition-opacity"><Mail size={16} /> boutrinambroise@gmail.com</a>
-                        <span className="flex items-center gap-2 opacity-80"><MapPin size={16} /> Orléans, France</span>
-                        <span className="flex items-center gap-2 opacity-80"><Phone size={16} /> 07 59 87 83 34</span>
+                <div className="max-w-7xl mx-auto px-6 relative z-10">
+                    <div className="flex flex-col lg:flex-row items-center gap-16">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                            className="lg:w-3/5"
+                        >
+                            <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6 border-b border-[var(--border-color)] pb-2 inline-block">
+                                Le partenaire de votre croissance
+                            </span>
+                            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-8 tracking-tight leading-tight">
+                                Du code pour <span className="opacity-30 italic">développer</span> votre chiffre d'affaires.
+                            </h1>
+                            <p className="text-lg md:text-2xl text-[var(--text-secondary)] max-w-2xl leading-relaxed font-light mb-8">
+                                Je suis Ambroise Boutrin. Mon objectif n'est pas seulement de créer une "jolie vitrine", mais de concevoir un <span className="text-[var(--foreground)] font-normal">outil digital ultra-performant avec un vrai retour sur investissement (ROI)</span>.
+                            </p>
+                            <p className="text-sm md:text-base text-[var(--text-tertiary)] max-w-xl leading-relaxed font-mono opacity-80">
+                                // Profil Hybride : Freelance et Licence 3 MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Une compréhension intime de vos enjeux de rentabilité et de vos process métiers.
+                            </p>
+                        </motion.div>
+
+                        <motion.div 
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8, delay: 0.2 }}
+                            className="lg:w-2/5 w-full max-w-md mx-auto"
+                        >
+                            <div className="relative aspect-[3/4] w-full rounded-2xl md:rounded-[2rem] overflow-hidden border border-[var(--border-color)] group shadow-2xl glass-panel">
+                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
+                                <Image
+                                    src="/images/IMG_4128.jpeg"
+                                    alt="Ambroise Boutrin - Développeur Web B2B"
+                                    fill
+                                    className="object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-1000 ease-[cubic-bezier(0.21,0.47,0.32,0.98)]"
+                                    priority
+                                />
+                                <div className="absolute bottom-6 left-6 z-20">
+                                    <div className="bg-[var(--background)]/80 backdrop-blur-md border border-[var(--border-color)] text-[var(--foreground)] px-4 py-2 text-[10px] font-mono uppercase tracking-widest rounded-lg">
+                                        Basé à Orléans, France
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
+            </header>
 
-                {/* Content */}
-                <div className="p-10 md:p-16 space-y-16 print:p-8">
 
-                    {/* Intro */}
-                    <section>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-8 border-b border-[var(--border-color)] pb-3">Profil</h3>
-                        <p className="text-lg leading-relaxed text-[var(--foreground)]/90 max-w-3xl">
-                            Futur étudiant en L3 MIAGE à l&apos;Université d&apos;Orléans après un BTS SIO et un an de BUT Informatique. Fort de deux expériences marquantes chez Sopra Steria et ADENES, je maîtrise le développement d&apos;applications, l&apos;intégration d&apos;APIs et l&apos;automatisation de processus. Rigoureux et doté de cette double sensibilité technique et fonctionnelle propre à la MIAGE, je recherche un stage de 3 mois pour accompagner vos projets SI.
+
+            {/* La Stack Technique (Bénéfices) */}
+            <div className="max-w-7xl mx-auto px-6 mb-32 md:mb-48">
+                <div className="mb-16">
+                    <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-4">Architecture Technique</span>
+                    <h2 className="text-4xl md:text-6xl font-serif text-[var(--foreground)] tracking-tight">
+                        La technologie au service <br className="hidden md:block"/><span className="opacity-30">de vos résultats.</span>
+                    </h2>
+                    <p className="text-lg text-[var(--text-secondary)] mt-6 max-w-xl">
+                        Je ne vends pas des langages de programmation, je fournis des bénéfices concrets pour votre entreprise.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                    {/* Card 1 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1, duration: 0.6 }}
+                        className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10"
+                    >
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
+                                <Zap className="w-5 h-5" />
+                            </div>
+                            <div>
+                                <h3 className="text-2xl font-serif text-[var(--foreground)]">Vitesse et Conversion</h3>
+                            </div>
+                        </div>
+                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 flex-1">
+                            Un site lent fait fuir vos clients. Je garantis des temps de chargement éclair, réduisant le taux de rebond et augmentant vos ventes.
                         </p>
-                    </section>
+                        <div className="h-px w-full bg-[var(--border-color)] mb-8"></div>
+                        <ul className="space-y-4">
+                            {["Next.js", "React", "Tailwind CSS"].map((tech, i) => (
+                                <li key={i} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[var(--foreground)] opacity-80">
+                                    <div className="w-1 h-1 bg-[var(--text-tertiary)] rounded-full"></div>
+                                    {tech}
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
 
-                    {/* Expérience */}
-                    <section>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-10 border-b border-[var(--border-color)] pb-3">Expériences Professionnelles</h3>
-
-                        <div className="space-y-12">
-                            <div className="group">
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-3 gap-2">
-                                    <h4 className="text-2xl font-bold text-[var(--foreground)]">Stage — Sopra Steria</h4>
-                                    <span className="font-mono text-sm px-3 py-1 bg-[var(--foreground)]/5 rounded-full text-[var(--text-secondary)]">2026</span>
-                                </div>
-                                <div className="text-[var(--text-secondary)] italic mb-6 flex items-center gap-2 text-lg">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/30"></span>
-                                    Paris La Défense
-                                </div>
-                                <ul className="space-y-4 text-[var(--foreground)]/80 text-base md:text-lg">
-                                    <li className="flex gap-4">
-                                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/20 mt-2.5"></span>
-                                        <strong className="text-[var(--foreground)]">Automatisation Sécurité :</strong>&nbsp;Workflow de récupération d&apos;alertes et génération automatique de rapports d&apos;audit Word.
-                                    </li>
-                                    <li className="flex gap-4">
-                                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/20 mt-2.5"></span>
-                                        <strong className="text-[var(--foreground)]">DevOps :</strong>&nbsp;Déploiement d&apos;un outil de recherche par trigramme optimisé sur GitLab.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="group">
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-3 gap-2">
-                                    <h4 className="text-2xl font-bold text-[var(--foreground)]">Créateur de solutions Web — Micro-entreprise</h4>
-                                    <span className="font-mono text-sm px-3 py-1 bg-[var(--foreground)]/5 rounded-full text-[var(--text-secondary)]">Depuis janv. 2026</span>
-                                </div>
-                                <div className="text-[var(--text-secondary)] italic mb-6 flex items-center gap-2 text-lg">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/30"></span>
-                                    Orléans
-                                </div>
-                                <ul className="space-y-4 text-[var(--foreground)]/80 text-base md:text-lg">
-                                    <li className="flex gap-4">
-                                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/20 mt-2.5"></span>
-                                        <strong className="text-[var(--foreground)]">Gestion de projet &amp; Client :</strong>&nbsp;Recueil des besoins, rédaction de cahiers des charges, devis et facturation.
-                                    </li>
-                                    <li className="flex gap-4">
-                                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/20 mt-2.5"></span>
-                                        <strong className="text-[var(--foreground)]">Développement :</strong>&nbsp;Conception et mise en ligne de sites web sur-mesure (vitrines et e-commerce).
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div className="group">
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-baseline mb-3 gap-2">
-                                    <h4 className="text-2xl font-bold text-[var(--foreground)]">Stage — ADENES</h4>
-                                    <span className="font-mono text-sm px-3 py-1 bg-[var(--foreground)]/5 rounded-full text-[var(--text-secondary)]">2024/2025</span>
-                                </div>
-                                <div className="text-[var(--text-secondary)] italic mb-6 flex items-center gap-2 text-lg">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/30"></span>
-                                    Lyon
-                                </div>
-                                <ul className="space-y-4 text-[var(--foreground)]/80 text-base md:text-lg">
-                                    <li className="flex gap-4">
-                                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/20 mt-2.5"></span>
-                                        <strong className="text-[var(--foreground)]">Outils collaboratifs :</strong>&nbsp;Création d&apos;un Add-in Outlook et d&apos;une API REST pour l&apos;archivage automatique de pièces jointes.
-                                    </li>
-                                    <li className="flex gap-4">
-                                        <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[var(--foreground)]/20 mt-2.5"></span>
-                                        <strong className="text-[var(--foreground)]">Intégration Web :</strong>&nbsp;Développement d&apos;interfaces (HTML5/CSS3/W3C) et application des protocoles de sécurité.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Formation */}
-                    <section>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-10 border-b border-[var(--border-color)] pb-3">Formation</h3>
-                        <div className="flex flex-col gap-8">
-                            <div className="relative pl-8 border-l border-[var(--border-color)]">
-                                <span className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-[var(--foreground)] pr-2"></span>
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2 gap-2">
-                                    <h4 className="text-xl font-bold text-[var(--foreground)]">Licence MIAGE</h4>
-                                    <span className="text-sm font-medium text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-3 py-1 rounded-full">2026 - 2027</span>
-                                </div>
-                                <p className="text-[var(--text-secondary)] text-lg">Université d&apos;Orléans — 3ème année</p>
-                            </div>
-                            <div className="relative pl-8 border-l border-[var(--border-color)]">
-                                <span className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-[var(--foreground)]/50 pr-2"></span>
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2 gap-2">
-                                    <h4 className="text-xl font-bold text-[var(--foreground)]">BTS SIO Option SLAM</h4>
-                                    <span className="text-sm font-medium text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-3 py-1 rounded-full">2024 - 2026</span>
-                                </div>
-                                <p className="text-[var(--text-secondary)] text-lg">Lycée Benjamin Franklin, Orléans</p>
-                            </div>
-                            <div className="relative pl-8 border-l border-[var(--border-color)]">
-                                <span className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-[var(--foreground)]/30 pr-2"></span>
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2 gap-2">
-                                    <h4 className="text-xl font-bold text-[var(--foreground)]">BUT Informatique</h4>
-                                    <span className="text-sm font-medium text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-3 py-1 rounded-full">2023 - 2024</span>
-                                </div>
-                                <p className="text-[var(--text-secondary)] text-lg">IUT d&apos;Orléans — 1ère année</p>
-                            </div>
-                            <div className="relative pl-8 border-l border-[var(--border-color)]">
-                                <span className="absolute left-[-5px] top-0 w-[9px] h-[9px] rounded-full bg-[var(--foreground)]/15 pr-2"></span>
-                                <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-2 gap-2">
-                                    <h4 className="text-xl font-bold text-[var(--foreground)]">Baccalauréat STI2D Option SIN</h4>
-                                    <span className="text-sm font-medium text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-3 py-1 rounded-full">2019 - 2023</span>
-                                </div>
-                                <p className="text-[var(--text-secondary)] text-lg">Lycée Sainte Croix - Sainte Euverte — Mention Assez Bien</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Compétences Grid */}
-                    <section>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-10 border-b border-[var(--border-color)] pb-3">Compétences</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                            <div>
-                                <strong className="block text-xl font-serif mb-4 text-[var(--foreground)]">Développement Logiciel</strong>
-                                <div className="flex flex-wrap gap-2 text-[var(--text-secondary)]">
-                                    {["Java", "C#", "Python", "HTML/CSS", "JavaScript", "API REST"].map(t => (
-                                        <span key={t} className="px-3 py-1 bg-[var(--foreground)]/5 rounded-md text-sm">{t}</span>
-                                    ))}
-                                </div>
+                    {/* Card 2 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
+                        className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10 shadow-2xl ring-1 ring-[var(--foreground)]/5 border-[var(--foreground)]/20"
+                    >
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
+                                <Target className="w-5 h-5" />
                             </div>
                             <div>
-                                <strong className="block text-xl font-serif mb-4 text-[var(--foreground)]">DevOps & Base de données</strong>
-                                <div className="flex flex-wrap gap-2 text-[var(--text-secondary)]">
-                                    {["Git", "GitLab CI", "MySQL", "MariaDB", "Docker", "Automatisation"].map(t => (
-                                        <span key={t} className="px-3 py-1 bg-[var(--foreground)]/5 rounded-md text-sm">{t}</span>
-                                    ))}
-                                </div>
+                                <h3 className="text-2xl font-serif text-[var(--foreground)]">Logique Métier</h3>
+                            </div>
+                        </div>
+                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 flex-1">
+                            Espace client, CRM sur-mesure ou gestion de données complexes. Une fiabilité à toute épreuve pour vos processus critiques.
+                        </p>
+                        <div className="h-px w-full bg-[var(--border-color)] mb-8"></div>
+                        <ul className="space-y-4">
+                            {["Node.js", "Python", "C# .NET"].map((tech, i) => (
+                                <li key={i} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[var(--foreground)] opacity-80">
+                                    <div className="w-1 h-1 bg-[var(--foreground)] rounded-full"></div>
+                                    {tech}
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+
+                    {/* Card 3 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3, duration: 0.6 }}
+                        className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10"
+                    >
+                        <div className="flex items-center gap-4 mb-8">
+                            <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
+                                <ShieldCheck className="w-5 h-5" />
                             </div>
                             <div>
-                                <strong className="block text-xl font-serif mb-4 text-[var(--foreground)]">Méthodes & Sécurité</strong>
-                                <div className="flex flex-wrap gap-2 text-[var(--text-secondary)]">
-                                    {["Agile / SCRUM", "Cybersécurité", "Gestion de Projet", "W3C"].map(t => (
-                                        <span key={t} className="px-3 py-1 bg-[var(--foreground)]/5 rounded-md text-sm">{t}</span>
-                                    ))}
-                                </div>
+                                <h3 className="text-2xl font-serif text-[var(--foreground)]">Sécurité et Continuité</h3>
                             </div>
                         </div>
-                    </section>
-
-                    {/* Langues */}
-                    <section>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-10 border-b border-[var(--border-color)] pb-3">Langues</h3>
-                        <div className="flex flex-wrap gap-6">
-                            <div className="flex items-center gap-3">
-                                <Globe size={18} className="text-[var(--text-secondary)]" />
-                                <span className="text-[var(--foreground)] font-medium">Français</span>
-                                <span className="text-xs text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-2 py-0.5 rounded-full">Langue Maternelle</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Globe size={18} className="text-[var(--text-secondary)]" />
-                                <span className="text-[var(--foreground)] font-medium">Anglais</span>
-                                <span className="text-xs text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-2 py-0.5 rounded-full">B2</span>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Globe size={18} className="text-[var(--text-secondary)]" />
-                                <span className="text-[var(--foreground)] font-medium">Espagnol</span>
-                                <span className="text-xs text-[var(--text-secondary)] bg-[var(--foreground)]/5 px-2 py-0.5 rounded-full">B1</span>
-                            </div>
-                        </div>
-                    </section>
-
+                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 flex-1">
+                            Vos données sont précieuses. Architectures robustes, sécurisées et prêtes à évoluer avec la croissance de votre activité.
+                        </p>
+                        <div className="h-px w-full bg-[var(--border-color)] mb-8"></div>
+                        <ul className="space-y-4">
+                            {["Docker", "MySQL", "GitLab CI"].map((tech, i) => (
+                                <li key={i} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[var(--foreground)] opacity-80">
+                                    <div className="w-1 h-1 bg-[var(--text-tertiary)] rounded-full"></div>
+                                    {tech}
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
                 </div>
             </div>
 
-            {/* Floating Action Button */}
-            <div className="fixed bottom-10 right-10 z-50 print:hidden">
-                <a
-                    href="/images/fichiers/CV_Ambroise_Boutrin_MIAGE.pdf"
-                    download="CV_Ambroise_Boutrin_MIAGE.pdf"
-                    className="flex items-center gap-3 px-8 py-5 bg-[var(--foreground)] text-[var(--background)] rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all font-bold group"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <Download size={22} className="group-hover:-translate-y-1 transition-transform" />
-                    <span>Télécharger mon CV</span>
-                </a>
+            {/* Visual Process Section */}
+            <div className="max-w-7xl mx-auto px-6 mt-32 md:mt-48">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
+                    <div>
+                        <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Méthodologie</span>
+                        <h2 className="text-4xl md:text-6xl font-serif text-[var(--foreground)] mb-8 leading-tight">
+                            Un accompagnement <span className="opacity-30">de A à Z.</span>
+                        </h2>
+                        <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-md">
+                            Une approche transparente en 3 étapes pour garantir la réussite de votre transformation digitale.
+                        </p>
+                    </div>
+
+                    <div className="space-y-8 relative">
+                        <div className="absolute left-[27px] top-6 bottom-6 w-px bg-gradient-to-b from-[var(--border-color)] via-[var(--border-hover)] to-[var(--border-color)] hidden md:block"></div>
+
+                        {steps.map((step, i) => (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, x: 20 }}
+                                whileInView={{ opacity: 1, x: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className="flex flex-col md:flex-row gap-6 relative group"
+                            >
+                                <div className="w-14 h-14 shrink-0 rounded-full border border-[var(--border-color)] bg-[var(--background)] flex items-center justify-center font-serif text-xl text-[var(--text-tertiary)] group-hover:border-[var(--foreground)] group-hover:text-[var(--foreground)] transition-all duration-500 z-10 glass-panel shadow-xl">
+                                    {step.icon}
+                                </div>
+                                <div className="pt-2">
+                                    <h4 className="text-xl font-serif text-[var(--foreground)] mb-2 group-hover:translate-x-1 transition-transform duration-300">{step.title}</h4>
+                                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-sm">{step.desc}</p>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
+            {/* Final High-Impact CTA */}
+            <div className="max-w-7xl mx-auto px-6 mt-32 md:mt-48">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="relative overflow-hidden rounded-3xl md:rounded-[3rem] bg-[var(--foreground)] text-[var(--background)] p-8 md:p-24 text-center border border-[var(--border-color)] shadow-3xl"
+                >
+                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--background)] opacity-[0.03] blur-[120px] rounded-full"></div>
+                    </div>
+
+                    <div className="relative z-10 flex flex-col items-center">
+                        <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Prêt à digitaliser votre entreprise ?</span>
+                        <h2 className="text-3xl md:text-6xl lg:text-8xl font-serif mb-8 md:mb-12 tracking-tight leading-tight text-[var(--background)]">
+                            Réservez un <span className="opacity-40 italic font-serif">Audit Gratuit</span> <br className="hidden md:block" /> de 15 minutes.
+                        </h2>
+
+                        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full md:w-auto">
+                            <Link
+                                href="/contact"
+                                className="w-full md:w-auto px-10 md:px-12 py-5 md:py-6 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:scale-105 transition-transform shadow-2xl flex items-center justify-center gap-3 group"
+                            >
+                                Voir les disponibilités <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                            </Link>
+                        </div>
+                    </div>
+                </motion.div>
+            </div>
         </main>
     );
 }

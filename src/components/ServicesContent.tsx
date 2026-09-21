@@ -1,38 +1,42 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Check, ArrowUpRight, Zap, Shield, Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Check, ArrowUpRight, Zap, Shield, Sparkles, Plus, Minus } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const packages = [
     {
-        name: "Essential",
+        name: "Pack Visibilité",
         subtitle: "L'impact immédiat.",
-        price: "dès 800€",
-        description: "Une Landing Page ou un Portfolio conçu pour convertir. Idéal pour lancer une offre, présenter une identité ou tester un concept.",
-        features: ["Design Exclusif (Pas de template)", "Développement Next.js", "Animations Scroll", "Optimisé Mobile & SEO", "1 Page Longue"],
+        price: "800€",
+        priceSuffix: "min.",
+        description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
+        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact & Calendly", "Optimisation Google My Business", "Optimisé Mobile & SEO Local", "Hébergement premium inclus"],
         cta: "Lancer mon projet",
         icon: <Zap className="w-5 h-5" />,
         isPopular: false
     },
     {
-        name: "Signature",
-        subtitle: "L'expérience complète.",
-        price: "dès 1800€",
-        description: "Un site vitrine ou une application web de 5 à 10 pages pour asseoir votre autorité. Une architecture solide et une direction artistique poussée.",
-        features: ["Stratégie de Contenu", "Jusqu'à 10 Pages / Vues", "CMS (Gestion de contenu)", "Interactions Avancées", "Analytics & GDPR", "Optimisation Performance"],
+        name: "Pack Conversion",
+        subtitle: "L'expérience e-commerce.",
+        price: "2 000€",
+        priceSuffix: "min.",
+        description: "E-commerce ou refonte complexe. Une architecture solide et une direction artistique poussée pour maximiser vos ventes.",
+        features: ["Boutique en Ligne / Refonte", "Intégration Paiement Sécurisé", "CMS (Gestion de contenu)", "Interactions Avancées", "Analytics & Conformité RGPD", "Optimisation des Performances"],
         cta: "Collaborer",
-        icon: <Shield className="w-5 h-5" />,
+        icon: <Sparkles className="w-5 h-5" />,
         isPopular: true
     },
     {
-        name: "Sur-Mesure",
-        subtitle: "Sans limite.",
-        price: "Sur Devis",
-        description: "Logiciel métier (ERP/CRM), E-commerce complexe, SaaS ou Applications Web Full-stack. Une solution technique robuste pour des besoins critiques.",
-        features: ["Architecture Headless", "Paiements (Stripe)", "Base de Données / API", "Comptes Utilisateurs", "Tableau de Bord Admin", "Maintenance Dédiée"],
-        cta: "Discuter du projet",
-        icon: <Sparkles className="w-5 h-5" />,
+        name: "Pack Sérénité",
+        subtitle: "Maintenance & Assurance.",
+        price: "49€",
+        priceSuffix: "/ mois",
+        description: "Une assurance indispensable pour votre activité en ligne. Sécurité, mises à jour et disponibilité garanties.",
+        features: ["Hébergement Premium & SSL", "Sauvegardes Quotidiennes", "Mises à jour de Sécurité", "Monitoring Serveur 24/7", "1h d'intervention / mois", "Support Technique Prioritaire"],
+        cta: "Protéger mon site",
+        icon: <Shield className="w-5 h-5" />,
         isPopular: false
     }
 ];
@@ -44,7 +48,40 @@ const steps = [
     { title: "Delivery", desc: "Tests rigoureux, mise en production et accompagnement post-lancement.", icon: "04" }
 ];
 
+const faqs = [
+    {
+        question: "Comment facturez-vous vos prestations ?",
+        answer: "Je ne facture pas au temps passé (TJM), mais au projet. Mes tarifs sont des forfaits clairs basés sur la valeur et le retour sur investissement que l'outil va vous apporter. Pas de mauvaise surprise ni de dépassement de budget."
+    },
+    {
+        question: "Quels sont les délais habituels pour un projet ?",
+        answer: "Pour un Pack Visibilité (site vitrine), comptez entre 2 et 4 semaines. Pour un Pack Conversion (e-commerce ou application métier), le délai varie de 1 à 3 mois selon la complexité. Un planning précis est validé dès le lancement."
+    },
+    {
+        question: "Je n'y connais rien en informatique, allez-vous m'accompagner ?",
+        answer: "Absolument. Mon rôle n'est pas de vous noyer sous un jargon technique. Je traduis vos enjeux business en solutions concrètes et je vous forme à l'utilisation de votre nouvel outil une fois celui-ci terminé."
+    },
+    {
+        question: "Que se passe-t-il une fois le site en ligne ?",
+        answer: "La livraison ne marque pas la fin de notre collaboration. Je propose un Pack Sérénité (maintenance) pour gérer l'hébergement, la sécurité et les mises à jour régulières. Vous pouvez vous concentrer sur votre métier, je m'occupe de la technique."
+    },
+    {
+        question: "Acceptez-vous des clients en dehors de la région d'Orléans ?",
+        answer: "Oui. Bien que je sois basé à Orléans et disponible pour des rendez-vous en présentiel dans le Centre-Val de Loire, je travaille régulièrement avec des entreprises dans toute la France grâce à des outils de collaboration à distance."
+    }
+];
+
 export default function ServicesContent() {
+    const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+    const toggleFaq = (index: number) => {
+        if (openFaq === index) {
+            setOpenFaq(null);
+        } else {
+            setOpenFaq(index);
+        }
+    };
+
     return (
         <main className="bg-[var(--background)] min-h-screen pb-24 transition-colors duration-300">
             {/* Hero Section - Theme Aware */}
@@ -78,11 +115,6 @@ export default function ServicesContent() {
                         transition={{ delay: index * 0.1, duration: 0.6 }}
                         className={`group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10 ${pkg.isPopular ? 'shadow-2xl ring-1 ring-[var(--foreground)]/5 border-[var(--foreground)]/20' : ''}`}
                     >
-                        {pkg.isPopular && (
-                            <div className="absolute top-6 right-6 bg-[var(--foreground)] text-[var(--background)] text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1.5 rounded-full z-20 shadow-xl">
-                                Plus Demandé
-                            </div>
-                        )}
 
                         <div className="flex items-center gap-4 mb-8">
                             <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
@@ -94,9 +126,9 @@ export default function ServicesContent() {
                             </div>
                         </div>
 
-                        <div className="mb-8">
-                            <span className="text-4xl font-serif text-[var(--foreground)]">{pkg.price}</span>
-                            {pkg.price !== "Sur Devis" && <span className="text-sm text-[var(--text-tertiary)] ml-2">min.</span>}
+                        <div className="mb-8 flex items-baseline gap-2">
+                            <span className="text-4xl md:text-5xl font-serif text-[var(--foreground)]">{pkg.price}</span>
+                            {pkg.priceSuffix && <span className="text-sm font-mono text-[var(--text-tertiary)] uppercase tracking-wider">{pkg.priceSuffix}</span>}
                         </div>
 
                         <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 min-h-[60px]">
@@ -164,6 +196,60 @@ export default function ServicesContent() {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+            </div>
+
+            {/* FAQ Section */}
+            <div className="max-w-4xl mx-auto px-6 mt-32 md:mt-48">
+                <div className="text-center mb-16">
+                    <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">FAQ</span>
+                    <h2 className="text-4xl md:text-5xl font-serif text-[var(--foreground)] leading-tight">
+                        Questions Fréquentes
+                    </h2>
+                </div>
+
+                <div className="space-y-4">
+                    {faqs.map((faq, i) => {
+                        const isOpen = openFaq === i;
+                        return (
+                            <motion.div
+                                key={i}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: i * 0.1 }}
+                                className={`border rounded-2xl overflow-hidden transition-colors duration-300 ${isOpen ? 'bg-[var(--bg-secondary)] border-[var(--foreground)]/20' : 'bg-transparent border-[var(--border-color)] hover:border-[var(--border-hover)]'}`}
+                            >
+                                <button
+                                    onClick={() => toggleFaq(i)}
+                                    className="w-full px-6 md:px-8 py-6 flex items-center justify-between gap-6 text-left"
+                                >
+                                    <h3 className={`text-lg md:text-xl font-serif transition-colors duration-300 ${isOpen ? 'text-[var(--foreground)]' : 'text-[var(--text-secondary)] group-hover:text-[var(--foreground)]'}`}>
+                                        {faq.question}
+                                    </h3>
+                                    <div className={`shrink-0 w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-300 ${isOpen ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)]' : 'bg-[var(--background)] text-[var(--foreground)] border-[var(--border-color)]'}`}>
+                                        {isOpen ? <Minus size={18} /> : <Plus size={18} />}
+                                    </div>
+                                </button>
+                                
+                                <AnimatePresence>
+                                    {isOpen && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="px-6 md:px-8 pb-8 pt-2 text-[var(--text-secondary)] leading-relaxed text-sm md:text-base border-t border-[var(--border-color)]/50 mt-2">
+                                                {faq.answer}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
 

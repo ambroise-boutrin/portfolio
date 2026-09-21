@@ -15,10 +15,8 @@ const JsonLd = () => {
                 { "@type": "SiteNavigationElement", "position": 1, "name": "Accueil", "url": "https://www.ambroise-boutrin.fr/" },
                 { "@type": "SiteNavigationElement", "position": 2, "name": "Services", "url": "https://www.ambroise-boutrin.fr/services" },
                 { "@type": "SiteNavigationElement", "position": 3, "name": "Projets", "url": "https://www.ambroise-boutrin.fr/projets" },
-                { "@type": "SiteNavigationElement", "position": 4, "name": "Compétences", "url": "https://www.ambroise-boutrin.fr/competences" },
-                { "@type": "SiteNavigationElement", "position": 5, "name": "Parcours", "url": "https://www.ambroise-boutrin.fr/parcours" },
-                { "@type": "SiteNavigationElement", "position": 6, "name": "Veille", "url": "https://www.ambroise-boutrin.fr/veille" },
-                { "@type": "SiteNavigationElement", "position": 7, "name": "Contact", "url": "https://www.ambroise-boutrin.fr/contact" }
+                { "@type": "SiteNavigationElement", "position": 4, "name": "À propos", "url": "https://www.ambroise-boutrin.fr/a-propos" },
+                { "@type": "SiteNavigationElement", "position": 5, "name": "Contact", "url": "https://www.ambroise-boutrin.fr/contact" }
             ]
         },
         {
@@ -29,7 +27,7 @@ const JsonLd = () => {
             "@id": "https://www.ambroise-boutrin.fr",
             "url": "https://www.ambroise-boutrin.fr",
             "telephone": "+33759878334",
-            "priceRange": "€€",
+            "priceRange": "€€€",
             "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Centre Ville",
@@ -51,6 +49,10 @@ const JsonLd = () => {
                 {
                     "@type": "State",
                     "name": "Centre-Val de Loire"
+                },
+                {
+                    "@type": "Country",
+                    "name": "France"
                 }
             ],
             "openingHoursSpecification": {
@@ -72,12 +74,12 @@ const JsonLd = () => {
             "name": "Ambroise Boutrin",
             "url": "https://www.ambroise-boutrin.fr",
             "image": "https://www.ambroise-boutrin.fr/me.png",
-            "jobTitle": "Étudiant L3 MIAGE | Développeur Fullstack Junior",
+            "jobTitle": "Développeur Web B2B | Freelance Next.js",
             "worksFor": {
                 "@type": "Organization",
                 "name": "Ambroise B. Studio"
             },
-            "description": "Futur étudiant en L3 MIAGE à l'Université d'Orléans. Développeur Fullstack spécialisé en applications web et automatisation de processus.",
+            "description": "Développeur web freelance expert B2B. Transformation de problématiques complexes en outils digitaux performants avec ROI garanti.",
             "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Orléans",
@@ -90,13 +92,13 @@ const JsonLd = () => {
                 "https://github.com/xeanoob",
                 "https://twitter.com/ambroise_b"
             ],
-            "knowsAbout": ["Java", "C#", "Python", "JavaScript", "HTML/CSS", "API REST", "Git", "MySQL", "Agile", "Cybersécurité"]
+            "knowsAbout": ["Next.js", "React", "Node.js", "Développement Web", "Applications Métier", "E-commerce", "SEO", "Architecture Logicielle"]
         },
         {
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "name": "Contactez Ambroise Boutrin - Développeur Fullstack Orléans",
-            "description": "Formulaire de contact pour discuter de vos projets web. Disponible pour freelance ou opportunités à Orléans et en remote.",
+            "name": "Contactez Ambroise Boutrin - Développeur B2B",
+            "description": "Formulaire de contact pour discuter de vos projets web.",
             "url": "https://www.ambroise-boutrin.fr/contact",
             "mainEntity": {
                 "@type": "Person",

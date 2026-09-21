@@ -24,7 +24,7 @@ export default function History() {
                         >
                             <h3 className="text-2xl font-serif italic mb-4 text-[var(--foreground)]">Futur étudiant en L3 MIAGE, passionné par l'innovation.</h3>
                             <p className="text-lg text-[var(--text-secondary)] leading-relaxed mb-6">
-                                Après un BTS SIO et un an de BUT Informatique, je m'oriente vers la L3 MIAGE à l'Université d'Orléans. Fort de stages chez Sopra Steria (Paris La Défense) et ADENES (Lyon), je maîtrise le développement d'applications, l'intégration d'APIs et l'automatisation de processus. En parallèle, je gère ma micro-entreprise de création de sites web.
+                                Après l'obtention d'un BTS SIO et un an de BUT Informatique, je m'oriente vers la L3 MIAGE à l'Université d'Orléans. Fort de stages chez Sopra Steria (Paris La Défense) et ADENES (Lyon), je maîtrise le développement d'applications, l'intégration d'APIs et l'automatisation de processus. En parallèle, je gère ma micro-entreprise de création de sites web.
                             </p>
                         </motion.div>
 

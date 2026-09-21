@@ -30,7 +30,7 @@ export default function Manifesto() {
                         <div className="absolute inset-0 border border-[var(--border-color)] rounded-sm bg-[var(--background)] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
                             {/* Placeholder Image - User can replace src */}
                             <Image
-                                src="/images/ambroise.webp"
+                                src="/images/IMG_4128.jpeg"
                                 alt="Ambroise Boutrin"
                                 fill
                                 className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
