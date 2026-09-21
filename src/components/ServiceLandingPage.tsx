@@ -10,7 +10,7 @@ export interface ServiceLandingProps {
     title: ReactNode;
     subtitle: string;
     description: string;
-    benefits: { title: string; description: string; icon?: ReactNode }[];
+    benefits: { title: string; description: string; image?: string; imageAlt?: string }[];
     targetAudience: string;
     priceStartingAt: string;
     primaryCtaText: string;
@@ -79,19 +79,46 @@ export default function ServiceLandingPage({
                         <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)]">Pourquoi choisir cette offre ?</h2>
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-                        {benefits.map((benefit, index) => (
-                            <div key={index} className="group relative p-8 md:p-10 rounded-3xl bg-[var(--background)] border border-[var(--border-color)] hover:border-[var(--foreground)]/30 hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                                {/* Decorative background gradient */}
-                                <div className="absolute top-0 right-0 w-40 h-40 bg-[var(--foreground)] opacity-0 group-hover:opacity-5 blur-[80px] rounded-full transition-opacity duration-500 pointer-events-none"></div>
-                                
-                                <div className="w-14 h-14 rounded-2xl bg-[var(--bg-secondary)] border border-[var(--border-color)] flex items-center justify-center text-[var(--foreground)] mb-8 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-500 shadow-sm">
-                                    {benefit.icon || <CheckCircle2 size={24} />}
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                        {benefits.map((benefit, index) => {
+                            // Asymmetric grid: First item spans 8 cols, second 4, third spans 12 (or whatever fits 3 items best).
+                            // Let's do: 1st item = 7 cols, 2nd = 5 cols, 3rd = 12 cols for a nice bento look.
+                            let colSpan = "md:col-span-4";
+                            if (benefits.length === 3) {
+                                if (index === 0) colSpan = "md:col-span-7";
+                                else if (index === 1) colSpan = "md:col-span-5";
+                                else if (index === 2) colSpan = "md:col-span-12";
+                            }
+
+                            return (
+                                <div key={index} className={`group relative p-8 md:p-12 rounded-3xl bg-[var(--background)] border border-[var(--border-color)] overflow-hidden flex flex-col justify-between ${colSpan}`}>
+                                    {/* Image background if provided */}
+                                    {benefit.image && (
+                                        <div className="absolute inset-0 z-0 pointer-events-none">
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-[var(--background)]/90 to-transparent z-10"></div>
+                                            <div className="absolute inset-0 bg-[var(--background)]/40 z-10"></div>
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                                            <img 
+                                                src={benefit.image} 
+                                                alt={benefit.imageAlt || benefit.title} 
+                                                className="w-full h-full object-cover object-top opacity-30 group-hover:opacity-60 transition-opacity duration-700 grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                    )}
+
+                                    <div className="relative z-10 flex flex-col h-full">
+                                        <div className="text-5xl md:text-7xl font-serif text-[var(--border-color)] opacity-50 mb-12 group-hover:text-[var(--foreground)] group-hover:opacity-20 transition-all duration-500">
+                                            0{index + 1}
+                                        </div>
+                                        
+                                        <div className="mt-auto md:max-w-xl">
+                                            <h3 className="text-2xl md:text-3xl font-serif text-[var(--foreground)] mb-4">{benefit.title}</h3>
+                                            <p className="text-[var(--text-secondary)] leading-relaxed text-sm md:text-base">{benefit.description}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                                <h3 className="text-2xl font-serif text-[var(--foreground)] mb-4">{benefit.title}</h3>
-                                <p className="text-[var(--text-secondary)] leading-relaxed">{benefit.description}</p>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
                 </div>
             </section>

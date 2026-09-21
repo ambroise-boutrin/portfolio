@@ -1,6 +1,5 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
 import { Metadata } from "next";
-import { ShieldAlert, ServerCog, Clock } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Maintenance et Sécurité de Site Web - Ambroise Boutrin",
@@ -19,17 +18,16 @@ export default function MaintenanceSiteWeb() {
             primaryCtaText="Sécuriser mon site"
             benefits={[
                 {
-                    icon: <ShieldAlert size={28} strokeWidth={1.5} />,
+                    image: "/images/analyse-graphes-python.png",
                     title: "Protection Anti-Piratage",
                     description: "Je déploie des pare-feux avancés et je mets à jour les failles de sécurité potentielles avant même qu'elles ne soient exploitées."
                 },
                 {
-                    icon: <ServerCog size={28} strokeWidth={1.5} />,
+                    image: "/images/serveur-minecraft-sur-mesure.webp",
                     title: "Disponibilité 99.9% (Uptime)",
                     description: "Je supervise (monitoring) votre site 24h/24. Si le serveur tombe en panne, je suis alerté immédiatement pour intervenir."
                 },
                 {
-                    icon: <Clock size={28} strokeWidth={1.5} />,
                     title: "Temps d'Intervention Inclus",
                     description: "Besoin de modifier un texte, d'ajouter un nouvel article ou de changer une image ? Le pack inclut du temps d'intervention chaque mois pour vos petites modifications."
                 }

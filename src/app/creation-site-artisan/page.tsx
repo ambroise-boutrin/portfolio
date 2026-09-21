@@ -1,6 +1,5 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
 import { Metadata } from "next";
-import { Search, Sparkles, Target } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Création de Site Web pour Artisans & TPE - Ambroise Boutrin",
@@ -19,17 +18,17 @@ export default function CreationSiteArtisan() {
             primaryCtaText="Démarrer mon projet"
             benefits={[
                 {
-                    icon: <Search size={28} strokeWidth={1.5} />,
+                    image: "/images/site-web-agence-creative-offtime.webp",
                     title: "Acquisition Locale (SEO)",
                     description: "J'optimise votre site et votre fiche Google My Business pour que vous apparaissiez en premier quand un client cherche votre métier dans votre ville."
                 },
                 {
-                    icon: <Sparkles size={28} strokeWidth={1.5} />,
+                    image: "/images/site-e-commerce-vetements-garanches.webp",
                     title: "Image de Marque Premium",
                     description: "Fini les sites 'faits maison' qui dévalorisent votre expertise. Je crée un design sur-mesure qui rassure vos prospects instantanément."
                 },
                 {
-                    icon: <Target size={28} strokeWidth={1.5} />,
+                    image: "/images/shots/site-web-assainissement-orleans.webp",
                     title: "Conversion Maximisée",
                     description: "L'interface est pensée pour faciliter le premier contact : boutons d'appels visibles, formulaires de devis simplifiés, intégration Calendly."
                 }

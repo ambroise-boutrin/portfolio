@@ -1,6 +1,5 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
 import { Metadata } from "next";
-import { Workflow, ShieldCheck, MousePointerClick } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Développement d'Application Métier & Logiciel PME - Ambroise Boutrin",
@@ -19,17 +18,17 @@ export default function ApplicationMetierPME() {
             primaryCtaText="Discuter de mon application"
             benefits={[
                 {
-                    icon: <Workflow size={28} strokeWidth={1.5} />,
+                    image: "/images/gallery/erp/accueil-dashboard-erp.png",
                     title: "Automatisation des Processus",
                     description: "Éliminez les doubles saisies et les erreurs humaines en connectant vos différents outils via API ou en créant un workflow automatisé sur-mesure."
                 },
                 {
-                    icon: <ShieldCheck size={28} strokeWidth={1.5} />,
+                    image: "/images/logiciel-erp-pme-stocko.png",
                     title: "Sécurité & Robustesse",
                     description: "Contrairement aux outils No-Code limités, je code votre application de A à Z. Vous êtes propriétaire de vos données et l'architecture est prête à supporter votre croissance (scalabilité)."
                 },
                 {
-                    icon: <MousePointerClick size={28} strokeWidth={1.5} />,
+                    image: "/images/gallery/erp/dashboard-ventes-erp.png",
                     title: "Expérience Utilisateur (UX)",
                     description: "Un outil métier ne doit pas être austère. Je conçois des interfaces intuitives qui réduisent le temps de formation de vos équipes et maximisent l'adoption de l'outil."
                 }
