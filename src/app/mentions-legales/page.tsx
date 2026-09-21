@@ -20,7 +20,7 @@ export default function MentionsLegales() {
                         <li><strong className="text-[var(--foreground)]">Propriétaire du site :</strong> Ambroise Boutrin</li>
                         <li><strong className="text-[var(--foreground)]">Statut :</strong> Entrepreneur individuel</li>
                         <li><strong className="text-[var(--foreground)]">SIRET :</strong> 101 033 504 00016</li>
-                        <li><strong className="text-[var(--foreground)]">Contact :</strong> boutrinambroise@gmail.com</li>
+                        <li><strong className="text-[var(--foreground)]">Contact :</strong> contact@ambroise-boutrin.fr</li>
                         <li><strong className="text-[var(--foreground)]">Téléphone :</strong> 07 59 87 83 34</li>
                         <li><strong className="text-[var(--foreground)]">Adresse :</strong> Orléans, France</li>
                     </ul>
@@ -57,7 +57,7 @@ export default function MentionsLegales() {
                         Aucune donnée personnelle n'est stockée en base de données. Les informations collectées ne sont ni revendues ni transmises à des tiers.
                     </p>
                     <p className="text-[var(--foreground)]/80 leading-relaxed">
-                        Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez : <a href="mailto:boutrinambroise@gmail.com" className="underline hover:opacity-70 transition-opacity">boutrinambroise@gmail.com</a>.
+                        Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi « Informatique et Libertés », vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ces droits, contactez : <a href="mailto:contact@ambroise-boutrin.fr" className="underline hover:opacity-70 transition-opacity">contact@ambroise-boutrin.fr</a>.
                     </p>
                 </section>
 

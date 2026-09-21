@@ -42,7 +42,7 @@ export default function ContactContent() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">Email</span>
-                                <a href="mailto:boutrinambroise@gmail.com" className="text-xl md:text-2xl font-serif text-[var(--foreground)]">boutrinambroise@gmail.com</a>
+                                <a href="mailto:contact@ambroise-boutrin.fr" className="text-xl md:text-2xl font-serif text-[var(--foreground)]">contact@ambroise-boutrin.fr</a>
                             </div>
                         </div>
 

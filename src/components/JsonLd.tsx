@@ -103,7 +103,7 @@ const JsonLd = () => {
             "mainEntity": {
                 "@type": "Person",
                 "name": "Ambroise Boutrin",
-                "email": "boutrinambroise@gmail.com",
+                "email": "contact@ambroise-boutrin.fr",
                 "telephone": "+33759878334",
                 "address": {
                     "@type": "PostalAddress",

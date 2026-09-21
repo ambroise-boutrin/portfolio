@@ -283,10 +283,10 @@ export default function ServicesContent() {
                             </Link>
 
                             <a
-                                href="mailto:boutrinambroise@gmail.com"
+                                href="mailto:contact@ambroise-boutrin.fr"
                                 className="opacity-60 hover:opacity-100 border-b border-[var(--background)]/20 pb-1 transition-all text-base md:text-lg font-light tracking-wide truncate max-w-full text-[var(--background)]"
                             >
-                                boutrinambroise@gmail.com
+                                contact@ambroise-boutrin.fr
                             </a>
                         </div>
                     </div>
