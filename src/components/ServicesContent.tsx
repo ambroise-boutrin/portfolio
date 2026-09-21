@@ -14,6 +14,7 @@ const packages = [
         description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
         features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact & Calendly", "Optimisation Google My Business", "Optimisé Mobile & SEO Local", "Hébergement premium inclus"],
         cta: "Lancer mon projet",
+        link: "/creation-site-artisan",
         icon: <Zap className="w-5 h-5" />,
         isPopular: false
     },
@@ -25,6 +26,7 @@ const packages = [
         description: "E-commerce ou refonte complexe. Une architecture solide et une direction artistique poussée pour maximiser vos ventes.",
         features: ["Boutique en Ligne / Refonte", "Intégration Paiement Sécurisé", "CMS (Gestion de contenu)", "Interactions Avancées", "Analytics & Conformité RGPD", "Optimisation des Performances"],
         cta: "Collaborer",
+        link: "/application-metier-pme",
         icon: <Sparkles className="w-5 h-5" />,
         isPopular: true
     },
@@ -36,6 +38,7 @@ const packages = [
         description: "Une assurance indispensable pour votre activité en ligne. Sécurité, mises à jour et disponibilité garanties.",
         features: ["Hébergement Premium & SSL", "Sauvegardes Quotidiennes", "Mises à jour de Sécurité", "Monitoring Serveur 24/7", "1h d'intervention / mois", "Support Technique Prioritaire"],
         cta: "Protéger mon site",
+        link: "/contact",
         icon: <Shield className="w-5 h-5" />,
         isPopular: false
     }
@@ -149,7 +152,7 @@ export default function ServicesContent() {
                         </ul>
 
                         <Link
-                            href="/contact"
+                            href={pkg.link}
                             className={`w-full py-4 flex items-center justify-center gap-3 text-xs font-mono uppercase tracking-[0.2em] transition-all duration-500 rounded-xl border ${pkg.isPopular
                                     ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)] hover:bg-transparent hover:text-[var(--foreground)] shadow-lg'
                                     : 'border-[var(--border-color)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)]'
