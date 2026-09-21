@@ -9,18 +9,10 @@ export default function ContactContent() {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const handleMessage = (e: MessageEvent) => {
-            if (e.data.event && e.data.event.indexOf('calendly') === 0) {
-                setIsLoaded(true);
-            }
-        };
-        window.addEventListener('message', handleMessage);
-        
-        // Fallback: assume loaded after 3.5s anyway to prevent infinite loading state
-        const timer = setTimeout(() => setIsLoaded(true), 3500);
+        // Fallback: assume loaded after 5s anyway to prevent infinite loading state
+        const timer = setTimeout(() => setIsLoaded(true), 5000);
 
         return () => {
-            window.removeEventListener('message', handleMessage);
             clearTimeout(timer);
         };
     }, []);
@@ -84,9 +76,15 @@ export default function ContactContent() {
                             <p className="text-sm font-mono uppercase tracking-widest text-[var(--text-secondary)]">Chargement de l'agenda...</p>
                         </div>
                     )}
-                    <div className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
-                        <div className="calendly-inline-widget" data-url="https://calendly.com/boutrinambroise/30min" style={{ minWidth: "320px", height: "700px" }}></div>
-                        <Script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
+                    <div className={`transition-opacity duration-1000 w-full h-full ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+                        <iframe 
+                            src="https://calendly.com/boutrinambroise/30min?hide_gdpr_banner=1" 
+                            width="100%" 
+                            height="100%" 
+                            className="min-h-[700px] border-0"
+                            onLoad={() => setIsLoaded(true)}
+                            title="Calendly"
+                        ></iframe>
                     </div>
                 </div>
 
