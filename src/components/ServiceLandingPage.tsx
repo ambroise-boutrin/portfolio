@@ -144,8 +144,9 @@ export default function ServiceLandingPage({
                         <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                         <h3 className="text-2xl font-serif mb-2 relative z-10">Investissement</h3>
                         <p className="text-white/60 mb-8 relative z-10">Budget transparent et adapté.</p>
-                        <div className="text-6xl font-serif mb-4 relative z-10">
-                            À partir de {priceStartingAt}
+                        <div className="text-xl text-white/60 font-serif italic mb-2 relative z-10">À partir de</div>
+                        <div className="text-5xl md:text-7xl font-serif mb-4 relative z-10">
+                            {priceStartingAt}
                         </div>
                         <p className="text-white/80 text-sm mb-10 relative z-10">Paiement échelonné possible. Pas de frais cachés.</p>
                         
