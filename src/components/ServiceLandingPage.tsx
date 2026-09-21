@@ -56,12 +56,6 @@ export default function ServiceLandingPage({
                             >
                                 {primaryCtaText} <ArrowRight size={16} />
                             </Link>
-                            <Link
-                                href="#details"
-                                className="px-8 py-4 border border-[var(--border-color)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider text-sm hover:bg-[var(--bg-secondary)] transition-colors flex items-center gap-3 w-full sm:w-auto justify-center"
-                            >
-                                En savoir plus <ChevronDown size={16} />
-                            </Link>
                         </div>
                     </motion.div>
                 </div>
