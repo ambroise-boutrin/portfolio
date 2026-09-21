@@ -2,10 +2,29 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Script from "next/script";
 
 export default function ContactContent() {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        const handleMessage = (e: MessageEvent) => {
+            if (e.data.event && e.data.event.indexOf('calendly') === 0) {
+                setIsLoaded(true);
+            }
+        };
+        window.addEventListener('message', handleMessage);
+        
+        // Fallback: assume loaded after 3.5s anyway to prevent infinite loading state
+        const timer = setTimeout(() => setIsLoaded(true), 3500);
+
+        return () => {
+            window.removeEventListener('message', handleMessage);
+            clearTimeout(timer);
+        };
+    }, []);
+
     return (
         <main className="min-h-screen bg-[var(--background)] pt-32 pb-20 px-6 relative overflow-hidden">
             {/* Ambient Light */}
@@ -58,9 +77,17 @@ export default function ContactContent() {
                 </div>
 
                 {/* Right: Form */}
-                <div className="md:w-1/2 bg-[var(--bg-secondary)] p-2 rounded-3xl md:mt-20 border border-[var(--border-color)] overflow-hidden">
-                    <div className="calendly-inline-widget" data-url="https://calendly.com/boutrinambroise/30min" style={{ minWidth: "320px", height: "700px" }}></div>
-                    <Script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
+                <div className="md:w-1/2 bg-[var(--bg-secondary)] p-2 rounded-3xl md:mt-20 border border-[var(--border-color)] overflow-hidden relative min-h-[700px]">
+                    {!isLoaded && (
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-[var(--bg-secondary)] z-10">
+                            <Loader2 className="w-8 h-8 text-[var(--foreground)] animate-spin mb-4" />
+                            <p className="text-sm font-mono uppercase tracking-widest text-[var(--text-secondary)]">Chargement de l'agenda...</p>
+                        </div>
+                    )}
+                    <div className={`transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+                        <div className="calendly-inline-widget" data-url="https://calendly.com/boutrinambroise/30min" style={{ minWidth: "320px", height: "700px" }}></div>
+                        <Script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async />
+                    </div>
                 </div>
 
             </ScrollReveal>
