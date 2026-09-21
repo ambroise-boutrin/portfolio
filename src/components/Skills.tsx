@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 
 const skillCategories = [
     {
-        name: "Développement Logiciel & POO",
+        name: "Développement Logiciel et POO",
         skills: ["Java", "C#", "Python", "HTML/CSS", "JavaScript", "API REST"]
     },
     {
-        name: "DevOps & Base de données",
+        name: "DevOps et Base de données",
         skills: ["Git", "GitLab CI", "MySQL", "MariaDB", "Docker", "Automatisation"]
     },
     {
-        name: "Méthodes & Sécurité",
+        name: "Méthodes et Sécurité",
         skills: ["Agile / SCRUM", "Cybersécurité", "Gestion de Projet", "W3C", "Linux"]
     }
 ];

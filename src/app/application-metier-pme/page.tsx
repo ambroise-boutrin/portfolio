@@ -2,7 +2,7 @@ import ServiceLandingPage from "@/components/ServiceLandingPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Développement d'Application Métier & Logiciel PME - Ambroise Boutrin",
+    title: "Développement d'Application Métier et Logiciel PME - Ambroise Boutrin",
     description: "Digitalisez vos processus internes. Développement d'applications métiers sur-mesure, portails clients, ERP et outils SaaS pour PME. Solutions robustes et évolutives.",
     alternates: { canonical: "/application-metier-pme" },
 };
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function ApplicationMetierPME() {
     return (
         <ServiceLandingPage
-            targetAudience="PME & Startups"
+            targetAudience="PME et Startups"
             title={<>Application <br className="hidden md:block"/> <span className="opacity-40">Métier pour PME</span></>}
             subtitle="Digitalisez vos processus avec un outil sur-mesure, rapide et sécurisé."
             description="Les fichiers Excel à rallonge et les logiciels obsolètes freinent votre croissance. Le Pack Conversion est pensé pour les PME qui ont besoin de centraliser leurs données. Que ce soit un ERP personnalisé, un portail client sécurisé ou une application métier complexe, je développe une architecture robuste (React/Node.js) parfaitement adaptée à vos règles métiers."
@@ -24,7 +24,7 @@ export default function ApplicationMetierPME() {
                 },
                 {
                     image: "/images/logiciel-erp-pme-stocko.png",
-                    title: "Sécurité & Robustesse",
+                    title: "Sécurité et Robustesse",
                     description: "Contrairement aux outils No-Code limités, je code votre application de A à Z. Vous êtes propriétaire de vos données et l'architecture est prête à supporter votre croissance (scalabilité)."
                 },
                 {

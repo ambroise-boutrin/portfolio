@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 
 const certifications = [
     {
-        category: "Programmation & Fondamentaux",
+        category: "Programmation et Fondamentaux",
         icon: <Code2 className="w-6 h-6" />,
         items: [
             { title: "W3C HTML / CSS", issuer: "W3Cx", date: "2024", detail: "Maîtrise des standards web et de l'accessibilité." },
@@ -19,21 +19,21 @@ const certifications = [
         icon: <Globe className="w-6 h-6" />,
         items: [
             { title: "JavaScript Évolué", issuer: "OpenClassrooms", date: "2024", detail: "ES6+, programmation asynchrone et manipulation du DOM." },
-            { title: "Java & Programmation Orientée Objet", issuer: "OpenClassrooms", date: "2024", detail: "Conception logicielle et design patterns." },
-            { title: "SQL & Bases de Données", issuer: "OpenClassrooms", date: "2024", detail: "Modélisation et optimisation de requêtes complexes." }
+            { title: "Java et Programmation Orientée Objet", issuer: "OpenClassrooms", date: "2024", detail: "Conception logicielle et design patterns." },
+            { title: "SQL et Bases de Données", issuer: "OpenClassrooms", date: "2024", detail: "Modélisation et optimisation de requêtes complexes." }
         ]
     },
     {
-        category: "Méthodologies & Outils",
+        category: "Méthodologies et Outils",
         icon: <Cpu className="w-6 h-6" />,
         items: [
-            { title: "Agile & SCRUM", issuer: "OpenClassrooms", date: "2024", detail: "Gestion de projet itérative et travail en équipe." },
-            { title: "Git & Versioning", issuer: "OpenClassrooms", date: "2024", detail: "Gestion de flux de travail collaboratifs." },
+            { title: "Agile et SCRUM", issuer: "OpenClassrooms", date: "2024", detail: "Gestion de projet itérative et travail en équipe." },
+            { title: "Git et Versioning", issuer: "OpenClassrooms", date: "2024", detail: "Gestion de flux de travail collaboratifs." },
             { title: "Système Linux", issuer: "OpenClassrooms", date: "2024", detail: "Administration système de base et ligne de commande." }
         ]
     },
     {
-        category: "Cybersécurité & Réseaux",
+        category: "Cybersécurité et Réseaux",
         icon: <ShieldCheck className="w-6 h-6" />,
         items: [
             { title: "SecNumacadémie", issuer: "ANSSI", date: "2024", detail: "Sensibilisation à la sécurité du numérique." },

@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const services = [
     {
         id: "01",
-        title: "Site Vitrine & E-commerce",
+        title: "Site Vitrine et E-commerce",
         description: "Une présence en ligne élégante et performante.",
         details: "Design sur mesure • SEO optimisé • Administrable",
         icon: <Globe />
@@ -23,7 +23,7 @@ const services = [
     },
     {
         id: "03",
-        title: "Mobile & API",
+        title: "Mobile et API",
         description: "Vos services accessibles partout.",
         details: "React Native • PWA • API REST / GraphQL",
         icon: <Smartphone />
@@ -102,7 +102,7 @@ export default function Services() {
                                     </h3>
                                 </div>
 
-                                {/* Description & Details */}
+                                {/* Description et Details */}
                                 <div className="col-span-1 md:col-span-4 flex flex-col gap-2">
                                     <p className="text-xl text-[var(--text-secondary)] group-hover:text-[var(--foreground)] transition-colors">
                                         {service.description}

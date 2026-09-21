@@ -105,7 +105,7 @@ export const projects: Project[] = [
         id: "11",
         title: "Serveur Minecraft",
         slug: "serveur-minecraft",
-        category: "Backend & Gaming",
+        category: "Backend et Gaming",
         role: "Développeur Backend",
         description: "Configuration et développement d'un serveur Minecraft avec gestion des plugins, des joueurs et de l'infrastructure backend en JavaScript.",
         tech: ["JavaScript", "Node.js", "JSON", "Linux"],
@@ -131,7 +131,7 @@ export const projects: Project[] = [
                 ]
             },
             solution: {
-                title: "Automatisation & Backend",
+                title: "Automatisation et Backend",
                 items: [
                     "Développement de scripts d'automatisation en Node.js",
                     "Configuration sur-mesure de l'environnement Linux",
@@ -139,7 +139,7 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Stabilité & Performance",
+                title: "Stabilité et Performance",
                 items: [
                     "Serveur stable accueillant de nombreux joueurs sans latence",
                     "Réduction drastique du temps d'administration",
@@ -157,7 +157,7 @@ export const projects: Project[] = [
         id: "10",
         title: "Complément Outlook",
         slug: "complement-outlook",
-        category: "Productivité & Add-ins",
+        category: "Productivité et Add-ins",
         role: "Développeur Fullstack",
         description: "Développement d'un complément Outlook sur mesure pour automatiser et enrichir la gestion des emails directement depuis le client de messagerie.",
         tech: ["Office.js", "React", "Node.js", "Microsoft Graph API"],
@@ -211,7 +211,7 @@ export const projects: Project[] = [
         id: "09",
         title: "Hound Search",
         slug: "hound-search",
-        category: "Outil Interne & DevOps",
+        category: "Outil Interne et DevOps",
         role: "DevOps / Déploiement",
         description: "Déploiement et configuration d'un moteur de recherche de code ultra-rapide basé sur des expressions régulières pour l'exploration de dépôts volumineux.",
         tech: ["Docker", "Linux", "Git", "JSON"],
@@ -260,7 +260,7 @@ export const projects: Project[] = [
         ],
         deploymentDocs: [
             {
-                step: "1. Prérequis & Préparation",
+                step: "1. Prérequis et Préparation",
                 content: "Assurez-vous d'avoir un serveur Linux (Ubuntu/Debian) avec Docker et Docker Compose installés.\n\n```bash\nsudo apt update\nsudo apt install docker.io docker-compose\n```"
             },
             {
@@ -332,8 +332,8 @@ export const projects: Project[] = [
         },
         problem: "Besoin d'un outil de gestion interne moderne, rapide et accessible depuis n'importe quel navigateur web.",
         stackDetails: [
-            { name: "React & Vite", reason: "Interface utilisateur dynamique et build ultra-fast" },
-            { name: "Node.js & Express", reason: "API robuste et traitement asynchrone des données" }
+            { name: "React et Vite", reason: "Interface utilisateur dynamique et build ultra-fast" },
+            { name: "Node.js et Express", reason: "API robuste et traitement asynchrone des données" }
         ]
 
     },
@@ -341,7 +341,7 @@ export const projects: Project[] = [
         id: "04",
         title: "OffTime | Creative Studio",
         slug: "offtime-studio",
-        category: "Cinematic & Digital Art",
+        category: "Cinematic et Digital Art",
         role: "Creative Studio",
         description: "Experience. In Motion. THE ART OF THE CUT. THE SOUL OF THE FRAME. Une exploration des textures temporelles traduite dans une expérience web immersive.",
         tech: ["Next.js", "Three.js", "TailwindCSS", "GSAP"],
@@ -369,7 +369,7 @@ export const projects: Project[] = [
                 ]
             },
             solution: {
-                title: "Immersion & Performance",
+                title: "Immersion et Performance",
                 items: [
                     "Utilisation de Three.js pour le rendu 3D créatif",
                     "Intégration d'animations GSAP fluides et millimétrées",
@@ -438,7 +438,7 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Ventes & Image de marque",
+                title: "Ventes et Image de marque",
                 items: [
                     "Expérience d'achat fluide et immersive pour les clients",
                     "Hausse perçue de la valeur des produits",
@@ -459,9 +459,9 @@ export const projects: Project[] = [
         id: "06",
         title: "NOMAD - House Music",
         slug: "nomad-collective",
-        category: "Web & Art Expérience",
-        role: "Développeur Lead & Design",
-        description: "Collectif House Music & Évènementiel. Une exploration des textures sonores traduite dans une expérience web immersive et performante.",
+        category: "Web et Art Expérience",
+        role: "Développeur Lead et Design",
+        description: "Collectif House Music et Évènementiel. Une exploration des textures sonores traduite dans une expérience web immersive et performante.",
         tech: ["Next.js", "Framer Motion", "TailwindCSS", "Lenis"],
         mainTech: "Next.js / Framer Motion",
         color: "bg-[#050505]",
@@ -520,7 +520,7 @@ export const projects: Project[] = [
         title: "Bellenippe - L'Art de l'Unicité",
         slug: "bellenippe-fashion",
         category: "E-Commerce Luxury",
-        role: "Direction Artistique & Dev",
+        role: "Direction Artistique et Dev",
         description: "Maison de couture digitale prônant l'artisanat et l'unicité. Une expérience e-commerce immersive pour des pièces limitées.",
         tech: ["Next.js", "Shopify", "Framer Motion", "Tailwind"],
         mainTech: "Next.js / Shopify",
@@ -577,7 +577,7 @@ export const projects: Project[] = [
         id: "02",
         title: "Outil d'Analyse Réseau",
         slug: "analyse-graphes",
-        category: "Data Science & Archives",
+        category: "Data Science et Archives",
         role: "Data Scientist",
         description: "Projet d'analyse de réseaux d'acteurs utilisant la théorie des graphes. Implémentation d'algorithmes de centralité et de détection de communautés avec NetworkX.",
         tech: ["Python", "NetworkX", "Matplotlib", "SciPy"],
@@ -630,7 +630,7 @@ export const projects: Project[] = [
         id: "03",
         title: "Gestion d'Événements (JO)",
         slug: "gestion-jo-2024",
-        category: "Desktop Java & Archives",
+        category: "Desktop Java et Archives",
         role: "Développeur Java",
         description: "Solution complète pour l'administration des épreuves et des résultats des Jeux Olympiques. Interface Java Swing.",
         tech: ["Java", "Swing", "MySQL", "JDBC"],
@@ -664,7 +664,7 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Centralisation & Fiabilité",
+                title: "Centralisation et Fiabilité",
                 items: [
                     "Accès rapide et sécurisé à l'ensemble des données sportives",
                     "Réduction des erreurs de saisie grâce aux validations intégrées",

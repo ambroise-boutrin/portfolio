@@ -8,19 +8,19 @@ import Link from "next/link";
 // Updated Data Structure: No arbitrary percentages, focused on "Stacks"
 const skillStacks = [
     {
-        title: "Architecture & Backend",
+        title: "Architecture et Backend",
         icon: <Database className="w-6 h-6" />,
         description: "Des fondations solides et sécurisées pour vos applications.",
         tags: ["Node.js", "Express", "Symfony / PHP", "PostgreSQL", "Supabase", "REST API", "Docker"]
     },
     {
-        title: "Frontend & Expérience",
+        title: "Frontend et Expérience",
         icon: <Layout className="w-6 h-6" />,
         description: "Interfaces réactives et animations fluides pixel-perfect.",
         tags: ["React", "Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "Vue.js"]
     },
     {
-        title: "Outils & Design",
+        title: "Outils et Design",
         icon: <PenTool className="w-6 h-6" />,
         description: "Un workflow optimisé de la conception au déploiement.",
         tags: ["Figma", "Git / GitHub", "Vercel", "Agile / Scrum", "CI/CD", "VS Code"]
@@ -35,7 +35,7 @@ export default function SkillsPage() {
 
             <div className="container mx-auto max-w-6xl relative z-10">
 
-                {/* Header - Compact & Impactful */}
+                {/* Header - Compact et Impactful */}
                 <div className="mb-16 md:mb-24 text-center md:text-left">
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -141,10 +141,10 @@ export default function SkillsPage() {
                             </ul>
                         </div>
 
-                        {/* Database & DevOps Column */}
+                        {/* Database et DevOps Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 bg-gray-600 rounded-full"></span> Ops & Data
+                                <span className="w-2 h-2 bg-gray-600 rounded-full"></span> Ops et Data
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="PostgreSQL" level="Solide" detail="Relations, Indexing" />
@@ -155,7 +155,7 @@ export default function SkillsPage() {
                             </ul>
                         </div>
 
-                        {/* Tools & Soft Skills Column */}
+                        {/* Tools et Soft Skills Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
                                 <span className="w-2 h-2 border border-white/50 rounded-full"></span> Outils &+

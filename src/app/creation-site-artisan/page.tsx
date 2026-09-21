@@ -2,7 +2,7 @@ import ServiceLandingPage from "@/components/ServiceLandingPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Création de Site Web pour Artisans & TPE - Ambroise Boutrin",
+    title: "Création de Site Web pour Artisans et TPE - Ambroise Boutrin",
     description: "Développeur web expert pour les artisans. Obtenez un site vitrine performant, optimisé pour le SEO local et conçu pour capturer des prospects dans votre région.",
     alternates: { canonical: "/creation-site-artisan" },
 };
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function CreationSiteArtisan() {
     return (
         <ServiceLandingPage
-            targetAudience="Artisans & Indépendants"
+            targetAudience="Artisans et Indépendants"
             title={<>Création de <br className="hidden md:block"/> <span className="opacity-40">Site Web Vitrine</span></>}
             subtitle="Un site vitrine ultra-performant qui agit comme votre meilleur commercial 24h/24."
             description="La plupart des artisans perdent des clients locaux parce que leur site est obsolète, invisible sur Google ou inexistant. Mon offre Pack Visibilité est spécialement conçue pour résoudre ce problème : un design premium, un référencement local agressif et des appels à l'action clairs pour transformer vos visiteurs en chantiers signés."
@@ -37,7 +37,7 @@ export default function CreationSiteArtisan() {
                 "Site vitrine sur-mesure (1 à 5 pages)",
                 "Développement ultra-rapide avec Next.js",
                 "Optimisation totale pour téléphones mobiles (Mobile-first)",
-                "Configuration SEO Local & Google My Business",
+                "Configuration SEO Local et Google My Business",
                 "Intégration d'un formulaire de contact et/ou demande de devis",
                 "Hébergement premium et sécurisé (Certificat SSL)",
                 "Formation à la modification des contenus de base"

@@ -116,7 +116,7 @@ const JsonLd = () => {
 
     return (
         <section>
-            {/* Structured Data for Local SEO (Orléans), Sitelinks & Person */}
+            {/* Structured Data for Local SEO (Orléans), Sitelinks et Person */}
             {schemas.map((schema, index) => (
                 <script
                     key={index}

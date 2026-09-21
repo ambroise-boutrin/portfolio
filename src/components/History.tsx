@@ -9,7 +9,7 @@ export default function History() {
             <ScrollReveal className="max-w-6xl mx-auto">
                 <div className="text-center mb-24">
                     <h2 className="text-4xl md:text-6xl font-serif mb-4 text-[var(--foreground)]">À Propos</h2>
-                    <p className="text-[var(--text-secondary)] font-mono text-xs uppercase tracking-[0.2em]">Philosophie & Méthode</p>
+                    <p className="text-[var(--text-secondary)] font-mono text-xs uppercase tracking-[0.2em]">Philosophie et Méthode</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">

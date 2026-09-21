@@ -11,12 +11,12 @@ const pillars = [
     {
         id: "02",
         title: "Design",
-        items: ["Direction Artistique", "UI & Web Design", "Interactions (Motion)"]
+        items: ["Direction Artistique", "UI et Web Design", "Interactions (Motion)"]
     },
     {
         id: "03",
         title: "Engineering",
-        items: ["Next.js & React", "Headless CMS", "Performance Green IT"]
+        items: ["Next.js et React", "Headless CMS", "Performance Green IT"]
     },
     {
         id: "04",

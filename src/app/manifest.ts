@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
     return {
         name: 'Ambroise Boutrin Portfolio',
         short_name: 'Ambroise B.',
-        description: 'Studio de développement web et design à Orléans - Applications & Sites Performance',
+        description: 'Studio de développement web et design à Orléans - Applications et Sites Performance',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',

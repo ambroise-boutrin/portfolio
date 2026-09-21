@@ -11,7 +11,7 @@ export default function MaintenanceSiteWeb() {
     return (
         <ServiceLandingPage
             targetAudience="Toutes Entreprises"
-            title={<>Maintenance de <br className="hidden md:block"/> <span className="opacity-40">Site Web & Sécurité</span></>}
+            title={<>Maintenance de <br className="hidden md:block"/> <span className="opacity-40">Site Web et Sécurité</span></>}
             subtitle="Une assurance indispensable pour garantir la disponibilité de votre outil de travail."
             description="Avoir un beau site c'est bien, mais s'il se fait pirater ou s'il tombe en panne pendant une campagne de communication, c'est une perte sèche pour votre activité. Le Pack Sérénité vous libère de toute la gestion technique : je m'occupe de l'hébergement, des mises à jour complexes, des sauvegardes quotidiennes et de la sécurité. Vous pouvez vous concentrer sur votre métier."
             priceStartingAt="49€ / mois"

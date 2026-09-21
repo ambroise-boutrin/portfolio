@@ -185,7 +185,7 @@ export default function ProjectsContent() {
                 </div>
             </div>
 
-            {/* Sticky Filter & Sort Bar */}
+            {/* Sticky Filter et Sort Bar */}
             <div className="sticky top-[64px] z-30 backdrop-blur-xl bg-[var(--background)]/80 border-y border-[var(--border-color)]">
                 <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
                     
