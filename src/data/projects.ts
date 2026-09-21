@@ -62,7 +62,7 @@ export const projects: Project[] = [
         demo: "https://enemicrostation.vercel.app",
         logo: null,
         invertLogo: false,
-        image: "/images/captureene.webp",
+        image: "/images/shots/ene-microstation.webp",
         imageAlt: "Page d'accueil du site ENE Micro-Station, spécialiste assainissement",
         images: [],
         longDescription: "Refonte complète de la présence en ligne pour ENE SAS, un acteur historique de l'assainissement non collectif cherchant à digitaliser son acquisition client. Ce projet s'articule autour d'une approche performance et SEO pour transformer un simple site vitrine en une véritable machine de génération de leads locaux.",
