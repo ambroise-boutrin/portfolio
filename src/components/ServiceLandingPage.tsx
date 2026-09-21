@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
-import ContactContent from "./ContactContent";
+
 
 export interface ServiceLandingProps {
     title: ReactNode;
@@ -51,7 +51,7 @@ export default function ServiceLandingPage({
                         
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <Link
-                                href="#contact"
+                                href="/contact"
                                 className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform flex items-center gap-3 w-full sm:w-auto justify-center"
                             >
                                 {primaryCtaText} <ArrowRight size={16} />
@@ -123,7 +123,7 @@ export default function ServiceLandingPage({
                         <p className="text-white/80 text-sm mb-10 relative z-10">Paiement échelonné possible. Pas de frais cachés.</p>
                         
                         <Link
-                            href="#contact"
+                            href="/contact"
                             className="inline-block px-10 py-5 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform relative z-10"
                         >
                             {primaryCtaText}
@@ -132,10 +132,6 @@ export default function ServiceLandingPage({
                 </div>
             </section>
 
-            {/* Contact Form Section */}
-            <section id="contact" className="border-t border-[var(--border-color)]">
-                <ContactContent />
-            </section>
         </main>
     );
 }
