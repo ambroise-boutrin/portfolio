@@ -23,12 +23,12 @@ export default function ApplicationMetierPME() {
                     description: "Éliminez les doubles saisies et les erreurs humaines en connectant vos différents outils via API ou en créant un workflow automatisé sur-mesure."
                 },
                 {
-                    image: "/images/logiciel-erp-pme-stocko.png",
+                    image: "/images/complement-outlook-entreprise.webp",
                     title: "Sécurité et Robustesse",
                     description: "Contrairement aux outils No-Code limités, je code votre application de A à Z. Vous êtes propriétaire de vos données et l'architecture est prête à supporter votre croissance (scalabilité)."
                 },
                 {
-                    image: "/images/gallery/erp/dashboard-ventes-erp.png",
+                    image: "/images/plateforme-web-freelance-nomad.webp",
                     title: "Expérience Utilisateur (UX)",
                     description: "Un outil métier ne doit pas être austère. Je conçois des interfaces intuitives qui réduisent le temps de formation de vos équipes et maximisent l'adoption de l'outil."
                 }
