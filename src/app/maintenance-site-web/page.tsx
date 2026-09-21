@@ -18,7 +18,7 @@ export default function MaintenanceSiteWeb() {
             primaryCtaText="Sécuriser mon site"
             benefits={[
                 {
-                    image: "/images/analyse-graphes-python.png",
+                    image: "/images/hound-search.webp",
                     title: "Protection Anti-Piratage",
                     description: "Je déploie des pare-feux avancés et je mets à jour les failles de sécurité potentielles avant même qu'elles ne soient exploitées."
                 },
@@ -28,6 +28,7 @@ export default function MaintenanceSiteWeb() {
                     description: "Je supervise (monitoring) votre site 24h/24. Si le serveur tombe en panne, je suis alerté immédiatement pour intervenir."
                 },
                 {
+                    image: "/images/gallery/erp/gestion-utilisateurs-erp.png",
                     title: "Temps d'Intervention Inclus",
                     description: "Besoin de modifier un texte, d'ajouter un nouvel article ou de changer une image ? Le pack inclut du temps d'intervention chaque mois pour vos petites modifications."
                 }
