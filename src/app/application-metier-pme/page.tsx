@@ -14,7 +14,7 @@ export default function ApplicationMetierPME() {
             title={<>Application <br className="hidden md:block"/> <span className="opacity-40">Métier pour PME</span></>}
             subtitle="Digitalisez vos processus avec un outil sur-mesure, rapide et sécurisé."
             description="Les fichiers Excel à rallonge et les logiciels obsolètes freinent votre croissance. Le Pack Conversion est pensé pour les PME qui ont besoin de centraliser leurs données. Que ce soit un ERP personnalisé, un portail client sécurisé ou une application métier complexe, je développe une architecture robuste (React/Node.js) parfaitement adaptée à vos règles métiers."
-            priceStartingAt="2 000€"
+            priceStartingAt="5 000€"
             primaryCtaText="Discuter de mon application"
             benefits={[
                 {
