@@ -118,6 +118,7 @@ export const projects: Project[] = [
         logo: null,
         invertLogo: false,
         image: "/images/serveur-minecraft-sur-mesure.webp",
+        video: "/videos/presentation-serveur-minecraft-sur-mesure.mp4",
         imageAlt: "Configuration du serveur Minecraft",
         images: [],
         longDescription: "Mise en place et développement d'un serveur Minecraft personnalisé. Le projet couvre la configuration du serveur, la gestion des plugins et des permissions joueurs, ainsi que l'automatisation de certaines tâches d'administration via des scripts JavaScript/Node.js.",
@@ -224,6 +225,7 @@ export const projects: Project[] = [
         logo: null,
         invertLogo: false,
         image: "/images/moteur-recherche-python-hound.gif",
+        video: "/videos/presentation-moteur-recherche-code-hound.mp4",
         imageAlt: "Interface de Hound Search",
         images: ["/images/moteur-recherche-python-hound.gif"],
         longDescription: "Mise en place de Hound Search, un outil open-source développé par Etsy, permettant de faire des recherches ultra-rapides sur d'énormes bases de code en utilisant des expressions régulières. Ce projet illustre mes compétences en déploiement de services internes, configuration via Docker, et gestion de l'intégration avec de multiples dépôts Git.",
@@ -295,6 +297,7 @@ export const projects: Project[] = [
         logo: "/images/GSB.png",
         invertLogo: false,
         image: "/images/logiciel-erp-pme-stocko.png",
+        video: "/videos/presentation-logiciel-erp-stocko.mp4",
         imageAlt: "Dashboard de l'application Stocko ERP Web",
         images: [
             "/images/gallery/erp/accueil-dashboard-erp.png",
@@ -354,6 +357,7 @@ export const projects: Project[] = [
         logo: null,
         invertLogo: false,
         image: "/images/site-web-agence-creative-offtime.webp",
+        video: "/videos/presentation-site-agence-creative-offtime.mp4",
         imageAlt: "Aperçu de la page d'accueil de OffTime Studio",
         images: [
             "/images/site-web-agence-creative-offtime.webp"
@@ -411,6 +415,7 @@ export const projects: Project[] = [
         logo: "/images/garanches.webp",
         invertLogo: true,
         image: "/images/site-e-commerce-vetements-garanches.webp",
+        video: "/videos/presentation-site-e-commerce-vins-garanches.mp4",
         imageAlt: "Page d'accueil du site e-commerce de vins Garances, design sombre et élégant",
         images: [
             "/images/gallery/garanches/page-boutique-vetements.webp",
@@ -472,6 +477,7 @@ export const projects: Project[] = [
         logo: "/images/nomadelogo.webp",
         invertLogo: true,
         image: "/images/plateforme-web-freelance-nomad.webp",
+        video: "/videos/presentation-site-collectif-house-music-nomad.mp4",
         imageAlt: "Interface immersive du site NOMAD, ambiance sombre et artistique",
         images: [
             "/images/gallery/nomad/accueil-plateforme-freelance.webp",
@@ -532,6 +538,7 @@ export const projects: Project[] = [
         logo: "/images/bellenippelogo.png",
         invertLogo: true,
         image: "/images/site-e-commerce-mode-bellenippe.png",
+        video: "/videos/presentation-site-e-commerce-mode-bellenippe.mp4",
         imageAlt: "Logo et interface sombre du site e-commerce de luxe Bellenippe",
         images: [
             "/images/gallery/bellenippe/accueil-site-mode.png",
@@ -590,6 +597,7 @@ export const projects: Project[] = [
         logo: "/images/analyse-graphes-python.png",
         invertLogo: false,
         image: "/images/analyse-graphes-python.png",
+        video: "/videos/presentation-analyse-reseau-graphes-python.mp4",
         imageAlt: "Visualisation de graphe de réseau complexe générée avec NetworkX et Matplotlib",
         images: [],
         longDescription: "Analyse approfondie d'un réseau de collaboration scientifique. Utilisation de métriques de centralité (PageRank, Betweenness) pour identifier les acteurs clés.",
@@ -643,6 +651,7 @@ export const projects: Project[] = [
         logo: "/images/gestion-evenements-jo-java.png",
         invertLogo: false,
         image: "/images/gestion-evenements-jo-java.png",
+        video: "/videos/presentation-application-gestion-jo-java.mp4",
         imageAlt: "Interface dashboard de l'application Java Swing pour la gestion des JO",
         images: [],
         longDescription: "Application de bureau pour la gestion centralisée des JO : athlètes, épreuves, résultats et médailles.",
@@ -696,6 +705,7 @@ export const projects: Project[] = [
         logo: "/images/application-frais-medicaux-gsb.webp",
         invertLogo: false,
         image: "/images/application-frais-medicaux-gsb.webp",
+        video: "/videos/presentation-application-comptes-rendus-gsb.mp4",
         imageAlt: "Interface de l'application GSB Compte Rendu",
         images: [],
         longDescription: "Application web développée dans le cadre du contexte GSB (Galaxy Swiss Bourdin) pour la gestion des comptes rendus de visite des visiteurs médicaux. Le système permet la saisie, la consultation et la modification des rapports de visite auprès des praticiens.",
@@ -750,6 +760,7 @@ export const projects: Project[] = [
         logo: null,
         invertLogo: false,
         image: "/images/site-web-association-alunisson.webp",
+        video: "/videos/presentation-site-association-alunisson.mp4",
         imageAlt: "Page d'accueil du site Alunisson, association de couture solidaire",
         images: [
             "/images/gallery/alunisson/accueil-site-association.webp",
