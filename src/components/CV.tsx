@@ -1,245 +1,224 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Zap, Target, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Receipt, KeyRound, MapPin } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const steps = [
-    { title: "Cadrage strict", desc: "Avant de coder, nous définissons vos objectifs, votre cible et le cahier des charges. Pas de mauvaises surprises, tout est validé.", icon: "01" },
-    { title: "Transparence totale", desc: "Vous avez accès à un espace de suivi de projet. Vous êtes impliqué à chaque étape via des points réguliers. Vous gardez le contrôle.", icon: "02" },
-    { title: "Livraison et Formation", desc: "La livraison inclut systématiquement une formation pour vous rendre autonome sur la gestion de votre outil.", icon: "03" }
+const facts = [
+    { value: "Orléans", label: "Basé dans le Loiret" },
+    { value: "13", label: "Projets réalisés" },
+    { value: "MIAGE", label: "Informatique et gestion" },
+    { value: "24h", label: "Délai de réponse" }
+];
+
+const story = [
+    {
+        year: "2019",
+        title: "Les débuts",
+        text: "Bac STI2D option numérique à Orléans. Je découvre que j'aime construire des choses qui servent vraiment."
+    },
+    {
+        year: "2024",
+        title: "Le terrain",
+        text: "BTS SIO et stage chez ADENES à Lyon : un complément Outlook qui archive automatiquement les pièces jointes. Mon premier outil utilisé au quotidien par une équipe."
+    },
+    {
+        year: "2026",
+        title: "La grande entreprise",
+        text: "Stage chez Sopra Steria à La Défense : automatisation de rapports de sécurité et déploiement d'outils internes. J'y apprends la rigueur des gros projets."
+    },
+    {
+        year: "Aujourd'hui",
+        title: "Le freelance",
+        text: "Je mets cette expérience au service des artisans, TPE et PME, tout en poursuivant une Licence MIAGE à l'Université d'Orléans."
+    }
+];
+
+const commitments = [
+    {
+        icon: <MessageCircle className="w-5 h-5" />,
+        title: "Un seul interlocuteur",
+        text: "Vous parlez directement à la personne qui fabrique votre site. Pas de commercial, pas de sous-traitance cachée."
+    },
+    {
+        icon: <Receipt className="w-5 h-5" />,
+        title: "Un prix annoncé d'avance",
+        text: "Un devis forfaitaire clair avant de commencer. Ce qui est signé est ce que vous payez."
+    },
+    {
+        icon: <KeyRound className="w-5 h-5" />,
+        title: "Votre site vous appartient",
+        text: "Code, nom de domaine, contenus : tout est à votre nom. Vous restez libre, même si nous arrêtons de travailler ensemble."
+    },
+    {
+        icon: <MapPin className="w-5 h-5" />,
+        title: "Disponible près de chez vous",
+        text: "Basé à Orléans, je peux vous rencontrer en personne dans le Loiret et le Centre-Val de Loire."
+    }
 ];
 
 export default function AboutPage() {
     return (
         <main className="bg-[var(--background)] min-h-screen pb-24 transition-colors duration-300">
-            {/* Hero Section */}
-            <header className="bg-[var(--background)] text-[var(--foreground)] pt-32 pb-20 md:pb-32 mb-16 md:mb-24 border-b border-[var(--border-color)] relative overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,var(--foreground),transparent)] opacity-[0.03] pointer-events-none"></div>
+            {/* Hero */}
+            <header className="pt-32 pb-16 md:pb-24 border-b border-[var(--border-color)]">
+                <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-12 lg:gap-20 items-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">
+                            À propos
+                        </span>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif mb-8 tracking-tight leading-tight text-[var(--foreground)]">
+                            Bonjour, moi c’est Ambroise<span className="opacity-30">.</span>
+                        </h1>
+                        <p className="text-lg md:text-2xl text-[var(--text-secondary)] leading-relaxed font-light mb-6">
+                            Je suis développeur web freelance à Orléans. Je crée des sites et des outils pour les artisans, les commerçants et les PME qui veulent être trouvés sur internet et gagner du temps au quotidien.
+                        </p>
+                        <p className="text-base md:text-lg text-[var(--text-secondary)] leading-relaxed mb-10">
+                            Je viens de l’informatique de gestion : avant d’écrire une ligne de code, je cherche à comprendre comment votre entreprise fonctionne et ce qui vous ferait gagner des clients.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <Link
+                                href="/contact"
+                                className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-[0.15em] text-xs flex items-center justify-center gap-3 hover:scale-105 transition-transform"
+                            >
+                                Parlons de votre projet <ArrowUpRight size={16} />
+                            </Link>
+                            <Link
+                                href="/projets"
+                                className="px-8 py-4 border border-[var(--border-color)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-[0.15em] text-xs flex items-center justify-center gap-3 hover:border-[var(--foreground)] transition-colors"
+                            >
+                                Voir mes réalisations
+                            </Link>
+                        </div>
+                    </motion.div>
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10">
-                    <div className="flex flex-col lg:flex-row items-center gap-16">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                            className="lg:w-3/5"
-                        >
-                            <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6 border-b border-[var(--border-color)] pb-2 inline-block">
-                                Le partenaire de votre croissance
-                            </span>
-                            <h1 className="text-4xl md:text-7xl lg:text-8xl font-serif mb-6 md:mb-8 tracking-tight leading-tight">
-                                Du code pour <span className="opacity-30 italic">développer</span> votre chiffre d'affaires.
-                            </h1>
-                            <p className="text-lg md:text-2xl text-[var(--text-secondary)] max-w-2xl leading-relaxed font-light mb-8">
-                                Je suis Ambroise Boutrin. Mon objectif n'est pas seulement de créer une "jolie vitrine", mais de concevoir un <span className="text-[var(--foreground)] font-normal">outil digital ultra-performant avec un vrai retour sur investissement (ROI)</span>.
-                            </p>
-                            <p className="text-sm md:text-base text-[var(--text-tertiary)] max-w-xl leading-relaxed font-mono opacity-80">
-                                // Profil Hybride : Freelance et Licence 3 MIAGE (Méthodes Informatiques Appliquées à la Gestion des Entreprises). Une compréhension intime de vos enjeux de rentabilité et de vos process métiers.
-                            </p>
-                        </motion.div>
-
-                        <motion.div 
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="lg:w-2/5 w-full max-w-md mx-auto"
-                        >
-                            <div className="relative aspect-[3/4] w-full rounded-2xl md:rounded-[2rem] overflow-hidden border border-[var(--border-color)] group shadow-2xl glass-panel">
-                                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700 z-10 pointer-events-none"></div>
-                                <Image
-                                    src="/images/IMG_4128.jpeg"
-                                    alt="Ambroise Boutrin - Développeur Web B2B"
-                                    fill
-                                    className="object-cover grayscale group-hover:grayscale-0 scale-105 group-hover:scale-100 transition-all duration-1000 ease-[cubic-bezier(0.21,0.47,0.32,0.98)]"
-                                    priority
-                                />
-                                <div className="absolute bottom-6 left-6 z-20">
-                                    <div className="bg-[var(--background)]/80 backdrop-blur-md border border-[var(--border-color)] text-[var(--foreground)] px-4 py-2 text-[10px] font-mono uppercase tracking-widest rounded-lg">
-                                        Basé à Orléans, France
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="w-full max-w-sm mx-auto"
+                    >
+                        <div className="relative aspect-[4/5] w-full rounded-[2rem] overflow-hidden border border-[var(--border-color)] shadow-2xl">
+                            <Image
+                                src="/images/IMG_4128.jpeg"
+                                alt="Ambroise Boutrin, développeur web freelance à Orléans"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 380px"
+                                className="object-cover"
+                                priority
+                            />
+                        </div>
+                    </motion.div>
                 </div>
             </header>
 
+            {/* Key facts */}
+            <section className="border-b border-[var(--border-color)]">
+                <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4">
+                    {facts.map((fact, i) => (
+                        <div
+                            key={i}
+                            className={`py-10 md:py-12 px-4 text-center border-[var(--border-color)] ${i % 2 === 1 ? "border-l" : ""} ${i === 2 ? "md:border-l" : ""} ${i >= 2 ? "border-t md:border-t-0" : ""}`}
+                        >
+                            <div className="text-3xl md:text-4xl font-serif text-[var(--foreground)] mb-2">{fact.value}</div>
+                            <div className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)]">{fact.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </section>
 
-
-            {/* La Stack Technique (Bénéfices) */}
-            <div className="max-w-7xl mx-auto px-6 mb-32 md:mb-48">
-                <div className="mb-16">
-                    <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-4">Architecture Technique</span>
-                    <h2 className="text-4xl md:text-6xl font-serif text-[var(--foreground)] tracking-tight">
-                        La technologie au service <br className="hidden md:block"/><span className="opacity-30">de vos résultats.</span>
+            {/* Story */}
+            <section className="max-w-6xl mx-auto px-6 py-24 md:py-32 grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
+                <div>
+                    <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Mon parcours</span>
+                    <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)] leading-tight mb-6">
+                        De l’école <span className="opacity-30">au terrain.</span>
                     </h2>
-                    <p className="text-lg text-[var(--text-secondary)] mt-6 max-w-xl">
-                        Je ne vends pas des langages de programmation, je fournis des bénéfices concrets pour votre entreprise.
+                    <p className="text-[var(--text-secondary)] leading-relaxed">
+                        J’ai appris le métier en entreprise, sur des outils utilisés tous les jours. C’est cette exigence que j’applique à chaque site.
                     </p>
+                    <a href="/images/fichiers/CV_Ambroise_Boutrin_MIAGE.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 mt-6 text-sm text-[var(--foreground)] border-b border-[var(--border-color)] hover:border-[var(--foreground)] pb-1 transition-colors">
+                        Télécharger mon CV <ArrowUpRight size={14} />
+                    </a>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                    {/* Card 1 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1, duration: 0.6 }}
-                        className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10"
-                    >
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
-                                <Zap className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <h3 className="text-2xl font-serif text-[var(--foreground)]">Vitesse et Conversion</h3>
-                            </div>
-                        </div>
-                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 flex-1">
-                            Un site lent fait fuir vos clients. Je garantis des temps de chargement éclair, réduisant le taux de rebond et augmentant vos ventes.
-                        </p>
-                        <div className="h-px w-full bg-[var(--border-color)] mb-8"></div>
-                        <ul className="space-y-4">
-                            {["Next.js", "React", "Tailwind CSS"].map((tech, i) => (
-                                <li key={i} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[var(--foreground)] opacity-80">
-                                    <div className="w-1 h-1 bg-[var(--text-tertiary)] rounded-full"></div>
-                                    {tech}
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                <ol className="relative border-l border-[var(--border-color)] ml-2 space-y-10">
+                    {story.map((step, i) => (
+                        <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: 20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1 }}
+                            className="pl-8 relative"
+                        >
+                            <span className="absolute -left-[5px] top-2 w-[9px] h-[9px] rounded-full bg-[var(--foreground)]"></span>
+                            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[var(--text-tertiary)]">{step.year}</span>
+                            <h3 className="text-xl md:text-2xl font-serif text-[var(--foreground)] mt-1 mb-2">{step.title}</h3>
+                            <p className="text-[var(--text-secondary)] leading-relaxed">{step.text}</p>
+                        </motion.li>
+                    ))}
+                </ol>
+            </section>
 
-                    {/* Card 2 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 0.6 }}
-                        className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10 shadow-2xl ring-1 ring-[var(--foreground)]/5 border-[var(--foreground)]/20"
-                    >
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
-                                <Target className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <h3 className="text-2xl font-serif text-[var(--foreground)]">Logique Métier</h3>
-                            </div>
-                        </div>
-                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 flex-1">
-                            Espace client, CRM sur-mesure ou gestion de données complexes. Une fiabilité à toute épreuve pour vos processus critiques.
-                        </p>
-                        <div className="h-px w-full bg-[var(--border-color)] mb-8"></div>
-                        <ul className="space-y-4">
-                            {["Node.js", "Python", "C# .NET"].map((tech, i) => (
-                                <li key={i} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[var(--foreground)] opacity-80">
-                                    <div className="w-1 h-1 bg-[var(--foreground)] rounded-full"></div>
-                                    {tech}
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
-
-                    {/* Card 3 */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.3, duration: 0.6 }}
-                        className="group relative flex flex-col h-full rounded-3xl overflow-hidden transition-all duration-500 border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10"
-                    >
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
-                                <ShieldCheck className="w-5 h-5" />
-                            </div>
-                            <div>
-                                <h3 className="text-2xl font-serif text-[var(--foreground)]">Sécurité et Continuité</h3>
-                            </div>
-                        </div>
-                        <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 flex-1">
-                            Vos données sont précieuses. Architectures robustes, sécurisées et prêtes à évoluer avec la croissance de votre activité.
-                        </p>
-                        <div className="h-px w-full bg-[var(--border-color)] mb-8"></div>
-                        <ul className="space-y-4">
-                            {["Docker", "MySQL", "GitLab CI"].map((tech, i) => (
-                                <li key={i} className="flex items-center gap-3 text-[10px] font-mono uppercase tracking-widest text-[var(--foreground)] opacity-80">
-                                    <div className="w-1 h-1 bg-[var(--text-tertiary)] rounded-full"></div>
-                                    {tech}
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+            {/* Commitments */}
+            <section className="max-w-6xl mx-auto px-6 pb-24 md:pb-32">
+                <div className="mb-12">
+                    <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Travailler ensemble</span>
+                    <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)] leading-tight">
+                        Ce que je vous garantis<span className="opacity-30">.</span>
+                    </h2>
                 </div>
-            </div>
 
-            {/* Visual Process Section */}
-            <div className="max-w-7xl mx-auto px-6 mt-32 md:mt-48">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
-                    <div>
-                        <span className="text-[10px] font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Méthodologie</span>
-                        <h2 className="text-4xl md:text-6xl font-serif text-[var(--foreground)] mb-8 leading-tight">
-                            Un accompagnement <span className="opacity-30">de A à Z.</span>
-                        </h2>
-                        <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-md">
-                            Une approche transparente en 3 étapes pour garantir la réussite de votre transformation digitale.
-                        </p>
-                    </div>
-
-                    <div className="space-y-8 relative">
-                        <div className="absolute left-[27px] top-6 bottom-6 w-px bg-gradient-to-b from-[var(--border-color)] via-[var(--border-hover)] to-[var(--border-color)] hidden md:block"></div>
-
-                        {steps.map((step, i) => (
-                            <motion.div
-                                key={i}
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: i * 0.1 }}
-                                className="flex flex-col md:flex-row gap-6 relative group"
-                            >
-                                <div className="w-14 h-14 shrink-0 rounded-full border border-[var(--border-color)] bg-[var(--background)] flex items-center justify-center font-serif text-xl text-[var(--text-tertiary)] group-hover:border-[var(--foreground)] group-hover:text-[var(--foreground)] transition-all duration-500 z-10 glass-panel shadow-xl">
-                                    {step.icon}
-                                </div>
-                                <div className="pt-2">
-                                    <h4 className="text-xl font-serif text-[var(--foreground)] mb-2 group-hover:translate-x-1 transition-transform duration-300">{step.title}</h4>
-                                    <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-sm">{step.desc}</p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {commitments.map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.1, duration: 0.6 }}
+                            className="flex gap-5 rounded-3xl border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 transition-colors"
+                        >
+                            <div className="shrink-0 h-fit p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
+                                {item.icon}
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-serif text-[var(--foreground)] mb-2">{item.title}</h3>
+                                <p className="text-[var(--text-secondary)] text-sm leading-relaxed">{item.text}</p>
+                            </div>
+                        </motion.div>
+                    ))}
                 </div>
-            </div>
+            </section>
 
-            {/* Final High-Impact CTA */}
-            <div className="max-w-7xl mx-auto px-6 mt-32 md:mt-48">
+            {/* CTA */}
+            <section className="max-w-6xl mx-auto px-6">
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 0.97 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="relative overflow-hidden rounded-3xl md:rounded-[3rem] bg-[var(--foreground)] text-[var(--background)] p-8 md:p-24 text-center border border-[var(--border-color)] shadow-3xl"
+                    className="rounded-3xl md:rounded-[3rem] bg-[var(--foreground)] text-[var(--background)] p-10 md:p-20 text-center"
                 >
-                    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[var(--background)] opacity-[0.03] blur-[120px] rounded-full"></div>
-                    </div>
-
-                    <div className="relative z-10 flex flex-col items-center">
-                        <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Prêt à digitaliser votre entreprise ?</span>
-                        <h2 className="text-3xl md:text-6xl lg:text-8xl font-serif mb-8 md:mb-12 tracking-tight leading-tight text-[var(--background)]">
-                            Réservez un <span className="opacity-40 italic font-serif">Audit Gratuit</span> <br className="hidden md:block" /> de 15 minutes.
-                        </h2>
-
-                        <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full md:w-auto">
-                            <Link
-                                href="/contact"
-                                className="w-full md:w-auto px-10 md:px-12 py-5 md:py-6 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:scale-105 transition-transform shadow-2xl flex items-center justify-center gap-3 group"
-                            >
-                                Voir les disponibilités <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                            </Link>
-                        </div>
-                    </div>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-6 tracking-tight leading-tight text-[var(--background)]">
+                        Votre site actuel vous rapporte-t-il des clients ?
+                    </h2>
+                    <p className="text-base md:text-lg opacity-70 max-w-2xl mx-auto mb-10 text-[var(--background)]">
+                        Je vous envoie gratuitement un audit d’une page : vitesse, affichage mobile, référencement local et fiche Google. Sans engagement.
+                    </p>
+                    <Link
+                        href="/contact"
+                        className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:scale-105 transition-transform"
+                    >
+                        Demander mon audit gratuit <ArrowUpRight size={18} />
+                    </Link>
                 </motion.div>
-            </div>
+            </section>
         </main>
     );
 }

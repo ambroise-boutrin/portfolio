@@ -13,6 +13,7 @@ export interface ServiceLandingProps {
     benefits: { title: string; description: string; image?: string; imageAlt?: string }[];
     targetAudience: string;
     priceStartingAt: string;
+    priceNote?: string;
     primaryCtaText: string;
     secondaryCtaText?: string;
     deliverables: string[];
@@ -25,6 +26,7 @@ export default function ServiceLandingPage({
     benefits,
     targetAudience,
     priceStartingAt,
+    priceNote,
     primaryCtaText,
     deliverables
 }: ServiceLandingProps) {
@@ -148,6 +150,9 @@ export default function ServiceLandingPage({
                         <div className="text-5xl md:text-7xl font-serif mb-4 relative z-10">
                             {priceStartingAt}
                         </div>
+                        {priceNote && (
+                            <p className="text-sm font-medium mb-4 mx-auto max-w-sm px-4 py-3 rounded-xl border border-white/20 bg-white/5 relative z-10">{priceNote}</p>
+                        )}
                         <p className="text-white/80 text-sm mb-10 relative z-10">Paiement échelonné possible. Pas de frais cachés.</p>
                         
                         <Link

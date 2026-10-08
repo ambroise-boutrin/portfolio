@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowUpRight, Zap, Shield, Sparkles, Plus, Minus } from "lucide-react";
+import { Check, ArrowUpRight, Zap, Shield, Sparkles, Plus, Minus, Search } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -9,8 +9,9 @@ const packages = [
     {
         name: "Pack Visibilité",
         subtitle: "L'impact immédiat.",
-        price: "800€",
-        priceSuffix: "min.",
+        price: "1 490€",
+        priceSuffix: "dès",
+        launchOffer: "Offre de lancement : 800 € pour mes 3 prochains projets, en échange d'un témoignage.",
         description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
         features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Calendly", "Optimisation Google My Business", "Optimisé Mobile et SEO Local", "Hébergement premium inclus"],
         cta: "Découvrir l'offre",
@@ -20,13 +21,13 @@ const packages = [
     },
     {
         name: "Pack Conversion",
-        subtitle: "L'expérience e-commerce.",
-        price: "2 000€",
-        priceSuffix: "min.",
-        description: "E-commerce ou refonte complexe. Une architecture solide et une direction artistique poussée pour maximiser vos ventes.",
-        features: ["Boutique en Ligne / Refonte", "Intégration Paiement Sécurisé", "CMS (Gestion de contenu)", "Interactions Avancées", "Analytics et Conformité RGPD", "Optimisation des Performances"],
-        cta: "Découvrir l'offre",
-        link: "/application-metier-pme",
+        subtitle: "Refonte et e-commerce.",
+        price: "1 990€",
+        priceSuffix: "dès",
+        description: "Votre site actuel est lent ou invisible sur Google ? Refonte complète ou boutique en ligne, pensée pour transformer vos visiteurs en clients.",
+        features: ["Refonte de site existant / Boutique en Ligne", "Audit de vitesse et SEO avant / après", "Référencement local et fiche Google", "Intégration Paiement Sécurisé", "CMS (Gestion de contenu)", "Analytics et Conformité RGPD"],
+        cta: "Demander un devis",
+        link: "/contact",
         icon: <Sparkles className="w-5 h-5" />,
         isPopular: true
     },
@@ -34,13 +35,32 @@ const packages = [
         name: "Pack Sérénité",
         subtitle: "Maintenance et Assurance.",
         price: "49€",
-        priceSuffix: "/ mois",
-        description: "Une assurance indispensable pour votre activité en ligne. Sécurité, mises à jour et disponibilité garanties.",
-        features: ["Hébergement Premium et SSL", "Sauvegardes Quotidiennes", "Mises à jour de Sécurité", "Monitoring Serveur 24/7", "1h d'intervention / mois", "Support Technique Prioritaire"],
+        priceSuffix: "/ mois dès",
+        description: "Une assurance indispensable pour votre activité en ligne. Trois formules selon le temps d'intervention dont vous avez besoin.",
+        features: ["Essentiel 49 €/mois : hébergement, SSL, sauvegardes, sécurité", "Pro 89 €/mois : + 1h de modifications et rapport mensuel", "Croissance 149 €/mois : + 2h et un article SEO par mois", "Monitoring Serveur 24/7", "Sans engagement après 12 mois", "Support Technique Prioritaire"],
         cta: "Découvrir l'offre",
         link: "/maintenance-site-web",
         icon: <Shield className="w-5 h-5" />,
         isPopular: false
+    }
+];
+
+const extraOffers = [
+    {
+        name: "Application Métier",
+        price: "Sur devis · dès 5 000€",
+        description: "Remplacez vos fichiers Excel et logiciels obsolètes par un outil sur-mesure : ERP, portail client, automatisation de vos processus.",
+        cta: "Découvrir l'offre",
+        link: "/application-metier-pme",
+        icon: <Sparkles className="w-5 h-5" />
+    },
+    {
+        name: "Audit Gratuit",
+        price: "Offert · 45 min",
+        description: "Vitesse, affichage mobile, référencement local, fiche Google : je vous envoie un rapport d'une page sur votre site actuel, sans engagement.",
+        cta: "Demander mon audit",
+        link: "/contact",
+        icon: <Search className="w-5 h-5" />
     }
 ];
 
@@ -58,7 +78,7 @@ const faqs = [
     },
     {
         question: "Quels sont les délais habituels pour un projet ?",
-        answer: "Pour un Pack Visibilité (site vitrine), comptez entre 2 et 4 semaines. Pour un Pack Conversion (e-commerce ou application métier), le délai varie de 1 à 3 mois selon la complexité. Un planning précis est validé dès le lancement."
+        answer: "Pour un Pack Visibilité (site vitrine), comptez entre 2 et 4 semaines. Pour un Pack Conversion (refonte ou e-commerce), comptez 4 à 8 semaines. Pour une application métier, de 1 à 3 mois selon la complexité. Un planning précis est validé dès le lancement."
     },
     {
         question: "Je n'y connais rien en informatique, allez-vous m'accompagner ?",
@@ -134,6 +154,12 @@ export default function ServicesContent() {
                             {pkg.priceSuffix && <span className="text-sm font-mono text-[var(--text-tertiary)] uppercase tracking-wider">{pkg.priceSuffix}</span>}
                         </div>
 
+                        {pkg.launchOffer && (
+                            <p className="-mt-4 mb-8 px-4 py-3 rounded-xl border border-[var(--foreground)]/20 bg-[var(--foreground)]/5 text-xs leading-relaxed text-[var(--foreground)]">
+                                {pkg.launchOffer}
+                            </p>
+                        )}
+
                         <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-8 min-h-[60px]">
                             {pkg.description}
                         </p>
@@ -159,6 +185,37 @@ export default function ServicesContent() {
                                 }`}
                         >
                             {pkg.cta} <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </Link>
+                    </motion.div>
+                ))}
+            </div>
+
+            {/* Additional Offers */}
+            <div className="max-w-7xl mx-auto px-6 mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                {extraOffers.map((offer, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1, duration: 0.6 }}
+                        className="group flex flex-col md:flex-row md:items-center justify-between gap-6 rounded-3xl border border-[var(--border-color)] hover:border-[var(--border-hover)] glass-panel p-8 md:p-10 transition-all duration-500"
+                    >
+                        <div>
+                            <div className="flex items-center gap-3 mb-3">
+                                <div className="p-2 bg-[var(--foreground)]/5 border border-[var(--border-color)] rounded-lg text-[var(--foreground)]">
+                                    {offer.icon}
+                                </div>
+                                <h3 className="text-2xl font-serif text-[var(--foreground)]">{offer.name}</h3>
+                            </div>
+                            <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)] mb-3">{offer.price}</p>
+                            <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-md">{offer.description}</p>
+                        </div>
+                        <Link
+                            href={offer.link}
+                            className="shrink-0 px-6 py-4 flex items-center justify-center gap-3 text-xs font-mono uppercase tracking-[0.2em] rounded-xl border border-[var(--border-color)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-all duration-500"
+                        >
+                            {offer.cta} <ArrowUpRight size={14} />
                         </Link>
                     </motion.div>
                 ))}

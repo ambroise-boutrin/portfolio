@@ -14,7 +14,8 @@ export default function CreationSiteArtisan() {
             title={<>Création de <br className="hidden md:block"/> <span className="opacity-40">Site Web Vitrine</span></>}
             subtitle="Un site vitrine ultra-performant qui agit comme votre meilleur commercial 24h/24."
             description="La plupart des artisans perdent des clients locaux parce que leur site est obsolète, invisible sur Google ou inexistant. Mon offre Pack Visibilité est spécialement conçue pour résoudre ce problème : un design premium, un référencement local agressif et des appels à l'action clairs pour transformer vos visiteurs en chantiers signés."
-            priceStartingAt="800€"
+            priceStartingAt="1 490€"
+            priceNote="Offre de lancement : 800 € pour mes 3 prochains projets, en échange d'un témoignage."
             primaryCtaText="Démarrer mon projet"
             benefits={[
                 {

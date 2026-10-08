@@ -15,6 +15,7 @@ export default function MaintenanceSiteWeb() {
             subtitle="Une assurance indispensable pour garantir la disponibilité de votre outil de travail."
             description="Avoir un beau site c'est bien, mais s'il se fait pirater ou s'il tombe en panne pendant une campagne de communication, c'est une perte sèche pour votre activité. Le Pack Sérénité vous libère de toute la gestion technique : je m'occupe de l'hébergement, des mises à jour complexes, des sauvegardes quotidiennes et de la sécurité. Vous pouvez vous concentrer sur votre métier."
             priceStartingAt="49€ / mois"
+            priceNote="Essentiel 49 € · Pro 89 € · Croissance 149 € par mois."
             primaryCtaText="Sécuriser mon site"
             benefits={[
                 {
@@ -30,7 +31,7 @@ export default function MaintenanceSiteWeb() {
                 {
                     image: "/images/gallery/erp/gestion-catalogue-erp.png",
                     title: "Temps d'Intervention Inclus",
-                    description: "Besoin de modifier un texte, d'ajouter un nouvel article ou de changer une image ? Le pack inclut du temps d'intervention chaque mois pour vos petites modifications."
+                    description: "Besoin de modifier un texte, d'ajouter un nouvel article ou de changer une image ? Les formules Pro et Croissance incluent du temps d'intervention chaque mois pour vos petites modifications."
                 }
             ]}
             deliverables={[
@@ -40,7 +41,8 @@ export default function MaintenanceSiteWeb() {
                 "Mises à jour des technologies et dépendances (Node.js, React, CMS)",
                 "Monitoring du site (alertes de pannes 24/7)",
                 "Correction de bugs critiques prioritaire",
-                "1 heure de modification de contenu offerte chaque mois",
+                "Formule Pro (89 €/mois) : 1 heure de modifications et un rapport mensuel",
+                "Formule Croissance (149 €/mois) : 2 heures de modifications et un article SEO par mois",
                 "Support technique par email avec réponse sous 24h"
             ]}
         />
