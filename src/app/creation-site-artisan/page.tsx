@@ -30,7 +30,7 @@ export default function CreationSiteArtisan() {
                 {
                     image: "/images/shots/site-web-assainissement-orleans.webp",
                     title: "Conversion Maximisée",
-                    description: "L'interface est pensée pour faciliter le premier contact : boutons d'appels visibles, formulaires de devis simplifiés, intégration Calendly."
+                    description: "L'interface est pensée pour faciliter le premier contact : boutons d'appels visibles, formulaires de devis et de contact simplifiés."
                 }
             ]}
             deliverables={[

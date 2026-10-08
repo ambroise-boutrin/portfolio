@@ -12,7 +12,7 @@ const packages = [
         price: "800€",
         priceSuffix: "min.",
         description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
-        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Calendly", "Optimisation Google My Business", "Optimisé Mobile et SEO Local", "Hébergement premium inclus"],
+        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Devis", "Optimisation Google My Business", "Optimisé Mobile et SEO Local", "Hébergement premium inclus"],
         cta: "Découvrir l'offre",
         link: "/creation-site-artisan",
         icon: <Zap className="w-5 h-5" />,
