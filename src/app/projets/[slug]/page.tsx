@@ -248,6 +248,24 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                     </div>
                 </div>
 
+                {/* Project Video */}
+                {(project as any).video && (
+                    <div className="mb-20">
+                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Démonstration Vidéo</h2>
+                        <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] aspect-[16/9] bg-black">
+                            <video 
+                                src={(project as any).video} 
+                                controls 
+                                muted
+                                className="w-full h-full object-contain"
+                                preload="metadata"
+                            >
+                                Votre navigateur ne supporte pas la balise vidéo.
+                            </video>
+                        </div>
+                    </div>
+                )}
+
                 {/* Project Gallery */}
                 {project.images && project.images.length > 0 && (
                     <div className="mb-20">
@@ -268,24 +286,6 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                                     </Zoom>
                                 </div>
                             ))}
-                        </div>
-                    </div>
-                )}
-
-                {/* Project Video */}
-                {(project as any).video && (
-                    <div className="mb-20">
-                        <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Démonstration Vidéo</h2>
-                        <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] aspect-[16/9] bg-black">
-                            <video 
-                                src={(project as any).video} 
-                                controls 
-                                muted
-                                className="w-full h-full object-contain"
-                                preload="metadata"
-                            >
-                                Votre navigateur ne supporte pas la balise vidéo.
-                            </video>
                         </div>
                     </div>
                 )}
