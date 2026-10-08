@@ -63,6 +63,7 @@ export const projects: Project[] = [
         logo: null,
         invertLogo: false,
         image: "/images/shots/site-web-assainissement-orleans.webp",
+        video: "/videos/presentation-site-ene-microstation.mp4",
         imageAlt: "Page d'accueil du site ENE Micro-Station, spécialiste assainissement",
         images: [],
         longDescription: "Refonte complète de la présence en ligne pour ENE SAS, un acteur historique de l'assainissement non collectif cherchant à digitaliser son acquisition client. Ce projet s'articule autour d'une approche performance et SEO pour transformer un simple site vitrine en une véritable machine de génération de leads locaux.",
