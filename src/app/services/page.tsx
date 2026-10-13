@@ -1,14 +1,28 @@
 import ServicesContent from "@/components/ServicesContent";
+import { JsonLdScript } from "@/components/JsonLd";
+import { faqs } from "@/data/faq";
 import { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Création Site Internet Orléans | Services Web et Mobile - Ambroise B.",
-    description: "Ambroise Boutrin, développeur web à Orléans (45). Création de sites internet vitrines, E-commerce et applications mobiles sur mesure. Devis gratuit.",
-    alternates: { canonical: '/services' }
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Tarifs création site internet à Orléans | Ambroise Boutrin",
+    description: "Site vitrine dès 1 490 € (800 € en offre de lancement), refonte ou e-commerce dès 1 990 €, maintenance dès 49 €/mois, application métier dès 5 000 €. Développeur web freelance à Orléans.",
+    path: "/services",
+});
 
 export default function ServicesPage() {
     return (
-        <ServicesContent />
+        <>
+            <JsonLdScript data={{
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": faqs.map((faq) => ({
+                    "@type": "Question",
+                    "name": faq.question,
+                    "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+                })),
+            }} />
+            <ServicesContent />
+        </>
     );
 }

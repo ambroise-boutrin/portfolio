@@ -1,14 +1,23 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
+import ServiceJsonLd from "@/components/ServiceJsonLd";
 import { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Développement d'Application Métier et Logiciel PME - Ambroise Boutrin",
-    description: "Digitalisez vos processus internes. Développement d'applications métiers sur-mesure, portails clients, ERP et outils SaaS pour PME. Solutions robustes et évolutives.",
-    alternates: { canonical: "/application-metier-pme" },
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Application métier sur mesure pour PME à Orléans | Ambroise Boutrin",
+    description: "Remplacez vos fichiers Excel par un outil sur mesure : ERP, portail client, automatisation. Développement d'applications métier pour PME, dès 5 000 €, par un développeur basé à Orléans.",
+    path: "/application-metier-pme",
+});
 
 export default function ApplicationMetierPME() {
     return (
+        <>
+            <ServiceJsonLd
+                name="Développement d'application métier pour PME"
+                description="Application métier sur mesure pour PME : ERP, portail client, automatisation de processus, en remplacement des fichiers Excel et logiciels obsolètes."
+                path="/application-metier-pme"
+                minPrice={5000}
+            />
         <ServiceLandingPage
             targetAudience="PME et Startups"
             title={<>Application <br className="hidden md:block"/> <span className="opacity-40">Métier pour PME</span></>}
@@ -44,5 +53,6 @@ export default function ApplicationMetierPME() {
                 "Documentation technique et formation des équipes"
             ]}
         />
+        </>
     );
 }

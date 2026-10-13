@@ -44,14 +44,14 @@ export default function Manifesto() {
 
                     {/* Manifesto Text */}
                     <div className="md:w-2/3">
-                        <motion.h1
+                        <motion.h2
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-3xl md:text-6xl lg:text-7xl font-serif text-[var(--foreground)] leading-[1.1] mb-6 md:mb-8 text-balance"
                         >
                             Je construis des écosystèmes digitaux <span className="text-[var(--text-secondary)] italic">remarquables.</span>
-                        </motion.h1>
+                        </motion.h2>
 
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}

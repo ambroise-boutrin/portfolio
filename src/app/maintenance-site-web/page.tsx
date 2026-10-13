@@ -1,14 +1,23 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
+import ServiceJsonLd from "@/components/ServiceJsonLd";
 import { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Maintenance et Sécurité de Site Web - Ambroise Boutrin",
-    description: "Confiez-moi la maintenance, la sécurité et l'hébergement de votre site web. Mises à jour, sauvegardes et support technique prioritaire pour dormir sur vos deux oreilles.",
-    alternates: { canonical: "/maintenance-site-web" },
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Maintenance de site internet dès 49 €/mois | Ambroise Boutrin, Orléans",
+    description: "Hébergement, sauvegardes, sécurité et mises à jour de votre site web. Formules Essentiel 49 €, Pro 89 € et Croissance 149 € par mois, par un développeur web à Orléans.",
+    path: "/maintenance-site-web",
+});
 
 export default function MaintenanceSiteWeb() {
     return (
+        <>
+            <ServiceJsonLd
+                name="Maintenance de site internet"
+                description="Hébergement, certificat SSL, sauvegardes, sécurité et mises à jour de votre site. Formules Essentiel 49 €, Pro 89 € et Croissance 149 € par mois."
+                path="/maintenance-site-web"
+                minPrice={49} unitText="MON"
+            />
         <ServiceLandingPage
             targetAudience="Toutes Entreprises"
             title={<>Maintenance de <br className="hidden md:block"/> <span className="opacity-40">Site Web et Sécurité</span></>}
@@ -46,5 +55,6 @@ export default function MaintenanceSiteWeb() {
                 "Support technique par email avec réponse sous 24h"
             ]}
         />
+        </>
     );
 }

@@ -5,30 +5,26 @@ import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import JsonLd from "@/components/JsonLd";
+import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.ambroise-boutrin.fr'),
-  title: "Ambroise Boutrin | Développeur Web B2B et Freelance Next.js - Orléans",
-  description: "Développeur web freelance expert B2B. Je transforme des problématiques complexes en outils digitaux ultra-performants (Next.js, Node.js) avec un vrai ROI.",
-  keywords: ["Développeur Web Orléans", "Freelance Next.js", "Création application métier", "Développeur React Orléans", "Agence Web Orléans", "Expert B2B Web", "Ambroise Boutrin"],
+  metadataBase: new URL(SITE_URL),
+  title: "Ambroise Boutrin | Développeur web freelance à Orléans, création de sites internet",
+  description: "Développeur web freelance à Orléans (45). Création de sites internet pour artisans, commerçants et PME : site vitrine dès 1 490 €, refonte, e-commerce, maintenance et applications métier.",
+  keywords: ["Développeur web Orléans", "Création site internet Orléans", "Création site vitrine artisan", "Freelance web Loiret", "Refonte site internet Orléans", "Application métier PME", "Développeur Next.js", "Ambroise Boutrin"],
+  authors: [{ name: "Ambroise Boutrin", url: SITE_URL }],
+  creator: "Ambroise Boutrin",
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
-    url: 'https://www.ambroise-boutrin.fr',
-    siteName: 'Ambroise B. Studio',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Ambroise B. Studio',
-      },
-    ],
+    siteName: SITE_NAME,
+    title: "Ambroise Boutrin | Développeur web freelance à Orléans",
+    description: "Création de sites internet pour artisans, commerçants et PME à Orléans et dans le Loiret. Prix annoncés d'avance, un seul interlocuteur.",
   },
   twitter: {
     card: 'summary_large_image',
-    description: "Studio de développement web et design. L'excellence numérique.",
-    creator: "@ambroise_b",
+    title: "Ambroise Boutrin | Développeur web freelance à Orléans",
+    description: "Création de sites internet pour artisans, commerçants et PME à Orléans et dans le Loiret. Prix annoncés d'avance, un seul interlocuteur.",
   },
   robots: {
     index: true,
@@ -40,9 +36,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  verification: {
-    google: "google-site-verification-code", // À remplacer par le vrai code si nécessaire
   },
   icons: {
     icon: '/icon.svg',

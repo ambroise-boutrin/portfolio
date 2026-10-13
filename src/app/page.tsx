@@ -3,10 +3,13 @@ import Manifesto from "@/components/Manifesto";
 import RecentProjects from "@/components/RecentProjects";
 import Services from "@/components/Services";
 import { Metadata } from 'next';
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/' }
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Ambroise Boutrin | Développeur web freelance à Orléans, création de sites internet",
+    description: "Développeur web freelance à Orléans (45). Création de sites internet pour artisans, commerçants et PME : site vitrine dès 1 490 €, refonte, e-commerce, maintenance et applications métier.",
+    path: "/",
+});
 
 export default function Home() {
   return (
