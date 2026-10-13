@@ -6,6 +6,7 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
 import { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
@@ -23,16 +24,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
-    return {
-        title: `${project.title} - Portfolio Ambroise B.`,
+    return pageMetadata({
+        title: `${project.title} | Projet web d'Ambroise Boutrin`,
         description: project.description,
-        openGraph: {
-            title: project.title,
-            description: project.description,
-            images: project.image ? [{ url: project.image }] : [],
-        },
-        alternates: { canonical: `/projets/${slug}` },
-    };
+        path: `/projets/${slug}`,
+        images: project.image ? [{ url: project.image, alt: project.imageAlt }] : undefined,
+    });
 }
 import ProjectJsonLd from "@/components/ProjectJsonLd";
 
@@ -277,7 +274,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                                         <div className="relative w-full h-full aspect-[16/9]">
                                             <Image
                                                 src={imgUrl}
-                                                alt={`${project.title} screenshot ${index + 1}`}
+                                                alt={`Capture d'écran ${index + 1} du projet ${project.title}`}
                                                 fill
                                                 className="object-cover hover:scale-105 transition-transform duration-700"
                                                 sizes={index === 0 ? "100vw" : "(max-width: 768px) 100vw, 50vw"}

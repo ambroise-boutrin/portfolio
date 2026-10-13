@@ -1,10 +1,12 @@
 import { MetadataRoute } from 'next'
 import { projects } from '@/data/projects'
+import { SITE_URL } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.ambroise-boutrin.fr' // Remplacez par votre domaine réel
+    const baseUrl = SITE_URL
 
-    const lastMod = '2026-05-12' // Updated to current date
+    // Date du déploiement : le sitemap est régénéré à chaque mise en ligne
+    const lastMod = new Date()
 
     const projectUrls = projects.map((project) => ({
         url: `${baseUrl}/projets/${project.slug}`,

@@ -1,14 +1,23 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
+import ServiceJsonLd from "@/components/ServiceJsonLd";
 import { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Création de Site Web pour Artisans et TPE - Ambroise Boutrin",
-    description: "Développeur web expert pour les artisans. Obtenez un site vitrine performant, optimisé pour le SEO local et conçu pour capturer des prospects dans votre région.",
-    alternates: { canonical: "/creation-site-artisan" },
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Création de site internet pour artisan à Orléans dès 1 490 € | Ambroise Boutrin",
+    description: "Site vitrine pour artisans et TPE à Orléans et dans le Loiret : 1 à 5 pages, formulaire de devis, fiche Google optimisée, SEO local. Dès 1 490 €, livré en 2 à 4 semaines.",
+    path: "/creation-site-artisan",
+});
 
 export default function CreationSiteArtisan() {
     return (
+        <>
+            <ServiceJsonLd
+                name="Création de site vitrine pour artisans et TPE"
+                description="Site vitrine de 1 à 5 pages pour artisans et TPE à Orléans et dans le Loiret : formulaire de devis, fiche Google optimisée et référencement local."
+                path="/creation-site-artisan"
+                minPrice={1490}
+            />
         <ServiceLandingPage
             targetAudience="Artisans et Indépendants"
             title={<>Création de <br className="hidden md:block"/> <span className="opacity-40">Site Web Vitrine</span></>}
@@ -44,5 +53,6 @@ export default function CreationSiteArtisan() {
                 "Formation à la modification des contenus de base"
             ]}
         />
+        </>
     );
 }

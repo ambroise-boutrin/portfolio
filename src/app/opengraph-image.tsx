@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 // export const runtime = 'edge'; // Commenté pour permettre la génération statique (SSG)
 
-export const alt = 'Ambroise B. | Studio Créatif et Développement Web';
+export const alt = 'Ambroise Boutrin, développeur web freelance à Orléans';
 export const size = {
     width: 1200,
     height: 630,
@@ -43,7 +43,7 @@ export default async function Image() {
                         color: 'transparent',
                         marginBottom: '10px'
                     }}>
-                        Ambroise B.
+                        Ambroise Boutrin
                     </div>
 
                     <div style={{
@@ -60,7 +60,7 @@ export default async function Image() {
                         color: '#cccccc',
                         textAlign: 'center',
                     }}>
-                        Studio de Développement Web et Design
+                        Développeur web freelance à Orléans
                     </div>
 
                     <div style={{
@@ -71,7 +71,7 @@ export default async function Image() {
                         letterSpacing: '0.1em',
                         textTransform: 'uppercase'
                     }}>
-                        Next.js • React • TypeScript • UI/UX
+                        Sites vitrines • Refonte • E-commerce • Applications métier
                     </div>
                 </div>
             </div>

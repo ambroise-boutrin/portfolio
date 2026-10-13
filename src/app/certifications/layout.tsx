@@ -1,10 +1,11 @@
 import { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Mes Certifications | Ambroise B. - Développeur Web",
-    description: "Découvrez mes certifications obtenues auprès d'OpenClassrooms, W3C, ANSSI et plus encore. Un parcours d'apprentissage continu pour garantir une expertise technique de pointe.",
-    alternates: { canonical: '/certifications' }
-};
+export const metadata: Metadata = pageMetadata({
+    title: "Certifications | Ambroise Boutrin, développeur web",
+    description: "Certifications d'Ambroise Boutrin, développeur web à Orléans : OpenClassrooms, W3C, ANSSI et autres formations suivies en continu.",
+    path: "/certifications",
+});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
     return <>{children}</>;
