@@ -94,10 +94,6 @@ export default function Hero() {
                     </div>
                 </ParallaxItem>
 
-                <Link href="/contact?audit=1" className="mt-6 text-sm text-[var(--text-secondary)] underline underline-offset-4 hover:text-[var(--foreground)] transition-colors">
-                    Vous avez déjà un site ? Demandez un audit gratuit
-                </Link>
-
                 {/* Réseaux Sociaux */}
                 <div className="mt-8 flex gap-6 text-[var(--text-secondary)] justify-center pb-4">
                     <a href="https://github.com/ambroise-boutrin" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
