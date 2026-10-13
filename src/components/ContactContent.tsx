@@ -2,13 +2,21 @@
 
 import ScrollReveal from "@/components/ScrollReveal";
 import { Mail, MapPin, Phone, Send, CheckCircle, AlertCircle, Loader2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
 export default function ContactContent() {
     const [status, setStatus] = useState<FormStatus>("idle");
     const [errorMessage, setErrorMessage] = useState("");
+    const messageRef = useRef<HTMLTextAreaElement>(null);
+
+    // Lien « Audit gratuit » (/contact?audit=1) : message prérempli, il ne reste qu'à coller l'adresse du site
+    useEffect(() => {
+        if (new URLSearchParams(window.location.search).has("audit") && messageRef.current && !messageRef.current.value) {
+            messageRef.current.value = "Bonjour, je souhaite un audit gratuit de mon site : ";
+        }
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -112,7 +120,7 @@ export default function ContactContent() {
                         </div>
                         <div>
                             <label className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Message</label>
-                            <textarea name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..." disabled={status === "loading"}></textarea>
+                            <textarea ref={messageRef} name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..." disabled={status === "loading"}></textarea>
                         </div>
 
                         {/* RGPD Consent */}

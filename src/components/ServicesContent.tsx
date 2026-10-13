@@ -66,10 +66,10 @@ const extraOffers = [
 ];
 
 const steps = [
-    { title: "Discovery", desc: "Analyse de vos besoins, audit et définition de la stratégie business.", icon: "01" },
-    { title: "Design", desc: "Direction artistique et prototypage interactif pour valider l'expérience.", icon: "02" },
-    { title: "Development", desc: "Intégration pixel-perfect, animations et développement backend robuste.", icon: "03" },
-    { title: "Delivery", desc: "Tests rigoureux, mise en production et accompagnement post-lancement.", icon: "04" }
+    { title: "Découverte", desc: "Analyse de vos besoins, audit et définition de la stratégie business.", icon: "01" },
+    { title: "Maquette", desc: "Direction artistique et maquette interactive pour valider l'expérience.", icon: "02" },
+    { title: "Développement", desc: "Intégration au pixel près, animations et développement backend robuste.", icon: "03" },
+    { title: "Mise en ligne", desc: "Tests rigoureux, mise en production et accompagnement post-lancement.", icon: "04" }
 ];
 
 export default function ServicesContent() {
