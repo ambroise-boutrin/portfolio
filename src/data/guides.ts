@@ -129,7 +129,7 @@ export const guides: Guide[] = [
                 answer: "Pas si la refonte est bien faite : on garde le même nom de domaine, on reprend les contenus qui fonctionnent et on redirige chaque ancienne adresse vers la nouvelle page correspondante.",
             },
         ],
-        cta: { text: "Vous hésitez ? Je regarde votre site et je vous envoie un rapport d'une page, gratuitement.", href: "/contact", label: "Demander mon audit gratuit" },
+        cta: { text: "Vous hésitez ? Je regarde votre site et je vous envoie un rapport d'une page, gratuitement.", href: "/contact?audit=1", label: "Demander mon audit gratuit" },
     },
     {
         slug: "fiche-google-business-profile-artisan",

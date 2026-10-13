@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Manifesto from "@/components/Manifesto";
 import RecentProjects from "@/components/RecentProjects";
 import Services from "@/components/Services";
+import HomeOffers from "@/components/HomeOffers";
 import { Metadata } from 'next';
 import { pageMetadata } from "@/lib/seo";
 
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <main className="relative z-10">
       <Hero />
+      <HomeOffers />
       <Manifesto />
       <RecentProjects />
       {/* Services Component removed as requested, replaced by Packages in Services page */}

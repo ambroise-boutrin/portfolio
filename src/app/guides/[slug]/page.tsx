@@ -107,6 +107,11 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                     <Link href={guide.cta.href} className="inline-block px-8 py-4 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform">
                         {guide.cta.label}
                     </Link>
+                    {!guide.cta.href.includes("audit") && (
+                        <p className="mt-6 text-sm opacity-70">
+                            Ou <Link href="/contact?audit=1" className="underline">demandez un audit gratuit de votre site</Link>.
+                        </p>
+                    )}
                 </div>
 
                 {others.length > 0 && (

@@ -11,7 +11,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
     const titleRef = useRef<HTMLHeadingElement>(null);
-    const subtitleRef = useRef<HTMLHeadingElement>(null);
     const linksRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -28,14 +27,8 @@ export default function Hero() {
                 );
             }
 
-            // Subtitle Reveal
-            if (subtitleRef.current) {
-                tl.fromTo(subtitleRef.current,
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 1 },
-                    "-=1"
-                );
-            }
+            // Le sous-titre reste visible dès le premier affichage : c'est le plus grand bloc
+            // de texte de l'écran (LCP), l'animer retardait l'affichage de près de 4 s sur mobile.
 
             // Links
             if (linksRef.current) {
@@ -70,7 +63,7 @@ export default function Hero() {
                     </div>
                 </h1>
 
-                <h2 ref={subtitleRef} className="text-xl md:text-3xl font-light mb-6 text-[var(--foreground)] mt-4 max-w-3xl">
+                <h2 className="text-xl md:text-3xl font-light mb-6 text-[var(--foreground)] mt-4 max-w-3xl">
                     Développeur Web Freelance à Orléans | Des sites performants pour générer plus de <span className="font-semibold text-[var(--text-secondary)]">chiffre d'affaires</span>.
                 </h2>
 
@@ -100,6 +93,10 @@ export default function Hero() {
                         </Link>
                     </div>
                 </ParallaxItem>
+
+                <Link href="/contact?audit=1" className="mt-6 text-sm text-[var(--text-secondary)] underline underline-offset-4 hover:text-[var(--foreground)] transition-colors">
+                    Vous avez déjà un site ? Demandez un audit gratuit
+                </Link>
 
                 {/* Réseaux Sociaux */}
                 <div className="mt-8 flex gap-6 text-[var(--text-secondary)] justify-center pb-4">
