@@ -43,12 +43,6 @@ export default function GuidesPage() {
                         </Link>
                     ))}
                 </div>
-                <div className="mt-16 p-8 rounded-3xl bg-[var(--foreground)] text-[var(--background)] flex flex-col md:flex-row md:items-center justify-between gap-6">
-                    <p className="text-xl font-serif">Vous préférez un avis sur votre propre site ? Je l&apos;analyse gratuitement.</p>
-                    <Link href="/contact?audit=1" className="shrink-0 text-center px-8 py-4 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform">
-                        Audit gratuit
-                    </Link>
-                </div>
             </div>
         </main>
     );

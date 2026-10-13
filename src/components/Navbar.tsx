@@ -60,10 +60,6 @@ export default function Navbar() {
 
                     <div className="w-px h-4 bg-[var(--border-color)] mx-2"></div>
 
-                    <TransitionLink href="/contact?audit=1" className="px-4 py-2 rounded-full text-sm font-medium text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors">
-                        Audit gratuit
-                    </TransitionLink>
-
                     <TransitionLink href="/contact" className="px-5 py-2 bg-[var(--foreground)] text-[var(--background)] rounded-full text-sm font-bold uppercase tracking-wider hover:opacity-80 transition-opacity ml-2">
                         Contact
                     </TransitionLink>
@@ -105,7 +101,6 @@ export default function Navbar() {
                                 { name: "Projets", path: "/projets" },
                                 { name: "Guides", path: "/guides" },
                                 { name: "À propos", path: "/a-propos" },
-                                { name: "Audit gratuit", path: "/contact?audit=1" },
                                 { name: "Contact", path: "/contact" }
                             ].map((item, i) => (
                                 <motion.div

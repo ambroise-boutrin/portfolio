@@ -41,10 +41,6 @@ export default function HomeOffers() {
                         </li>
                     ))}
                 </ul>
-
-                <Link href="/contact?audit=1" className="inline-block mt-10 text-xs font-mono uppercase tracking-widest text-[var(--foreground)] border-b border-[var(--foreground)] pb-1 hover:text-[var(--text-secondary)] hover:border-[var(--text-secondary)] transition-colors">
-                    Déjà un site ? Audit gratuit
-                </Link>
             </div>
         </section>
     );
