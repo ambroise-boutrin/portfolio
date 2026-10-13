@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <main className="relative z-10">
       <Hero />
-      <HomeOffers />
       <Manifesto />
       <RecentProjects />
+      <HomeOffers />
       {/* Services Component removed as requested, replaced by Packages in Services page */}
     </main>
   );
