@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next'
 import { projects } from '@/data/projects'
+import { guides } from '@/data/guides'
+import { metiers } from '@/data/metiers'
 import { SITE_URL } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -77,11 +79,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.5,
         },
         {
-            url: `${baseUrl}/veille`,
+            url: `${baseUrl}/guides`,
             lastModified: lastMod,
             changeFrequency: 'weekly',
-            priority: 0.6,
+            priority: 0.7,
         },
+        ...guides.map((guide) => ({
+            url: `${baseUrl}/guides/${guide.slug}`,
+            lastModified: guide.updatedAt,
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        })),
+        ...metiers.map((metier) => ({
+            url: `${baseUrl}/creation-site-artisan/${metier.slug}`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly' as const,
+            priority: 0.7,
+        })),
         ...projectUrls,
     ]
 }

@@ -1,5 +1,7 @@
 import { projects } from '@/data/projects'
 import { faqs } from '@/data/faq'
+import { guides } from '@/data/guides'
+import { metiers } from '@/data/metiers'
 import { SITE_URL } from '@/lib/seo'
 
 // llms.txt : résumé du site en Markdown, lu par les assistants IA (ChatGPT, Claude, Perplexity...)
@@ -9,6 +11,14 @@ export const dynamic = 'force-static'
 export function GET() {
     const projectLines = projects
         .map((p) => `- [${p.title}](${SITE_URL}/projets/${p.slug}) : ${p.description}`)
+        .join('\n')
+
+    const guideLines = guides
+        .map((g) => `- [${g.title}](${SITE_URL}/guides/${g.slug}) : ${g.answer}`)
+        .join('\n')
+
+    const metierLines = metiers
+        .map((m) => `- [Site internet pour ${m.namePlural}](${SITE_URL}/creation-site-artisan/${m.slug})`)
         .join('\n')
 
     const faqLines = faqs
@@ -38,8 +48,17 @@ export function GET() {
 - [Accueil](${SITE_URL}/)
 - [Services et tarifs](${SITE_URL}/services)
 - [Réalisations](${SITE_URL}/projets)
+- [Guides pour artisans et TPE](${SITE_URL}/guides)
 - [À propos](${SITE_URL}/a-propos)
 - [Contact](${SITE_URL}/contact)
+
+## Guides
+
+${guideLines}
+
+## Sites par métier
+
+${metierLines}
 
 ## Réalisations
 
