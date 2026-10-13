@@ -19,7 +19,7 @@ export default function HomeOffers() {
                             03
                         </span>
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[var(--foreground)] tracking-tight leading-tight">
-                            Tarifs <span className="text-[var(--text-secondary)] italic">Annoncés.</span>
+                            Mes <span className="text-[var(--text-secondary)] italic">Tarifs.</span>
                         </h2>
                     </div>
                     <p className="text-base md:text-lg text-[var(--text-secondary)] font-light max-w-sm md:pb-4">
