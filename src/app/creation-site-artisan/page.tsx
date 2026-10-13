@@ -1,5 +1,7 @@
 import ServiceLandingPage from "@/components/ServiceLandingPage";
 import ServiceJsonLd from "@/components/ServiceJsonLd";
+import Link from "next/link";
+import { metiers } from "@/data/metiers";
 import { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
@@ -53,6 +55,21 @@ export default function CreationSiteArtisan() {
                 "Formation à la modification des contenus de base"
             ]}
         />
+        <section className="pb-24 px-6 bg-[var(--background)]">
+            <div className="max-w-5xl mx-auto text-center">
+                <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)] mb-6">Un site pensé pour votre métier</h2>
+                <p className="text-lg text-[var(--text-secondary)] mb-10 max-w-2xl mx-auto">Chaque métier a ses propres clients et ses propres recherches sur Google. Voyez ce que je propose pour le vôtre :</p>
+                <ul className="flex flex-wrap justify-center gap-3">
+                    {metiers.map((metier) => (
+                        <li key={metier.slug}>
+                            <Link href={`/creation-site-artisan/${metier.slug}`} className="inline-block px-5 py-3 rounded-full border border-[var(--border-color)] hover:border-[var(--foreground)] transition-colors text-[var(--foreground)]">
+                                {metier.namePlural.charAt(0).toUpperCase() + metier.namePlural.slice(1)}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
         </>
     );
 }
