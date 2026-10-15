@@ -26,7 +26,7 @@ export default function MentionsLegales() {
                         <li><strong className="text-[var(--foreground)]">Directeur de la publication :</strong> Ambroise Boutrin</li>
                         <li><strong className="text-[var(--foreground)]">Contact :</strong> contact@ambroise-boutrin.fr</li>
                         <li><strong className="text-[var(--foreground)]">Téléphone :</strong> 07 59 87 83 34</li>
-                        <li><strong className="text-[var(--foreground)]">Adresse :</strong> Orléans, France</li>
+                        <li><strong className="text-[var(--foreground)]">Adresse :</strong> 1 rue Saint-Martin du Mail, 45000 Orléans, France</li>
                     </ul>
                 </section>
 

@@ -66,7 +66,7 @@ export const projects: Project[] = [
         video: "/videos/presentation-site-ene-microstation.mp4",
         imageAlt: "Page d'accueil du site ENE Micro-Station, spécialiste assainissement",
         images: [],
-        longDescription: "Refonte complète de la présence en ligne pour ENE SAS, un acteur historique de l'assainissement non collectif cherchant à digitaliser son acquisition client. Ce projet s'articule autour d'une approche performance et SEO pour transformer un simple site vitrine en une véritable machine de génération de leads locaux.",
+        longDescription: "Refonte complète de la présence en ligne pour ENE SAS, une entreprise d'assainissement non collectif installée depuis 2006 qui voulait être mieux trouvée en ligne. Le travail a porté sur la vitesse du site et le référencement local, pour que les particuliers du secteur trouvent l'entreprise sur Google et la contactent facilement.",
         competences: [],
         caseStudy: {
             problem: {
@@ -88,9 +88,9 @@ export const projects: Project[] = [
             result: {
                 title: "Résultat concret",
                 items: [
-                    "Visibilité en ligne considérablement accrue",
-                    "Augmentation des contacts qualifiés générés via le site",
-                    "Le site fait office de commercial digital disponible 24/7"
+                    "Nouveau site en ligne, rapide et lisible sur téléphone",
+                    "Données structurées (LocalBusiness) en place pour Google",
+                    "Produits et services présentés page par page, avec un accès direct au contact"
                 ]
             }
         },
@@ -108,7 +108,7 @@ export const projects: Project[] = [
         slug: "serveur-minecraft",
         category: "Backend et Gaming",
         role: "Développeur Backend",
-        description: "Configuration et développement d'un serveur Minecraft avec gestion des plugins, des joueurs et de l'infrastructure backend en JavaScript.",
+        description: "Projet personnel. Configuration et développement d'un serveur Minecraft avec gestion des plugins, des joueurs et de l'infrastructure backend en JavaScript.",
         tech: ["JavaScript", "Node.js", "JSON", "Linux"],
         mainTech: "Node.js / JavaScript",
         color: "bg-[#3b8526]",
@@ -143,9 +143,9 @@ export const projects: Project[] = [
             result: {
                 title: "Stabilité et Performance",
                 items: [
-                    "Serveur stable accueillant de nombreux joueurs sans latence",
-                    "Réduction drastique du temps d'administration",
-                    "Gestion fine et automatisée des permissions"
+                    "Serveur stable et facile à reconfigurer",
+                    "Moins de tâches d'administration à faire à la main",
+                    "Permissions des joueurs gérées par scripts"
                 ]
             }
         },
@@ -194,11 +194,11 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Gain de temps massif",
+                title: "Gain de temps",
                 items: [
-                    "Suppression totale de la double saisie",
-                    "Processus métiers accélérés et fiabilisés",
-                    "Adoption immédiate par les collaborateurs"
+                    "Moins de double saisie entre Outlook et les outils internes",
+                    "Moins d'erreurs de copier-coller",
+                    "Les informations sont extraites sans quitter la messagerie"
                 ]
             }
         },
@@ -206,7 +206,7 @@ export const projects: Project[] = [
         stackDetails: [
             { name: "Office.js", reason: "API officielle pour interagir avec les clients Office" },
             { name: "React", reason: "Création d'une interface utilisateur dynamique et réactive" },
-            { name: "Microsoft Graph API", reason: "Accès sécurisé aux données de l'écosystème Microsoft 365" }
+            { name: "Microsoft Graph API", reason: "Accès sécurisé aux données de Microsoft 365" }
         ]
     },
     {
@@ -248,11 +248,11 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Vélocité accrue",
+                title: "Recherche plus rapide",
                 items: [
                     "Recherche instantanée par expressions régulières",
-                    "Gain de productivité majeur pour toute l'équipe technique",
-                    "Outil interne fiable et adopté par tous"
+                    "Tous les dépôts consultables depuis une seule interface",
+                    "Service facile à relancer et à mettre à jour grâce à Docker"
                 ]
             }
         },
@@ -330,7 +330,7 @@ export const projects: Project[] = [
                 items: [
                     "Interface centralisée rapide et intuitive",
                     "Données mises à jour et accessibles en temps réel",
-                    "Optimisation globale des processus métiers"
+                    "Stocks, achats et ventes suivis dans le même outil"
                 ]
             }
         },
@@ -345,9 +345,9 @@ export const projects: Project[] = [
         id: "04",
         title: "OffTime | Creative Studio",
         slug: "offtime-studio",
-        category: "Cinematic et Digital Art",
+        category: "Cinéma et Art Numérique",
         role: "Creative Studio",
-        description: "Experience. In Motion. THE ART OF THE CUT. THE SOUL OF THE FRAME. Une exploration des textures temporelles traduite dans une expérience web immersive.",
+        description: "Projet réalisé en formation. Site vitrine d'un studio de création vidéo, avec animations au scroll et rendu 3D.",
         tech: ["Next.js", "Three.js", "TailwindCSS", "GSAP"],
         mainTech: "Next.js / GSAP",
         color: "bg-[#050505]",
@@ -362,7 +362,7 @@ export const projects: Project[] = [
         images: [
             "/images/site-web-agence-creative-offtime.webp"
         ],
-        longDescription: "Chez OffTime, nous ne nous contentons pas de capturer la lumière. Nous manipulons la perception du temps. À travers un montage méticuleux, une typographie cinétique et un design numérique fluide, nous transformons des secondes en moments profonds. Studio avant-gardiste opérant globalement, notre travail se situe à l'intersection du cinéma et de l'art interactif.",
+        longDescription: "Projet réalisé en formation : le site vitrine d'OffTime, un studio de création vidéo. Le cahier des charges demandait de retrouver sur le web l'esthétique d'un film : montage rythmé, typographie animée et navigation fluide, sans ralentir le chargement des pages.",
         competences: [],
         caseStudy: {
             problem: {
@@ -378,19 +378,19 @@ export const projects: Project[] = [
                 items: [
                     "Utilisation de Three.js pour le rendu 3D créatif",
                     "Intégration d'animations GSAP fluides et millimétrées",
-                    "Architecture Next.js pour garantir la vitesse de chargement"
+                    "Architecture Next.js pour des pages qui chargent vite"
                 ]
             },
             result: {
-                title: "Expérience primée",
+                title: "Rendu final",
                 items: [
-                    "Vitrine digitale digne des standards Awwwards",
-                    "Navigation immersive sans temps de latence",
-                    "Identité visuelle avant-gardiste respectée à 100%"
+                    "Animations au scroll et rendu 3D intégrés au site",
+                    "Navigation fluide d'une section à l'autre",
+                    "Identité visuelle conforme au cahier des charges"
                 ]
             }
         },
-        problem: "Concevoir une expérience numérique qui traduit l'esthétique cinématographique et la vision avant-gardiste du studio sans compromettre les performances.",
+        problem: "Traduire l'esthétique cinéma demandée par le cahier des charges sans ralentir le site.",
         stackDetails: [
             { name: "Next.js", reason: "Performance, rendu hybride, architecture moderne" },
             { name: "Three.js", reason: "Rendu 3D et expériences visuelles complexes" },
@@ -405,7 +405,7 @@ export const projects: Project[] = [
         slug: "garanches-ecommerce",
         category: "Web Fullstack",
         role: "Développeur Fullstack",
-        description: "Plateforme de vente de vins avec gestion de panier, paiement sécurisé et back-office administrateur. Design premium et performance optimisée.",
+        description: "Plateforme de vente de vins avec gestion de panier, paiement sécurisé et back-office administrateur. Design soigné et pages rapides.",
         tech: ["Next.js", "Stripe", "TailwindCSS", "Prisma"],
         mainTech: "Next.js / Stripe",
         color: "bg-[#111]",
@@ -438,8 +438,8 @@ export const projects: Project[] = [
             solution: {
                 title: "E-Commerce Sur-Mesure",
                 items: [
-                    "Conception d'une boutique Next.js ultra-rapide",
-                    "Design premium sombre et élégant avec Tailwind CSS",
+                    "Conception d'une boutique sous Next.js",
+                    "Design sombre et élégant avec Tailwind CSS",
                     "Intégration d'un paiement transparent et sécurisé via Stripe"
                 ]
             },
@@ -447,8 +447,8 @@ export const projects: Project[] = [
                 title: "Ventes et Image de marque",
                 items: [
                     "Expérience d'achat fluide et immersive pour les clients",
-                    "Hausse perçue de la valeur des produits",
-                    "Système robuste gérant les stocks et transactions"
+                    "Une présentation à la hauteur des vins vendus",
+                    "Gestion des stocks et des paiements Stripe"
                 ]
             }
         },
@@ -467,7 +467,7 @@ export const projects: Project[] = [
         slug: "nomad-collective",
         category: "Web et Art Expérience",
         role: "Développeur Lead et Design",
-        description: "Collectif House Music et Évènementiel. Une exploration des textures sonores traduite dans une expérience web immersive et performante.",
+        description: "Projet réalisé en formation. Site d'un collectif de house music et d'évènements, avec animations fluides et défilement doux.",
         tech: ["Next.js", "Framer Motion", "TailwindCSS", "Lenis"],
         mainTech: "Next.js / Framer Motion",
         color: "bg-[#050505]",
@@ -485,7 +485,7 @@ export const projects: Project[] = [
             "/images/gallery/nomad/page-a-propos-plateforme.webp",
             "/images/gallery/nomad/galerie-profils-freelance.webp"
         ],
-        longDescription: "Plus qu'une série de morceaux, NOMAD est une exploration des textures sonores. Nous sculptons chaque set pour transformer le dancefloor en une expérience immersive, loin des standards classiques. Le site web reflète cette philosophie avec des animations fluides, un grain de texture cinématographique et une navigation haute performance.",
+        longDescription: "Projet réalisé en formation : le site de NOMAD, un collectif de house music qui organise des soirées. Le cahier des charges demandait un site qui rappelle l'ambiance des soirées plutôt qu'une simple page d'informations. J'ai utilisé des animations fluides, un grain de texture façon pellicule et une navigation rapide.",
         competences: [],
         caseStudy: {
             problem: {
@@ -505,15 +505,15 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Engagement du public",
+                title: "Rendu final",
                 items: [
-                    "Le site agit comme une extension de l'expérience en club",
-                    "Augmentation de la visibilité des prochains évènements",
-                    "Renforcement de l'image de marque du collectif"
+                    "Une ambiance visuelle proche de celle des soirées",
+                    "Les prochains évènements mis en avant dès l'accueil",
+                    "Une identité visuelle cohérente sur toutes les pages"
                 ]
             }
         },
-        problem: "Besoin d'une vitrine digitale qui ne soit pas juste un site informatif, mais une extension de l'expérience artistique du collectif.",
+        problem: "Le cahier des charges demandait un site qui ne soit pas qu'informatif, mais qui rappelle l'ambiance artistique du collectif.",
         stackDetails: [
             { name: "Next.js", reason: "Pour l'architecture moderne et le rendu ultra-rapide" },
             { name: "Framer Motion", reason: "Animations fluides et immersives" },
@@ -526,26 +526,26 @@ export const projects: Project[] = [
         id: "00", // New Top Project
         title: "Bellenippe - L'Art de l'Unicité",
         slug: "bellenippe-fashion",
-        category: "E-Commerce Luxury",
+        category: "E-Commerce Mode",
         role: "Direction Artistique et Dev",
-        description: "Maison de couture digitale prônant l'artisanat et l'unicité. Une expérience e-commerce immersive pour des pièces limitées.",
+        description: "Projet réalisé en formation. Boutique en ligne pour une marque de couture qui vend des pièces uniques en petite série.",
         tech: ["Next.js", "Shopify", "Framer Motion", "Tailwind"],
         mainTech: "Next.js / Shopify",
         color: "bg-[#0a0a0a]",
         textColor: "text-white",
-        github: null, // Private client
+        github: null,
         demo: "https://bellenippe.vercel.app/",
         logo: "/images/bellenippelogo.png",
         invertLogo: true,
         image: "/images/site-e-commerce-mode-bellenippe.png",
         video: "/videos/presentation-site-e-commerce-mode-bellenippe.mp4",
-        imageAlt: "Logo et interface sombre du site e-commerce de luxe Bellenippe",
+        imageAlt: "Logo et page d'accueil sombre du site de mode Bellenippe",
         images: [
             "/images/gallery/bellenippe/accueil-site-mode.png",
             "/images/gallery/bellenippe/page-marque-mode.png",
             "/images/gallery/bellenippe/page-contact-mode.png",
         ],
-        longDescription: "Conception complète de l'identité numérique de Bellenippe, une marque de couture française. L'objectif était de traduire la texture et la rareté des pièces physiques dans une interface digitale. Utilisation de transitions fluides et d'une typographie éditoriale pour sublimer chaque vêtement.",
+        longDescription: "Projet réalisé en formation : le site de Bellenippe, une marque de couture. Le cahier des charges demandait de montrer la matière et la rareté des pièces à l'écran. J'ai utilisé des transitions fluides et une typographie de magazine pour mettre chaque vêtement en valeur.",
         competences: [],
         caseStudy: {
             problem: {
@@ -557,7 +557,7 @@ export const projects: Project[] = [
                 ]
             },
             solution: {
-                title: "Direction Artistique Digitale",
+                title: "Direction artistique et technique",
                 items: [
                     "Architecture Headless avec Shopify pour le backend",
                     "Frontend Next.js pour une navigation ultra-rapide",
@@ -565,11 +565,11 @@ export const projects: Project[] = [
                 ]
             },
             result: {
-                title: "Conversion et Prestige",
+                title: "Rendu final",
                 items: [
-                    "L'interface sublime les pièces et justifie leur valeur",
-                    "Parcours d'achat sans friction avec performances optimales",
-                    "Taux d'engagement de la clientèle en forte hausse (+30%)"
+                    "Les pièces sont présentées en grand, avec leurs détails",
+                    "Un parcours d'achat court, du produit au paiement",
+                    "Contenu éditorial et boutique réunis sur le même site"
                 ]
             }
         },
@@ -587,7 +587,7 @@ export const projects: Project[] = [
         slug: "analyse-graphes",
         category: "Data Science et Archives",
         role: "Data Scientist",
-        description: "Projet d'analyse de réseaux d'acteurs utilisant la théorie des graphes. Implémentation d'algorithmes de centralité et de détection de communautés avec NetworkX.",
+        description: "Projet réalisé en formation. Analyse de réseaux d'acteurs utilisant la théorie des graphes. Implémentation d'algorithmes de centralité et de détection de communautés avec NetworkX.",
         tech: ["Python", "NetworkX", "Matplotlib", "SciPy"],
         mainTech: "Python / NetworkX",
         color: "bg-[#1a1a1a]",
@@ -641,7 +641,7 @@ export const projects: Project[] = [
         slug: "gestion-jo-2024",
         category: "Desktop Java et Archives",
         role: "Développeur Java",
-        description: "Solution complète pour l'administration des épreuves et des résultats des Jeux Olympiques. Interface Java Swing.",
+        description: "Projet réalisé en formation. Application de bureau pour gérer les épreuves et les résultats des Jeux Olympiques, en Java Swing.",
         tech: ["Java", "Swing", "MySQL", "JDBC"],
         mainTech: "Java / SQL",
         color: "bg-[#1f1f1f]",
@@ -677,8 +677,8 @@ export const projects: Project[] = [
                 title: "Centralisation et Fiabilité",
                 items: [
                     "Accès rapide et sécurisé à l'ensemble des données sportives",
-                    "Réduction des erreurs de saisie grâce aux validations intégrées",
-                    "Application performante même avec un grand jeu de données"
+                    "Contrôles à la saisie pour limiter les erreurs",
+                    "Saisie et consultation de nombreuses données sportives"
                 ]
             }
         },
@@ -695,7 +695,7 @@ export const projects: Project[] = [
         slug: "gsb-compte-rendu",
         category: "Web Fullstack",
         role: "Développeur Fullstack",
-        description: "Application web de gestion des comptes rendus de visite pour les visiteurs médicaux du laboratoire Galaxy Swiss Bourdin. Interface CRUD complète avec authentification.",
+        description: "Projet réalisé en formation. Application web de gestion des comptes rendus de visite pour les visiteurs médicaux du laboratoire Galaxy Swiss Bourdin. Interface CRUD complète avec authentification.",
         tech: ["PHP", "CodeIgniter 4", "MySQL", "Bootstrap"],
         mainTech: "CodeIgniter 4 / PHP",
         color: "bg-[#1a1a2e]",
@@ -708,7 +708,7 @@ export const projects: Project[] = [
         video: "/videos/presentation-application-comptes-rendus-gsb.mp4",
         imageAlt: "Interface de l'application GSB Compte Rendu",
         images: [],
-        longDescription: "Application web développée dans le cadre du contexte GSB (Galaxy Swiss Bourdin) pour la gestion des comptes rendus de visite des visiteurs médicaux. Le système permet la saisie, la consultation et la modification des rapports de visite auprès des praticiens.",
+        longDescription: "Application web développée en formation, sur le cas d'étude GSB (Galaxy Swiss Bourdin, laboratoire fictif) pour la gestion des comptes rendus de visite des visiteurs médicaux. Le système permet la saisie, la consultation et la modification des rapports de visite auprès des praticiens.",
         competences: [],
         caseStudy: {
             problem: {
@@ -732,7 +732,7 @@ export const projects: Project[] = [
                 items: [
                     "Saisie des rapports facilitée directement après la visite",
                     "Accès immédiat aux statistiques pour les managers",
-                    "Sécurisation globale des données de l'entreprise"
+                    "Accès aux données protégé par authentification et rôles"
                 ]
             }
         },
@@ -774,7 +774,7 @@ export const projects: Project[] = [
             problem: {
                 title: "Visibilité associative",
                 items: [
-                    "L'association manquait d'un support digital pour présenter ses actions",
+                    "L'association n'avait pas de site pour présenter ses actions",
                     "Besoin de faciliter la réservation des ateliers de couture",
                     "Nécessité de communiquer sur les partenariats sociaux (ODAS)"
                 ]
@@ -790,7 +790,7 @@ export const projects: Project[] = [
             result: {
                 title: "Rayonnement Local",
                 items: [
-                    "Augmentation de la participation aux ateliers créatifs",
+                    "Ateliers présentés clairement, avec réservation en ligne",
                     "Professionnalisation de l'image de l'association",
                     "Facilitation des échanges avec les partenaires institutionnels"
                 ]

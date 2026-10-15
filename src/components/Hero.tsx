@@ -1,50 +1,19 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowRight, Github, Linkedin, MapPin } from "lucide-react";
 import ParallaxItem from "@/components/ParallaxItem";
 import ScrollIndicator from "@/components/ScrollIndicator";
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+
+// Animation d'apparition en CSS pur (keyframes dans globals.css), easing proche du "expo.out" de GSAP.
+// motion-safe : aucune animation si prefers-reduced-motion. fill-mode "both" : l'état initial
+// masqué n'existe que pendant l'animation, le contenu reste visible sans JS.
+// Classes écrites en entier : Tailwind les détecte statiquement (pas d'interpolation).
+const LINE_1 = "motion-safe:animate-[hero-line-reveal_1.5s_cubic-bezier(0.16,1,0.3,1)_0.2s_both]";
+const LINE_2 = "motion-safe:animate-[hero-line-reveal_1.5s_cubic-bezier(0.16,1,0.3,1)_0.3s_both]";
+const LINKS = "motion-safe:animate-[hero-fade-up_1s_cubic-bezier(0.16,1,0.3,1)_1s_both]";
 
 export default function Hero() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const titleRef = useRef<HTMLHeadingElement>(null);
-    const linksRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const ctx = gsap.context(() => {
-            const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-
-            // Title Reveal (Staggered lines)
-            // Title Reveal (Staggered lines)
-            if (titleRef.current) {
-                const titleLines = titleRef.current.querySelectorAll(".reveal-text");
-                tl.fromTo(titleLines,
-                    { y: "100%" },
-                    { y: "0%", duration: 1.5, stagger: 0.1, delay: 0.2 }
-                );
-            }
-
-            // Le sous-titre reste visible dès le premier affichage : c'est le plus grand bloc
-            // de texte de l'écran (LCP), l'animer retardait l'affichage de près de 4 s sur mobile.
-
-            // Links
-            if (linksRef.current) {
-                tl.fromTo(linksRef.current,
-                    { opacity: 0, y: 20 },
-                    { opacity: 1, y: 0, duration: 1 },
-                    "-=0.8"
-                );
-            }
-
-        }, containerRef);
-
-        return () => ctx.revert();
-    }, []);
-
     return (
-        <section ref={containerRef} className="min-h-screen py-16 flex items-center justify-center relative overflow-hidden">
+        <section className="min-h-screen py-16 flex items-center justify-center relative overflow-hidden">
 
             {/* Fond Grid Géométrique */}
             <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
@@ -53,12 +22,12 @@ export default function Hero() {
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
 
                 {/* Titre Principal */}
-                <h1 ref={titleRef} className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-4">
+                <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-4">
                     <div className="overflow-hidden">
-                        <span className="block reveal-text">Ambroise</span>
+                        <span className={`block ${LINE_1}`}>Ambroise</span>
                     </div>
                     <div className="overflow-hidden">
-                        <span className="block italic text-[var(--text-secondary)] reveal-text">Boutrin</span>
+                        <span className={`block italic text-[var(--text-secondary)] ${LINE_2}`}>Boutrin</span>
                     </div>
                 </h1>
 
@@ -74,7 +43,7 @@ export default function Hero() {
 
                 {/* Boutons d'action */}
                 <ParallaxItem offset={0} className="w-full">
-                    <div ref={linksRef} className="flex flex-col sm:flex-row gap-6 justify-center items-center w-full opacity-0">
+                    <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center w-full ${LINKS}`}>
 
                         {/* Bouton Projets (Inverse) */}
                         <Link href="/contact" className="group relative">

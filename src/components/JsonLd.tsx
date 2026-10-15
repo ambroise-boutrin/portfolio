@@ -106,9 +106,9 @@ export const graph = {
                 "@type": "OfferCatalog",
                 "name": "Offres de création et maintenance de sites web",
                 "itemListElement": [
-                    offer("Pack Visibilité : site vitrine", "Site vitrine de 1 à 5 pages pour artisans et TPE, formulaire de devis, fiche Google et SEO local.", 1490, "/creation-site-artisan"),
+                    offer("Pack Visibilité : site vitrine", "Site vitrine de 1 à 5 pages pour artisans et TPE, formulaire de devis, fiche Google et SEO local. 1re année d'hébergement incluse.", 1490, "/creation-site-artisan"),
                     offer("Pack Conversion : refonte ou e-commerce", "Refonte de site existant ou boutique en ligne avec paiement sécurisé, audit SEO avant et après.", 1990, "/services"),
-                    offer("Pack Sérénité : maintenance", "Hébergement, SSL, sauvegardes, sécurité et mises à jour. Formules à 49, 89 et 149 € par mois.", 49, "/maintenance-site-web", "MON"),
+                    offer("Pack Sérénité : maintenance", "Hébergement, SSL, sauvegardes, sécurité et mises à jour. Formules à 49, 89 et 149 € par mois, sans engagement.", 49, "/maintenance-site-web", "MON"),
                     offer("Application métier sur mesure", "ERP, portail client ou automatisation de processus pour PME.", 5000, "/application-metier-pme"),
                     {
                         "@type": "Offer",

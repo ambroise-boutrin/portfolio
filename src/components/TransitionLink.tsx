@@ -40,8 +40,8 @@ export default function TransitionLink({ children, href, className, onClick, ...
         const body = document.querySelector("body");
         body?.classList.add("page-transition-exit");
 
-        // Wait for curtain animation
-        await sleep(500);
+        // Attente courte du rideau (sa transition CSS dure 200 ms, cf. layout.tsx)
+        await sleep(200);
 
         // Navigate
         router.push(href);

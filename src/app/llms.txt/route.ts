@@ -31,9 +31,9 @@ export function GET() {
 
 ## Offres et tarifs
 
-- Pack Visibilité, site vitrine de 1 à 5 pages : dès 1 490 € (offre de lancement à 800 € pour les 3 prochains projets, en échange d'un témoignage). Délai : 2 à 4 semaines. Détails : ${SITE_URL}/creation-site-artisan
+- Pack Visibilité, site vitrine de 1 à 5 pages, 1re année d'hébergement incluse : dès 1 490 € (offre de lancement à 800 € pour les 3 prochains projets, en échange d'un témoignage). Délai : 2 à 4 semaines. Détails : ${SITE_URL}/creation-site-artisan
 - Pack Conversion, refonte ou e-commerce : dès 1 990 €. Délai : 4 à 8 semaines. Détails : ${SITE_URL}/services
-- Pack Sérénité, maintenance : Essentiel 49 €/mois, Pro 89 €/mois, Croissance 149 €/mois. Détails : ${SITE_URL}/maintenance-site-web
+- Pack Sérénité, maintenance : Essentiel 49 €/mois, Pro 89 €/mois, Croissance 149 €/mois. Sans engagement, résiliable chaque mois. Détails : ${SITE_URL}/maintenance-site-web
 - Application métier sur mesure (ERP, portail client, automatisation) : dès 5 000 €, 1 à 3 mois. Détails : ${SITE_URL}/application-metier-pme
 - Audit gratuit d'un site existant (vitesse, mobile, référencement local, fiche Google) : ${SITE_URL}/contact
 

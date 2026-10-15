@@ -3,10 +3,6 @@
 import { ReactNode, useEffect, useRef } from "react";
 import Lenis from "lenis";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
     const pathname = usePathname();
@@ -24,23 +20,14 @@ export default function SmoothScroll({ children }: { children: ReactNode }) {
             orientation: "vertical",
             gestureOrientation: "vertical",
             smoothWheel: true,
+            // Lenis gère lui-même sa boucle requestAnimationFrame (arrêtée par destroy())
+            autoRaf: true,
         });
 
         lenisRef.current = lenis;
 
-        // Synchronize Lenis and GSAP ScrollTrigger
-        lenis.on('scroll', ScrollTrigger.update);
-
-        // Add Lenis's requestAnimationFrame to GSAP's ticker
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 1000); // GSAP gives time in seconds, Lenis needs ms
-        });
-
-        // Disable GSAP's lag smoothing to prevent stuttering
-        gsap.ticker.lagSmoothing(0);
-
         return () => {
-            gsap.ticker.remove(lenis.raf);
+            lenisRef.current = null;
             lenis.destroy();
         };
     }, []);

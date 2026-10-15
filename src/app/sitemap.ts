@@ -4,15 +4,29 @@ import { guides } from '@/data/guides'
 import { metiers } from '@/data/metiers'
 import { SITE_URL } from '@/lib/seo'
 
+// Date de dernière modification réelle de chaque page (format AAAA-MM-JJ).
+// Mettre à jour la date quand le contenu de la page change.
+// Les guides utilisent leur propre champ updatedAt (src/data/guides.ts).
+const LAST_MODIFIED = {
+    home: '2026-10-15',
+    projets: '2026-10-15',
+    projects: '2026-10-15',
+    services: '2026-10-15',
+    creationSiteArtisan: '2026-10-15',
+    applicationMetier: '2026-10-15',
+    maintenance: '2026-10-15',
+    aPropos: '2026-10-13',
+    contact: '2026-10-15',
+    guides: '2026-10-13',
+    metiers: '2026-10-13',
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = SITE_URL
 
-    // Date du déploiement : le sitemap est régénéré à chaque mise en ligne
-    const lastMod = new Date()
-
     const projectUrls = projects.map((project) => ({
         url: `${baseUrl}/projets/${project.slug}`,
-        lastModified: lastMod,
+        lastModified: LAST_MODIFIED.projects,
         changeFrequency: 'monthly' as const,
         priority: 0.7,
     }))
@@ -20,67 +34,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return [
         {
             url: baseUrl,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.home,
             changeFrequency: 'monthly',
             priority: 1,
         },
         {
             url: `${baseUrl}/projets`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.projets,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/services`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.services,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/creation-site-artisan`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.creationSiteArtisan,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/application-metier-pme`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.applicationMetier,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/maintenance-site-web`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.maintenance,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/a-propos`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.aPropos,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/competences`,
-            lastModified: lastMod,
-            changeFrequency: 'yearly',
-            priority: 0.6,
-        },
-        {
-            url: `${baseUrl}/certifications`,
-            lastModified: lastMod,
-            changeFrequency: 'monthly',
-            priority: 0.6,
-        },
-        {
             url: `${baseUrl}/contact`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.contact,
             changeFrequency: 'yearly',
             priority: 0.5,
         },
         {
             url: `${baseUrl}/guides`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.guides,
             changeFrequency: 'weekly',
             priority: 0.7,
         },
@@ -92,7 +94,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         })),
         ...metiers.map((metier) => ({
             url: `${baseUrl}/creation-site-artisan/${metier.slug}`,
-            lastModified: lastMod,
+            lastModified: LAST_MODIFIED.metiers,
             changeFrequency: 'monthly' as const,
             priority: 0.7,
         })),

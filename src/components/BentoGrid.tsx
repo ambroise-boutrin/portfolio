@@ -5,23 +5,23 @@ import { motion } from "framer-motion";
 const pillars = [
     {
         id: "01",
-        title: "Stratégie",
-        items: ["Audit UX/UI", "Architecture de Marque", "Roadmap Produit"]
+        title: "Conseil",
+        items: ["Audit du site actuel", "Plan des pages", "Devis et planning"]
     },
     {
         id: "02",
         title: "Design",
-        items: ["Direction Artistique", "UI et Web Design", "Interactions (Motion)"]
+        items: ["Maquettes sur mesure", "Pensé mobile d'abord", "Animations sobres"]
     },
     {
         id: "03",
-        title: "Engineering",
-        items: ["Next.js et React", "Headless CMS", "Performance Green IT"]
+        title: "Développement",
+        items: ["Next.js et React", "Contenus modifiables", "Pages légères et rapides"]
     },
     {
         id: "04",
-        title: "Growth",
-        items: ["SEO Technique", "Conversion (CRO)", "Scalabilité"]
+        title: "Référencement",
+        items: ["SEO technique et local", "Plus de demandes de devis", "Un site qui peut évoluer"]
     }
 ];
 

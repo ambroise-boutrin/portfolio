@@ -4,17 +4,10 @@ import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, ChevronDown, Check, SlidersHorizontal } from "lucide-react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
 
 import { projects, type Project } from "@/data/projects";
 import ScrollIndicator from "@/components/ScrollIndicator";
-
-// Register ScrollTrigger for GSAP
-if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-}
 
 const ALL_CATEGORY = "Tous";
 const categories = [
@@ -155,10 +148,8 @@ export default function ProjectsContent() {
     }, []);
 
     const handleCategoryChange = useCallback((category: string) => {
+        // La hauteur de page change : Lenis (autoResize) la recalcule seul via ResizeObserver
         setActiveCategory(category);
-        setTimeout(() => {
-            ScrollTrigger.refresh();
-        }, 150);
     }, []);
 
     const activeSortLabel = useMemo(() => {

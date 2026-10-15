@@ -6,9 +6,14 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
 
+// Projets clients mis en avant sur l'accueil, dans cet ordre
+const FEATURED_SLUGS = ["ene-microstation", "alunisson", "garanches-ecommerce", "stocko-erp"];
+
+const recentProjects = FEATURED_SLUGS
+    .map((slug) => projects.find((p) => p.slug === slug))
+    .filter((p): p is (typeof projects)[number] => p !== undefined);
+
 export default function RecentProjects() {
-    // Get the first 4 projects for the homepage
-    const recentProjects = projects.slice(0, 4);
 
     return (
         <section className="py-24 md:py-32 bg-[var(--background)] relative z-10 overflow-hidden border-t border-[var(--border-color)]">

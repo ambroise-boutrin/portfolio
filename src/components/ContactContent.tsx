@@ -76,7 +76,7 @@ export default function ContactContent() {
                     </h1>
 
                     <p className="text-xl text-[var(--text-secondary)] mb-12 max-w-md leading-relaxed">
-                        Vous avez une idée en tête ou vous cherchez un développeur pour rejoindre votre équipe ? N&apos;hésitez pas à me contacter.
+                        Un site à créer, à refaire, ou un outil sur mesure pour votre activité ? Écrivez-moi, je réponds sous 24 h ouvrées.
                     </p>
 
                     <div className="space-y-8">

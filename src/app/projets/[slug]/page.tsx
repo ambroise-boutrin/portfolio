@@ -251,8 +251,13 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                         <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Démonstration Vidéo</h2>
                         <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] aspect-[16/9] bg-black">
                             <video 
-                                src={project.video} 
-                                controls 
+                                src={project.video}
+                                poster={(() => {
+                                    // /videos/<nom>.mp4 -> /videos/posters/<nom>.webp (aperçu généré à ~1 s)
+                                    const nom = project.video.match(/^\/videos\/([^/]+)\.mp4$/)?.[1];
+                                    return nom ? `/videos/posters/${nom}.webp` : undefined;
+                                })()}
+                                controls
                                 muted
                                 className="w-full h-full object-contain"
                                 preload="metadata"
