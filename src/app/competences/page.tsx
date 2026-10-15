@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code, Database, Layout, Smartphone, Terminal, PenTool, ArrowUpRight } from "lucide-react";
+import { Database, Layout, Terminal, PenTool, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
 
@@ -17,7 +17,7 @@ const skillStacks = [
         title: "Frontend et Expérience",
         icon: <Layout className="w-6 h-6" />,
         description: "Interfaces réactives et animations fluides pixel-perfect.",
-        tags: ["React", "Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion", "Vue.js"]
+        tags: ["React", "Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion", "Vue.js"]
     },
     {
         title: "Outils et Design",
@@ -115,7 +115,7 @@ export default function SkillsPage() {
                         {/* Frontend Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 bg-white rounded-full"></span> Frontend
+                                <span className="w-2 h-2 bg-[var(--foreground)] rounded-full"></span> Frontend
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="React.js" level="Avancé" detail="Hooks, Context, Performance" />
@@ -158,7 +158,7 @@ export default function SkillsPage() {
                         {/* Tools et Soft Skills Column */}
                         <div className="space-y-6">
                             <h3 className="text-xl font-bold uppercase tracking-widest flex items-center gap-2 text-[var(--foreground)]">
-                                <span className="w-2 h-2 border border-white/50 rounded-full"></span> Outils &+
+                                <span className="w-2 h-2 border border-[var(--foreground)]/50 rounded-full"></span> Outils et plus
                             </h3>
                             <ul className="space-y-3">
                                 <SkillItem name="Figma" level="Créatif" detail="Maquettage, Prototypage" />

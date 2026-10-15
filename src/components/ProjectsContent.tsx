@@ -8,7 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { projects } from "@/data/projects";
+import { projects, type Project } from "@/data/projects";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
 // Register ScrollTrigger for GSAP
@@ -29,7 +29,7 @@ const sortOptions = [
     { value: "za", label: "Nom de Z à A" }
 ];
 
-const ProjectCard = ({ project, index }: any) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
     const isLightBg = ['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color);
 
     return (
@@ -129,7 +129,7 @@ export default function ProjectsContent() {
     }, []);
 
     const filteredAndSortedProjects = useMemo(() => {
-        let result = activeCategory === ALL_CATEGORY
+        const result = activeCategory === ALL_CATEGORY
             ? [...projects]
             : projects.filter((p) => p.category === activeCategory);
 
@@ -237,6 +237,8 @@ export default function ProjectsContent() {
                         <div ref={dropdownRef} className="relative z-40">
                             <button
                                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                aria-expanded={isDropdownOpen}
+                                aria-haspopup="true"
                                 className="flex items-center gap-2 px-4 py-2 border border-[var(--border-color)] hover:border-[var(--foreground)] rounded-full text-xs font-mono uppercase tracking-wider text-[var(--foreground)] transition-colors duration-300 cursor-pointer"
                             >
                                 <SlidersHorizontal size={12} className="opacity-60" />

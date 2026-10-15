@@ -20,6 +20,12 @@ export default function TransitionLink({ children, href, className, onClick, ...
     const pathname = usePathname();
 
     const handleTransition = async (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        // Ouverture dans un nouvel onglet / fenêtre : laisser le navigateur faire
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) {
+            if (onClick) onClick();
+            return;
+        }
+
         e.preventDefault();
 
         // Call any additional onClick handler (e.g. closing mobile menu)

@@ -13,16 +13,23 @@ const sameAs = [
     "https://github.com/ambroise-boutrin",
 ];
 
-const offer = (name: string, description: string, price: number, path: string, unitText?: string) => ({
+// unitCode (UN/CEFACT, ex. "MON" = mois) : prix récurrent, exprimé en UnitPriceSpecification
+const offer = (name: string, description: string, price: number, path: string, unitCode?: string) => ({
     "@type": "Offer",
     "url": `${SITE_URL}${path}`,
     "priceCurrency": "EUR",
-    "priceSpecification": {
-        "@type": "PriceSpecification",
-        "minPrice": price,
-        "priceCurrency": "EUR",
-        ...(unitText ? { "unitText": unitText } : {}),
-    },
+    "priceSpecification": unitCode
+        ? {
+            "@type": "UnitPriceSpecification",
+            "minPrice": price,
+            "priceCurrency": "EUR",
+            "unitCode": unitCode,
+        }
+        : {
+            "@type": "PriceSpecification",
+            "minPrice": price,
+            "priceCurrency": "EUR",
+        },
     "itemOffered": { "@type": "Service", "name": name, "description": description },
 });
 

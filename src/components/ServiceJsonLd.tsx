@@ -2,14 +2,18 @@ import { JsonLdScript } from '@/components/JsonLd';
 import { SITE_URL } from '@/lib/seo';
 
 // Données structurées d'une page d'offre : le service, son prix de départ et le fil d'Ariane.
-export default function ServiceJsonLd({ name, description, path, minPrice, unitText }: {
+export default function ServiceJsonLd({ name, description, path, minPrice, unitCode, unitText }: {
     name: string;
     description: string;
     path: string;
     minPrice: number;
+    /** Code UN/CEFACT de l'unité de facturation (ex. "MON" = par mois). */
+    unitCode?: string;
+    /** @deprecated utiliser unitCode ; conservé pour compatibilité, traité comme un unitCode. */
     unitText?: string;
 }) {
     const url = `${SITE_URL}${path}`;
+    const code = unitCode ?? unitText;
     return (
         <>
             <JsonLdScript data={{
@@ -28,12 +32,18 @@ export default function ServiceJsonLd({ name, description, path, minPrice, unitT
                     "@type": "Offer",
                     "url": url,
                     "priceCurrency": "EUR",
-                    "priceSpecification": {
-                        "@type": "PriceSpecification",
-                        "minPrice": minPrice,
-                        "priceCurrency": "EUR",
-                        ...(unitText ? { "unitText": unitText } : {}),
-                    },
+                    "priceSpecification": code
+                        ? {
+                            "@type": "UnitPriceSpecification",
+                            "minPrice": minPrice,
+                            "priceCurrency": "EUR",
+                            "unitCode": code,
+                        }
+                        : {
+                            "@type": "PriceSpecification",
+                            "minPrice": minPrice,
+                            "priceCurrency": "EUR",
+                        },
                 },
             }} />
             <JsonLdScript data={{

@@ -10,9 +10,12 @@ export default function ContactContent() {
     const [status, setStatus] = useState<FormStatus>("idle");
     const [errorMessage, setErrorMessage] = useState("");
     const messageRef = useRef<HTMLTextAreaElement>(null);
+    const startedAtRef = useRef<number | null>(null);
 
     // Lien « Audit gratuit » (/contact?audit=1) : message prérempli, il ne reste qu'à coller l'adresse du site
     useEffect(() => {
+        // Horodatage du montage : l'API ignore les envois trop rapides (bots)
+        startedAtRef.current = performance.now();
         if (new URLSearchParams(window.location.search).has("audit") && messageRef.current && !messageRef.current.value) {
             messageRef.current.value = "Bonjour, je souhaite un audit gratuit de mon site : ";
         }
@@ -28,12 +31,14 @@ export default function ContactContent() {
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
         const message = formData.get("message") as string;
+        const website = (formData.get("hp_field") as string | null) ?? "";
+        const fillMs = startedAtRef.current !== null ? Math.round(performance.now() - startedAtRef.current) : null;
 
         try {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, message }),
+                body: JSON.stringify({ name, email, message, website, ...(fillMs !== null ? { fillMs } : {}) }),
             });
 
             const data = await res.json();
@@ -71,7 +76,7 @@ export default function ContactContent() {
                     </h1>
 
                     <p className="text-xl text-[var(--text-secondary)] mb-12 max-w-md leading-relaxed">
-                        Vous avez une idée en tête ou vous cherchez un développeur pour rejoindre votre équipe ? N'hésitez pas à me contacter.
+                        Vous avez une idée en tête ou vous cherchez un développeur pour rejoindre votre équipe ? N&apos;hésitez pas à me contacter.
                     </p>
 
                     <div className="space-y-8">
@@ -91,7 +96,7 @@ export default function ContactContent() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">Téléphone</span>
-                                <span className="text-xl md:text-2xl font-serif text-[var(--foreground)]">07 59 87 83 34</span>
+                                <a href="tel:+33759878334" className="text-xl md:text-2xl font-serif text-[var(--foreground)]">07 59 87 83 34</a>
                             </div>
                         </div>
 
@@ -110,17 +115,22 @@ export default function ContactContent() {
                 {/* Right: Form */}
                 <div className="md:w-1/2 bg-[var(--bg-secondary)] p-10 md:p-14 rounded-3xl md:mt-20 border border-[var(--border-color)]">
                     <form className="space-y-8" onSubmit={handleSubmit}>
-                        <div>
-                            <label className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Nom Complet</label>
-                            <input type="text" name="name" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Votre nom" disabled={status === "loading"} />
+                        {/* Pot de miel anti-spam : invisible pour les humains et les lecteurs d'écran */}
+                        <div aria-hidden="true" style={{ position: "absolute", left: "-10000px", top: "auto", width: "1px", height: "1px", overflow: "hidden" }}>
+                            <label htmlFor="contact-website">Ne pas remplir ce champ</label>
+                            <input type="text" id="contact-website" name="hp_field" tabIndex={-1} autoComplete="new-password" data-1p-ignore data-lpignore="true" defaultValue="" />
                         </div>
                         <div>
-                            <label className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Email</label>
-                            <input type="email" name="email" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="votre@email.com" disabled={status === "loading"} />
+                            <label htmlFor="contact-name" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Nom Complet</label>
+                            <input type="text" id="contact-name" name="name" autoComplete="name" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Votre nom" disabled={status === "loading"} />
                         </div>
                         <div>
-                            <label className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Message</label>
-                            <textarea ref={messageRef} name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..." disabled={status === "loading"}></textarea>
+                            <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Email</label>
+                            <input type="email" id="contact-email" name="email" autoComplete="email" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="votre@email.com" disabled={status === "loading"} />
+                        </div>
+                        <div>
+                            <label htmlFor="contact-message" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Message</label>
+                            <textarea ref={messageRef} id="contact-message" name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..." disabled={status === "loading"}></textarea>
                         </div>
 
                         {/* RGPD Consent */}

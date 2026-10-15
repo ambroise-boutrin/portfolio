@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -77,6 +76,8 @@ export default function Navbar() {
                     zIndex: 2147483647
                 }}
                 aria-label="Menu"
+                aria-expanded={isOpen}
+                aria-controls="mobile-menu"
             >
                 {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -85,6 +86,7 @@ export default function Navbar() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
+                        id="mobile-menu"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}

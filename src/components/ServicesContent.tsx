@@ -14,7 +14,7 @@ const packages = [
         priceSuffix: "dès",
         launchOffer: "Offre de lancement : 800 € pour mes 3 prochains projets, en échange d'un témoignage.",
         description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
-        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Devis", "Optimisation Google My Business", "Optimisé Mobile et SEO Local", "Hébergement premium inclus"],
+        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Devis", "Optimisation Google Business Profile", "Optimisé Mobile et SEO Local", "Hébergement premium inclus"],
         cta: "Découvrir l'offre",
         link: "/creation-site-artisan",
         icon: <Zap className="w-5 h-5" />,
@@ -60,7 +60,7 @@ const extraOffers = [
         price: "Offert · 45 min",
         description: "Vitesse, affichage mobile, référencement local, fiche Google : je vous envoie un rapport d'une page sur votre site actuel, sans engagement.",
         cta: "Demander mon audit",
-        link: "/contact",
+        link: "/contact?audit=1",
         icon: <Search className="w-5 h-5" />
     }
 ];
@@ -99,7 +99,7 @@ export default function ServicesContent() {
                             Services<span className="opacity-30">.</span>
                         </h1>
                         <p className="text-lg md:text-3xl text-[var(--text-secondary)] max-w-3xl leading-relaxed font-light">
-                            Trois niveaux d'excellence pour transformer vos ambitions en <span className="text-[var(--foreground)] font-normal">solutions digitales d'exception</span>.
+                            Trois niveaux d’excellence pour transformer vos ambitions en <span className="text-[var(--foreground)] font-normal">solutions digitales d’exception</span>.
                         </p>
                     </motion.div>
                 </div>
@@ -260,6 +260,8 @@ export default function ServicesContent() {
                             >
                                 <button
                                     onClick={() => toggleFaq(i)}
+                                    aria-expanded={isOpen}
+                                    aria-controls={`faq-panel-${i}`}
                                     className="w-full px-6 md:px-8 py-6 flex items-center justify-between gap-6 text-left"
                                 >
                                     <h3 className={`text-lg md:text-xl font-serif transition-colors duration-300 ${isOpen ? 'text-[var(--foreground)]' : 'text-[var(--text-secondary)] group-hover:text-[var(--foreground)]'}`}>
@@ -277,6 +279,7 @@ export default function ServicesContent() {
                                             animate={{ height: "auto", opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
                                             transition={{ duration: 0.3, ease: [0.33, 1, 0.68, 1] }}
+                                            id={`faq-panel-${i}`}
                                             className="overflow-hidden"
                                         >
                                             <div className="px-6 md:px-8 pb-8 pt-2 text-[var(--text-secondary)] leading-relaxed text-sm md:text-base border-t border-[var(--border-color)]/50 mt-2">
@@ -306,7 +309,7 @@ export default function ServicesContent() {
                     <div className="relative z-10 flex flex-col items-center">
                         <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Prêt à passer au niveau supérieur ?</span>
                         <h2 className="text-3xl md:text-8xl font-serif mb-8 md:mb-12 tracking-tight leading-tight text-[var(--background)]">
-                            Donnez à votre vision <br className="hidden md:block" /> la <span className="opacity-40">vitesse</span> qu'elle mérite.
+                            Donnez à votre vision <br className="hidden md:block" /> la <span className="opacity-40">vitesse</span> qu’elle mérite.
                         </h2>
 
                         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full md:w-auto">

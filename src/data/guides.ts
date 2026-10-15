@@ -122,14 +122,14 @@ export const guides: Guide[] = [
         faq: [
             {
                 question: "Combien de temps dure la refonte d'un site vitrine ?",
-                answer: "Comptez en général 3 à 6 semaines pour un site vitrine, selon la quantité de contenu à reprendre et la rapidité des validations.",
+                answer: "Comptez en général 4 à 8 semaines pour une refonte, selon la quantité de contenu à reprendre et la rapidité des validations.",
             },
             {
                 question: "Vais-je perdre mon référencement en refaisant mon site ?",
                 answer: "Pas si la refonte est bien faite : on garde le même nom de domaine, on reprend les contenus qui fonctionnent et on redirige chaque ancienne adresse vers la nouvelle page correspondante.",
             },
         ],
-        cta: { text: "Vous hésitez ? Je regarde votre site et je vous envoie un rapport d'une page, gratuitement.", href: "/contact?audit=1", label: "Demander mon audit gratuit" },
+        cta: { text: "Vous hésitez entre refonte et mise à jour ? Parlons de votre site.", href: "/contact", label: "Me contacter" },
     },
     {
         slug: "fiche-google-business-profile-artisan",

@@ -32,7 +32,7 @@ body.page-transition-exit #page-transition-curtain {
   --text-primary: #050505;
   --text-secondary: #52525b;
   /* Darker gray for readability */
-  --text-tertiary: #a1a1aa;
+  --text-tertiary: #6b6b74;
 
   --bg-primary: #ffffff;
   --bg-secondary: #f4f4f5;
@@ -55,7 +55,7 @@ body.page-transition-exit #page-transition-curtain {
 
     --text-primary: #ffffff;
     --text-secondary: #a1a1aa;
-    --text-tertiary: #52525b;
+    --text-tertiary: #8b8b94;
 
     --bg-primary: #050505;
     --bg-secondary: #0a0a0a;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 interface ParallaxProps {

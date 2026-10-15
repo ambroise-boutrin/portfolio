@@ -206,7 +206,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                             Points Clés du Projet
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {project.competences.map((comp: any, i: number) => (
+                            {project.competences.map((comp, i) => (
                                 <div
                                     key={i}
                                     className="p-6 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)] hover:border-[var(--foreground)]/20 transition-all duration-300 group"
@@ -233,7 +233,7 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                     <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Stack Technique</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {project.stackDetails ? (
-                            project.stackDetails.map((item: any, i: number) => (
+                            project.stackDetails.map((item, i) => (
                                 <div key={i} className="p-6 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)] hover:border-[var(--foreground)]/20 transition-colors">
                                     <h3 className="font-bold text-lg mb-2 text-[var(--foreground)]">{item.name}</h3>
                                     <p className="text-[var(--text-secondary)] text-sm">{item.reason}</p>
@@ -246,12 +246,12 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                 </div>
 
                 {/* Project Video */}
-                {(project as any).video && (
+                {project.video && (
                     <div className="mb-20">
                         <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Démonstration Vidéo</h2>
                         <div className="relative w-full overflow-hidden rounded-xl border border-[var(--border-color)] aspect-[16/9] bg-black">
                             <video 
-                                src={(project as any).video} 
+                                src={project.video} 
                                 controls 
                                 muted
                                 className="w-full h-full object-contain"
@@ -288,11 +288,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                 )}
 
                 {/* Deployment Documentation */}
-                {(project as any).deploymentDocs && (
+                {project.deploymentDocs && (
                     <div className="mb-20">
                         <h2 className="text-3xl font-serif font-bold mb-10 border-b border-[var(--border-color)] pb-4 text-[var(--foreground)]">Documentation de Déploiement</h2>
                         <div className="space-y-8">
-                            {(project as any).deploymentDocs.map((doc: any, i: number) => (
+                            {project.deploymentDocs.map((doc, i) => (
                                 <div key={i} className="p-6 bg-[var(--bg-secondary)] rounded-2xl border border-[var(--border-color)]">
                                     <h3 className="text-xl font-bold mb-4 text-[var(--foreground)]">{doc.step}</h3>
                                     <div className="text-[var(--text-secondary)]">

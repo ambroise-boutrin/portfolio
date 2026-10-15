@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import TransitionLink from "@/components/TransitionLink";
 
 interface Article {
     title: string;
@@ -91,7 +90,7 @@ export default function VeillePage() {
                         Veille <span className="text-[var(--text-secondary)] italic">Technologique</span>
                     </h1>
                     <p className="text-xl md:text-2xl text-[var(--text-secondary)] font-light max-w-3xl leading-relaxed">
-                        Ma sélection d'articles et tendances majeures autour de l'intelligence artificielle et de son impact sur notre quotidien.
+                        Ma sélection d’articles et tendances majeures autour de l’intelligence artificielle et de son impact sur notre quotidien.
                     </p>
                 </motion.div>
 
@@ -137,7 +136,7 @@ export default function VeillePage() {
                                         {article.description}
                                     </p>
                                     <div className="pt-2 flex items-center text-[10px] font-bold uppercase tracking-widest text-[var(--text-tertiary)] group-hover:text-[var(--foreground)] transition-colors">
-                                        Consulter l'article original
+                                        Consulter l’article original
                                         <svg className="w-3 h-3 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>

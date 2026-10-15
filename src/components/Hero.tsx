@@ -1,12 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Github, Linkedin, MapPin } from "lucide-react";
 import ParallaxItem from "@/components/ParallaxItem";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function Hero() {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -64,7 +63,7 @@ export default function Hero() {
                 </h1>
 
                 <h2 className="text-xl md:text-3xl font-light mb-6 text-[var(--foreground)] mt-4 max-w-3xl">
-                    Développeur Web Freelance à Orléans | Des sites performants pour générer plus de <span className="font-semibold text-[var(--text-secondary)]">chiffre d'affaires</span>.
+                    Développeur Web Freelance à Orléans | Des sites performants pour générer plus de <span className="font-semibold text-[var(--text-secondary)]">chiffre d’affaires</span>.
                 </h2>
 
                 {/* Localisation */}
