@@ -70,7 +70,7 @@ export default function RootLayout({
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-[9999] px-4 py-2 bg-black text-white font-bold rounded-md">Passer au contenu</a>
         <Navbar />
         <SmoothScroll>
-          <div id="page-transition-curtain" className="fixed inset-0 bg-[var(--bg-inverse)] z-[99999] opacity-0 pointer-events-none" style={{ transitionDuration: "200ms" }}></div>
+          <div id="page-transition-curtain" className="fixed inset-0 bg-[var(--bg-inverse)] z-[99999] opacity-0 pointer-events-none"></div>
           <div id="main-content" className="relative z-0 min-h-screen"> {/* Main Content Container */}
             {children}
           </div>
