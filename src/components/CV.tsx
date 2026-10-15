@@ -205,17 +205,14 @@ export default function AboutPage() {
                     viewport={{ once: true }}
                     className="rounded-3xl md:rounded-[3rem] bg-[var(--foreground)] text-[var(--background)] p-10 md:p-20 text-center"
                 >
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-6 tracking-tight leading-tight text-[var(--background)]">
-                        Votre site actuel vous rapporte-t-il des clients ?
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif mb-10 tracking-tight leading-tight text-[var(--background)]">
+                        Un projet en tête ?
                     </h2>
-                    <p className="text-base md:text-lg opacity-70 max-w-2xl mx-auto mb-10 text-[var(--background)]">
-                        Je vous envoie gratuitement un audit d’une page : vitesse, affichage mobile, référencement local et fiche Google. Sans engagement.
-                    </p>
                     <Link
                         href="/contact"
                         className="inline-flex items-center gap-3 px-10 py-5 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:scale-105 transition-transform"
                     >
-                        Demander mon audit gratuit <ArrowUpRight size={18} />
+                        Me contacter <ArrowUpRight size={18} />
                     </Link>
                 </motion.div>
             </section>

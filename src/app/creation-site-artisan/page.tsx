@@ -32,7 +32,7 @@ export default function CreationSiteArtisan() {
                 {
                     image: "/images/site-web-agence-creative-offtime.webp",
                     title: "Acquisition Locale (SEO)",
-                    description: "J'optimise votre site et votre fiche Google My Business pour que vous apparaissiez en premier quand un client cherche votre métier dans votre ville."
+                    description: "J'optimise votre site et votre fiche Google Business Profile pour que vous apparaissiez en premier quand un client cherche votre métier dans votre ville."
                 },
                 {
                     image: "/images/site-e-commerce-vetements-garanches.webp",
@@ -49,7 +49,7 @@ export default function CreationSiteArtisan() {
                 "Site vitrine sur-mesure (1 à 5 pages)",
                 "Développement ultra-rapide avec Next.js",
                 "Optimisation totale pour téléphones mobiles (Mobile-first)",
-                "Configuration SEO Local et Google My Business",
+                "Configuration SEO Local et Google Business Profile",
                 "Intégration d'un formulaire de contact et/ou demande de devis",
                 "Hébergement premium et sécurisé (Certificat SSL)",
                 "Formation à la modification des contenus de base"

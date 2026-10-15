@@ -33,6 +33,7 @@ export default function Manifesto() {
                                 src="/images/IMG_4128.jpeg"
                                 alt="Ambroise Boutrin"
                                 fill
+                                sizes="(min-width: 768px) 33vw, 100vw"
                                 className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
                             />
                             {/* Fallback visual if no image */}

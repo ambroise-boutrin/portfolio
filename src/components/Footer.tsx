@@ -15,6 +15,16 @@ export default function Footer() {
                     <TransitionLink href="/mentions-legales" className="text-[10px] hover:text-[var(--foreground)] transition-colors underline mt-2">
                         Mentions Légales
                     </TransitionLink>
+                    <button
+                        type="button"
+                        onClick={() => {
+                            localStorage.removeItem("cookie_consent");
+                            window.location.reload();
+                        }}
+                        className="text-[10px] uppercase tracking-widest text-center md:text-left hover:text-[var(--foreground)] transition-colors underline cursor-pointer"
+                    >
+                        Gérer les cookies
+                    </button>
                 </div>
 
                 {/* Aesthetic Button - Centered */}

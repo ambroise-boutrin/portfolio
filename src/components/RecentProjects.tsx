@@ -49,8 +49,8 @@ export default function RecentProjects() {
                             className="group flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors"
                         >
                             <span className="relative overflow-hidden pb-1">
-                                <span className="block transition-transform duration-300 group-hover:-translate-y-full">Voir l'archive complète</span>
-                                <span className="absolute inset-0 top-full transition-transform duration-300 group-hover:-translate-y-full">Voir l'archive complète</span>
+                                <span className="block transition-transform duration-300 group-hover:-translate-y-full">Voir l’archive complète</span>
+                                <span className="absolute inset-0 top-full transition-transform duration-300 group-hover:-translate-y-full">Voir l’archive complète</span>
                                 <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--foreground)] scale-x-100 group-hover:scale-x-0 origin-right transition-transform duration-300"></span>
                             </span>
                             <span className="w-8 h-8 rounded-full border border-[var(--border-color)] flex items-center justify-center group-hover:bg-[var(--foreground)] group-hover:text-[var(--background)] transition-all duration-300">

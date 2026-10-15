@@ -1,4 +1,4 @@
-import React from 'react';
+import { JsonLdScript } from '@/components/JsonLd';
 
 type ProjectData = {
     title: string;
@@ -36,7 +36,8 @@ export default function ProjectJsonLd({ project }: { project: ProjectData }) {
 
     const creativeWorkJsonLd = {
         "@context": "https://schema.org",
-        "@type": project.category.includes('Web') ? "WebApplication" : "CreativeWork",
+        // CreativeWork pour tous : la catégorie ne permet pas de distinguer de façon fiable une appli d'un site vitrine
+        "@type": "CreativeWork",
         "name": project.title,
         "description": project.description,
         "url": `https://www.ambroise-boutrin.fr/projets/${project.slug}`,
@@ -49,14 +50,8 @@ export default function ProjectJsonLd({ project }: { project: ProjectData }) {
 
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(creativeWorkJsonLd) }}
-            />
+            <JsonLdScript data={jsonLd} />
+            <JsonLdScript data={creativeWorkJsonLd} />
         </>
     );
 }

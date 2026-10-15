@@ -11,10 +11,52 @@ const escapeHtml = (value: string) =>
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
 
-export async function POST(request: NextRequest) {
+const ALLOWED_HOSTS = new Set(["www.ambroise-boutrin.fr", "ambroise-boutrin.fr", "localhost", "127.0.0.1"]);
+const MIN_FILL_DELAY_MS = 3000;
+
+// Origin absente : on laisse passer (certains clients ne l'envoient pas).
+// Origin présente : uniquement le domaine, les previews Vercel et le local.
+const isAllowedOrigin = (origin: string | null) => {
+    if (!origin) return true;
     try {
-        const body = await request.json();
-        const { name, email, message } = body;
+        const { hostname } = new URL(origin);
+        return ALLOWED_HOSTS.has(hostname) || hostname.endsWith(".vercel.app");
+    } catch {
+        return false;
+    }
+};
+
+export async function POST(request: NextRequest) {
+    if (!isAllowedOrigin(request.headers.get("origin"))) {
+        return NextResponse.json({ error: "Origine non autorisée." }, { status: 403 });
+    }
+
+    let body: unknown;
+    try {
+        body = await request.json();
+    } catch {
+        return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+    }
+    if (typeof body !== "object" || body === null || Array.isArray(body)) {
+        return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+    }
+
+    try {
+        const { name, email, message, website, fillMs } = body as Record<string, unknown>;
+
+        // Pot de miel : un humain ne voit pas ce champ. Réponse 200 silencieuse pour ne pas renseigner le bot.
+        if (typeof website === "string" ? website.trim() !== "" : website != null) {
+            return NextResponse.json({ ok: true });
+        }
+
+        // Délai minimal de saisie : envoi en moins de 3 s = bot. Champ facultatif (compatibilité).
+        // Durée de saisie mesurée dans le navigateur (performance.now), indépendante de son horloge.
+        if (fillMs !== undefined && fillMs !== null) {
+            const ms = Number(fillMs);
+            if (!Number.isFinite(ms) || ms < MIN_FILL_DELAY_MS) {
+                return NextResponse.json({ ok: true });
+            }
+        }
 
         if (
             typeof name !== "string" || typeof email !== "string" || typeof message !== "string" ||

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, ChevronDown } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 import { ReactNode } from "react";
 
@@ -66,7 +66,7 @@ export default function ServiceLandingPage({
             {/* Description et Intro */}
             <section id="details" className="py-24 md:py-32 px-6">
                 <div className="max-w-3xl mx-auto text-center">
-                    <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)] mb-8">L'enjeu.</h2>
+                    <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)] mb-8">L’enjeu.</h2>
                     <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed">
                         {description}
                     </p>
@@ -143,17 +143,17 @@ export default function ServiceLandingPage({
                     </div>
                     
                     <div className="p-10 rounded-3xl bg-[var(--foreground)] text-[var(--background)] text-center relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--background)]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
                         <h3 className="text-2xl font-serif mb-2 relative z-10">Investissement</h3>
-                        <p className="text-white/60 mb-8 relative z-10">Budget transparent et adapté.</p>
-                        <div className="text-xl text-white/60 font-serif italic mb-2 relative z-10">À partir de</div>
+                        <p className="text-[var(--background)]/60 mb-8 relative z-10">Budget transparent et adapté.</p>
+                        <div className="text-xl text-[var(--background)]/60 font-serif italic mb-2 relative z-10">À partir de</div>
                         <div className="text-5xl md:text-7xl font-serif mb-4 relative z-10">
                             {priceStartingAt}
                         </div>
                         {priceNote && (
-                            <p className="text-sm font-medium mb-4 mx-auto max-w-sm px-4 py-3 rounded-xl border border-white/20 bg-white/5 relative z-10">{priceNote}</p>
+                            <p className="text-sm font-medium mb-4 mx-auto max-w-sm px-4 py-3 rounded-xl border border-[var(--background)]/20 bg-[var(--background)]/5 relative z-10">{priceNote}</p>
                         )}
-                        <p className="text-white/80 text-sm mb-10 relative z-10">Paiement échelonné possible. Pas de frais cachés.</p>
+                        <p className="text-[var(--background)]/80 text-sm mb-10 relative z-10">Paiement échelonné possible. Pas de frais cachés.</p>
                         
                         <Link
                             href="/contact"

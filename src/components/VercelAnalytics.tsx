@@ -17,9 +17,13 @@ export default function VercelAnalytics() {
 
         checkConsent();
 
-        // Listen to custom event for immediate reaction
+        // "storage" : changement depuis un autre onglet ; "cookie_consent_updated" : émis par CookieBanner dans cet onglet
         window.addEventListener("storage", checkConsent);
-        return () => window.removeEventListener("storage", checkConsent);
+        window.addEventListener("cookie_consent_updated", checkConsent);
+        return () => {
+            window.removeEventListener("storage", checkConsent);
+            window.removeEventListener("cookie_consent_updated", checkConsent);
+        };
     }, []);
 
     if (!consentGranted) return null;
