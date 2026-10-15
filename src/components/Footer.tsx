@@ -2,6 +2,7 @@
 
 import TransitionLink from "@/components/TransitionLink";
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { clearAnalyticsCookies } from "@/lib/consent";
 
 export default function Footer() {
     return (
@@ -19,6 +20,7 @@ export default function Footer() {
                         type="button"
                         onClick={() => {
                             localStorage.removeItem("cookie_consent");
+                            clearAnalyticsCookies();
                             window.location.reload();
                         }}
                         className="text-[10px] uppercase tracking-widest text-center md:text-left hover:text-[var(--foreground)] transition-colors underline cursor-pointer"

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { clearAnalyticsCookies } from "@/lib/consent";
 
 export default function CookieBanner() {
     const [showBanner, setShowBanner] = useState(false);
@@ -26,6 +27,7 @@ export default function CookieBanner() {
 
     const handleDecline = () => {
         localStorage.setItem("cookie_consent", "denied");
+        clearAnalyticsCookies();
         setShowBanner(false);
     };
 

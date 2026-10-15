@@ -29,7 +29,7 @@ export const guides: Guide[] = [
         metaTitle: "Prix d'un site internet pour artisan en 2026 : combien prévoir ?",
         description: "Combien coûte un site internet pour un artisan : fourchettes de prix selon la solution (outil en ligne, freelance, agence), ce qui fait varier le devis et les coûts annuels à prévoir.",
         publishedAt: "2026-10-13",
-        updatedAt: "2026-10-13",
+        updatedAt: "2026-10-15",
         readingMinutes: 6,
         answer: "Pour un artisan, un site vitrine de quelques pages coûte en général entre 0 € (outil à faire soi-même) et 5 000 € et plus (agence). Avec un développeur freelance, comptez le plus souvent entre 800 € et 2 500 € pour un site sur mesure, plus 100 à 600 € par an pour le nom de domaine, l'hébergement et la maintenance.",
         sections: [
@@ -64,7 +64,7 @@ export const guides: Guide[] = [
             {
                 heading: "Mes tarifs, pour comparer",
                 paragraphs: [
-                    "Je suis développeur web freelance à Orléans. Le Pack Visibilité (site vitrine de 1 à 5 pages, formulaire de devis, fiche Google et référencement local) démarre à 1 490 €, et je le propose à 800 € pour mes 3 prochains projets en échange d'un témoignage. La maintenance démarre à 49 € par mois. Le prix est fixé avant de commencer.",
+                    "Je suis développeur web freelance à Orléans. Le Pack Visibilité (site vitrine de 1 à 5 pages, formulaire de devis, fiche Google, référencement local et 1re année d'hébergement incluse) démarre à 1 490 €, et je le propose à 800 € pour mes 3 prochains projets en échange d'un témoignage. La maintenance démarre à 49 € par mois, sans engagement. Le prix est fixé avant de commencer.",
                 ],
             },
         ],

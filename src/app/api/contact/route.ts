@@ -26,6 +26,42 @@ const isAllowedOrigin = (origin: string | null) => {
     }
 };
 
+// Limite de débit : RATE_LIMIT_MAX envois par IP sur une fenêtre fixe de RATE_LIMIT_WINDOW_MS.
+// Stockage en mémoire, donc par instance serverless : chaque instance (et chaque démarrage à froid)
+// a son propre compteur. C'est une protection « meilleur effort », pas une garantie globale.
+const RATE_LIMIT_MAX = 5;
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000;
+const RATE_LIMIT_MAX_ENTRIES = 10_000;
+const rateLimitHits = new Map<string, { count: number; resetAt: number }>();
+
+const getClientIp = (request: NextRequest) => {
+    const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim();
+    return forwarded || request.headers.get("x-real-ip")?.trim() || "unknown";
+};
+
+const pruneExpired = (now: number) => {
+    for (const [ip, entry] of rateLimitHits) {
+        if (entry.resetAt <= now) rateLimitHits.delete(ip);
+    }
+};
+
+// Retourne true si la requête est autorisée (et la comptabilise), false si la limite est atteinte.
+const consumeRateLimit = (ip: string) => {
+    const now = Date.now();
+    pruneExpired(now);
+
+    const entry = rateLimitHits.get(ip);
+    if (!entry) {
+        // Garde-fou mémoire : si la Map est saturée (IP falsifiées en masse), on la vide.
+        if (rateLimitHits.size >= RATE_LIMIT_MAX_ENTRIES) rateLimitHits.clear();
+        rateLimitHits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+        return true;
+    }
+    if (entry.count >= RATE_LIMIT_MAX) return false;
+    entry.count += 1;
+    return true;
+};
+
 export async function POST(request: NextRequest) {
     if (!isAllowedOrigin(request.headers.get("origin"))) {
         return NextResponse.json({ error: "Origine non autorisée." }, { status: 403 });
@@ -39,6 +75,14 @@ export async function POST(request: NextRequest) {
     }
     if (typeof body !== "object" || body === null || Array.isArray(body)) {
         return NextResponse.json({ error: "Requête invalide." }, { status: 400 });
+    }
+
+    // Appliquée à toute requête POST bien formée, bots compris (avant pot de miel et délai de saisie).
+    if (!consumeRateLimit(getClientIp(request))) {
+        return NextResponse.json(
+            { error: "Trop d'envois, réessayez plus tard." },
+            { status: 429 }
+        );
     }
 
     try {

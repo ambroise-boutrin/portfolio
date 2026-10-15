@@ -23,10 +23,10 @@ export const faqs = [
     },
     {
         question: "Que se passe-t-il une fois le site en ligne ?",
-        answer: "La livraison ne marque pas la fin de notre collaboration. Je propose un Pack Sérénité (maintenance) pour gérer l'hébergement, la sécurité et les mises à jour régulières. Vous pouvez vous concentrer sur votre métier, je m'occupe de la technique."
+        answer: "La livraison ne marque pas la fin de notre collaboration. Je propose un Pack Sérénité (maintenance) pour gérer l'hébergement, la sécurité et les mises à jour régulières, sans engagement et résiliable chaque mois. Vous pouvez vous concentrer sur votre métier, je m'occupe de la technique."
     },
     {
         question: "Acceptez-vous des clients en dehors de la région d'Orléans ?",
-        answer: "Oui. Bien que je sois basé à Orléans et disponible pour des rendez-vous en présentiel dans le Centre-Val de Loire, je travaille régulièrement avec des entreprises dans toute la France grâce à des outils de collaboration à distance."
+        answer: "Oui. Bien que je sois basé à Orléans et disponible pour des rendez-vous en présentiel dans le Centre-Val de Loire, je travaille à distance avec des entreprises partout en France."
     }
 ];

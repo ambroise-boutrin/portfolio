@@ -21,21 +21,21 @@ export default function MaintenanceSiteWeb() {
         <ServiceLandingPage
             targetAudience="Toutes Entreprises"
             title={<>Maintenance de <br className="hidden md:block"/> <span className="opacity-40">Site Web et Sécurité</span></>}
-            subtitle="Une assurance indispensable pour garantir la disponibilité de votre outil de travail."
-            description="Avoir un beau site c'est bien, mais s'il se fait pirater ou s'il tombe en panne pendant une campagne de communication, c'est une perte sèche pour votre activité. Le Pack Sérénité vous libère de toute la gestion technique : je m'occupe de l'hébergement, des mises à jour complexes, des sauvegardes quotidiennes et de la sécurité. Vous pouvez vous concentrer sur votre métier."
+            subtitle="Je m'occupe de la partie technique de votre site pour qu'il reste en ligne et à jour."
+            description="Avoir un beau site c'est bien, mais s'il se fait pirater ou s'il tombe en panne pendant une campagne de communication, c'est une perte sèche pour votre activité. Le Pack Sérénité vous libère de toute la gestion technique : je m'occupe de l'hébergement, des mises à jour, des sauvegardes et de la sécurité. Vous pouvez vous concentrer sur votre métier."
             priceStartingAt="49€ / mois"
-            priceNote="Essentiel 49 € · Pro 89 € · Croissance 149 € par mois."
+            priceNote="Essentiel 49 € · Pro 89 € · Croissance 149 € par mois. Sans engagement, résiliable chaque mois."
             primaryCtaText="Sécuriser mon site"
             benefits={[
                 {
                     image: "/images/hound-search.webp",
-                    title: "Protection Anti-Piratage",
-                    description: "Je déploie des pare-feux avancés et je mets à jour les failles de sécurité potentielles avant même qu'elles ne soient exploitées."
+                    title: "Sécurité et mises à jour",
+                    description: "Certificat SSL actif en permanence et mises à jour de sécurité appliquées rapidement après leur publication pour les outils utilisés par votre site."
                 },
                 {
                     image: "/images/analyse-graphes-python.png",
-                    title: "Disponibilité 99.9% (Uptime)",
-                    description: "Je supervise (monitoring) votre site 24h/24. Si le serveur tombe en panne, je suis alerté immédiatement pour intervenir."
+                    title: "Hébergement et sauvegardes",
+                    description: "Votre site est hébergé sur Vercel et son code est sauvegardé sur GitHub. Je vérifie qu'il reste en ligne et j'interviens en cas de problème."
                 },
                 {
                     image: "/images/gallery/erp/gestion-catalogue-erp.png",
@@ -44,15 +44,16 @@ export default function MaintenanceSiteWeb() {
                 }
             ]}
             deliverables={[
-                "Hébergement sur serveur privé ultra-rapide (VPS)",
+                "Hébergement sur Vercel",
                 "Renouvellement automatique du nom de domaine et SSL",
-                "Sauvegardes chiffrées automatiques (quotidiennes)",
+                "Code versionné et sauvegardé sur GitHub",
                 "Mises à jour des technologies et dépendances (Node.js, React, CMS)",
-                "Monitoring du site (alertes de pannes 24/7)",
-                "Correction de bugs critiques prioritaire",
+                "Surveillance de la disponibilité du site",
+                "Correction des bugs bloquants en priorité",
                 "Formule Pro (89 €/mois) : 1 heure de modifications et un rapport mensuel",
                 "Formule Croissance (149 €/mois) : 2 heures de modifications et un article SEO par mois",
-                "Support technique par email avec réponse sous 24h"
+                "Support technique par email avec réponse sous 24 h ouvrées",
+                "Sans engagement, résiliable chaque mois"
             ]}
         />
         </>

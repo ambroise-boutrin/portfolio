@@ -10,7 +10,7 @@ export default function Manifesto() {
 
             {/* Background Texture over the whole section */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light"></div>
+                <div className="absolute inset-0 bg-[url('/images/noise.svg')] opacity-20 mix-blend-soft-light"></div>
             </div>
 
 
@@ -51,7 +51,7 @@ export default function Manifesto() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-3xl md:text-6xl lg:text-7xl font-serif text-[var(--foreground)] leading-[1.1] mb-6 md:mb-8 text-balance"
                         >
-                            Je construis des écosystèmes digitaux <span className="text-[var(--text-secondary)] italic">remarquables.</span>
+                            Je crée des sites et des outils web <span className="text-[var(--text-secondary)] italic">sur mesure.</span>
                         </motion.h2>
 
                         <motion.div
@@ -61,11 +61,11 @@ export default function Manifesto() {
                             className="space-y-4 md:space-y-6 text-base md:text-xl text-[var(--text-secondary)] font-light max-w-2xl"
                         >
                             <p className="md:hidden">
-                                Au-delà du code, je façonne des identités digitales.
+                                Du design au code, je m&apos;occupe de tout.
                             </p>
                             <p className="hidden md:block">
-                                Au-delà du code et du design, je façonne des identités.
-                                Mon approche fusionne rigueur technique et sensibilité artistique pour créer des plateformes qui convertissent.
+                                Je m&apos;occupe du design comme du code, de la maquette à la mise en ligne.
+                                Mon objectif : un site simple à utiliser, qui donne envie de vous contacter.
                             </p>
                             <div className="flex items-center gap-4 pt-4">
                                 <span className="h-px w-12 bg-[var(--border-color)]"></span>

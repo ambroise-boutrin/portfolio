@@ -14,7 +14,7 @@ const packages = [
         priceSuffix: "dès",
         launchOffer: "Offre de lancement : 800 € pour mes 3 prochains projets, en échange d'un témoignage.",
         description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
-        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Devis", "Optimisation Google Business Profile", "Optimisé Mobile et SEO Local", "Hébergement premium inclus"],
+        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Devis", "Optimisation Google Business Profile", "Optimisé Mobile et SEO Local", "1re année d'hébergement incluse"],
         cta: "Découvrir l'offre",
         link: "/creation-site-artisan",
         icon: <Zap className="w-5 h-5" />,
@@ -38,7 +38,7 @@ const packages = [
         price: "49€",
         priceSuffix: "/ mois dès",
         description: "Une assurance indispensable pour votre activité en ligne. Trois formules selon le temps d'intervention dont vous avez besoin.",
-        features: ["Essentiel 49 €/mois : hébergement, SSL, sauvegardes, sécurité", "Pro 89 €/mois : + 1h de modifications et rapport mensuel", "Croissance 149 €/mois : + 2h et un article SEO par mois", "Monitoring Serveur 24/7", "Sans engagement après 12 mois", "Support Technique Prioritaire"],
+        features: ["Essentiel 49 €/mois : hébergement, SSL, sauvegardes, sécurité", "Pro 89 €/mois : + 1h de modifications et rapport mensuel", "Croissance 149 €/mois : + 2h et un article SEO par mois", "Surveillance de la disponibilité", "Sans engagement, résiliable chaque mois", "Support par email sous 24 h ouvrées"],
         cta: "Découvrir l'offre",
         link: "/maintenance-site-web",
         icon: <Shield className="w-5 h-5" />,
@@ -99,7 +99,7 @@ export default function ServicesContent() {
                             Services<span className="opacity-30">.</span>
                         </h1>
                         <p className="text-lg md:text-3xl text-[var(--text-secondary)] max-w-3xl leading-relaxed font-light">
-                            Trois niveaux d’excellence pour transformer vos ambitions en <span className="text-[var(--foreground)] font-normal">solutions digitales d’exception</span>.
+                            Trois offres claires pour créer, refaire ou entretenir <span className="text-[var(--foreground)] font-normal">le site de votre entreprise</span>.
                         </p>
                     </motion.div>
                 </div>
@@ -208,7 +208,7 @@ export default function ServicesContent() {
                             Une approche méticuleuse du <span className="opacity-30">Pixel au Code.</span>
                         </h2>
                         <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-md">
-                            Chaque projet suit une méthodologie rigoureuse pour garantir des performances optimales et une expérience utilisateur inégalée.
+                            Chaque projet suit les mêmes quatre étapes, et vous validez chacune avant de passer à la suivante.
                         </p>
                     </div>
 
@@ -309,7 +309,7 @@ export default function ServicesContent() {
                     <div className="relative z-10 flex flex-col items-center">
                         <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Prêt à passer au niveau supérieur ?</span>
                         <h2 className="text-3xl md:text-8xl font-serif mb-8 md:mb-12 tracking-tight leading-tight text-[var(--background)]">
-                            Donnez à votre vision <br className="hidden md:block" /> la <span className="opacity-40">vitesse</span> qu’elle mérite.
+                            Parlons de votre <br className="hidden md:block" /> <span className="opacity-40">prochain</span> site.
                         </h2>
 
                         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full md:w-auto">
