@@ -55,6 +55,7 @@ import Navbar from "@/components/Navbar";
 import CookieBanner from "@/components/CookieBanner";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import VercelAnalytics from "@/components/VercelAnalytics";
+import VercelSpeedInsights from "@/components/VercelSpeedInsights";
 
 // ...
 
@@ -82,6 +83,7 @@ export default function RootLayout({
         </SmoothScroll>
         <JsonLd />
         <VercelAnalytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
