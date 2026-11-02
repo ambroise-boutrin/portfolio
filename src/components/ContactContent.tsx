@@ -145,7 +145,7 @@ export default function ContactContent() {
                         </div>
                         <div>
                             <label htmlFor="contact-type" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Votre projet</label>
-                            <select id="contact-type" name="projectType" defaultValue="" className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)]" disabled={status === "loading"}>
+                            <select id="contact-type" name="projectType" defaultValue="" className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] [&_option]:bg-[var(--background)] [&_option]:text-[var(--foreground)]" disabled={status === "loading"}>
                                 <option value="">Choisir (facultatif)</option>
                                 <option value="Créer un site">Créer un site</option>
                                 <option value="Refaire mon site">Refaire mon site</option>
