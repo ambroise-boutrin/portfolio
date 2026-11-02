@@ -18,6 +18,8 @@ export default function ContactContent() {
         startedAtRef.current = performance.now();
         if (new URLSearchParams(window.location.search).has("audit") && messageRef.current && !messageRef.current.value) {
             messageRef.current.value = "Bonjour, je souhaite un audit gratuit de mon site : ";
+            const typeSelect = document.getElementById("contact-type") as HTMLSelectElement | null;
+            if (typeSelect) typeSelect.value = "Audit gratuit";
         }
     }, []);
 
@@ -31,6 +33,9 @@ export default function ContactContent() {
         const name = formData.get("name") as string;
         const email = formData.get("email") as string;
         const message = formData.get("message") as string;
+        const phone = ((formData.get("phone") as string | null) ?? "").trim();
+        const projectType = ((formData.get("projectType") as string | null) ?? "").trim();
+        const city = ((formData.get("city") as string | null) ?? "").trim();
         const website = (formData.get("hp_field") as string | null) ?? "";
         const fillMs = startedAtRef.current !== null ? Math.round(performance.now() - startedAtRef.current) : null;
 
@@ -38,7 +43,7 @@ export default function ContactContent() {
             const res = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, message, website, ...(fillMs !== null ? { fillMs } : {}) }),
+                body: JSON.stringify({ name, email, message, phone, projectType, city, website, ...(fillMs !== null ? { fillMs } : {}) }),
             });
 
             const data = await res.json();
@@ -71,8 +76,8 @@ export default function ContactContent() {
                 {/* Left: Info */}
                 <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h1 className="text-5xl md:text-8xl font-serif mb-10 tracking-tighter text-[var(--foreground)]">
-                        Parlons <br />
-                        <span className="italic text-[var(--text-secondary)]">Projets</span>
+                        Parlons de <br />
+                        <span className="italic text-[var(--text-secondary)]">votre projet</span>
                     </h1>
 
                     <p className="text-xl text-[var(--text-secondary)] mb-12 max-w-md leading-relaxed">
@@ -127,6 +132,29 @@ export default function ContactContent() {
                         <div>
                             <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Email</label>
                             <input type="email" id="contact-email" name="email" autoComplete="email" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="votre@email.com" disabled={status === "loading"} />
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                            <div>
+                                <label htmlFor="contact-phone" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Téléphone <span className="normal-case font-normal tracking-normal">(facultatif)</span></label>
+                                <input type="tel" id="contact-phone" name="phone" autoComplete="tel" maxLength={30} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="06 12 34 56 78" disabled={status === "loading"} />
+                            </div>
+                            <div>
+                                <label htmlFor="contact-city" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Ville <span className="normal-case font-normal tracking-normal">(facultatif)</span></label>
+                                <input type="text" id="contact-city" name="city" autoComplete="address-level2" maxLength={100} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Orléans" disabled={status === "loading"} />
+                            </div>
+                        </div>
+                        <div>
+                            <label htmlFor="contact-type" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Votre projet</label>
+                            <select id="contact-type" name="projectType" defaultValue="" className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)]" disabled={status === "loading"}>
+                                <option value="">Choisir (facultatif)</option>
+                                <option value="Créer un site">Créer un site</option>
+                                <option value="Refaire mon site">Refaire mon site</option>
+                                <option value="Boutique en ligne">Boutique en ligne</option>
+                                <option value="Maintenance">Maintenance de mon site</option>
+                                <option value="Application métier">Application métier</option>
+                                <option value="Audit gratuit">Audit gratuit</option>
+                                <option value="Autre">Autre</option>
+                            </select>
                         </div>
                         <div>
                             <label htmlFor="contact-message" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Message</label>

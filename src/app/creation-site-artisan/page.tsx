@@ -31,28 +31,28 @@ export default function CreationSiteArtisan() {
             benefits={[
                 {
                     image: "/images/site-web-agence-creative-offtime.webp",
-                    title: "Acquisition Locale (SEO)",
+                    title: "Trouvé sur Google",
                     description: "J'optimise votre site et votre fiche Google Business Profile pour que les clients qui cherchent votre métier dans votre ville vous trouvent plus facilement."
                 },
                 {
                     image: "/images/site-e-commerce-vetements-garanches.webp",
-                    title: "Image de Marque Soignée",
+                    title: "Une image soignée",
                     description: "Fini les sites 'faits maison' qui dévalorisent votre expertise. Je crée un design sur mesure qui inspire confiance à vos futurs clients."
                 },
                 {
                     image: "/images/shots/site-web-assainissement-orleans.webp",
-                    title: "Contact Facilité",
+                    title: "Facile à contacter",
                     description: "L'interface est pensée pour faciliter le premier contact : boutons d'appels visibles, formulaires de devis et de contact simplifiés."
                 }
             ]}
             deliverables={[
                 "Site vitrine sur-mesure (1 à 5 pages)",
-                "Développement ultra-rapide avec Next.js",
-                "Optimisation totale pour téléphones mobiles (Mobile-first)",
-                "Configuration SEO Local et Google Business Profile",
+                "Site rapide à charger, fait sur mesure (pas de modèle)",
+                "Pensé d'abord pour le téléphone, là où vos clients vous cherchent",
+                "Référencement local et réglage de votre fiche Google",
                 "Intégration d'un formulaire de contact et/ou demande de devis",
                 "1re année d'hébergement incluse (avec certificat SSL)",
-                "Formation à la modification des contenus de base"
+                "Je vous montre comment modifier vos textes et photos"
             ]}
         />
         <section className="pb-24 px-6 bg-[var(--background)]">

@@ -9,12 +9,12 @@ import { faqs } from "@/data/faq";
 const packages = [
     {
         name: "Pack Visibilité",
-        subtitle: "L'impact immédiat.",
+        subtitle: "Être trouvé près de chez vous.",
         price: "1 490€",
         priceSuffix: "dès",
         launchOffer: "Offre de lancement : 800 € pour mes 3 prochains projets, en échange d'un témoignage.",
-        description: "Idéal pour les artisans locaux. Un site vitrine performant pour présenter votre activité et capturer des leads.",
-        features: ["Site Vitrine 1 à 5 pages", "Développement Next.js / Tailwind", "Formulaire de Contact et Devis", "Optimisation Google Business Profile", "Optimisé Mobile et SEO Local", "1re année d'hébergement incluse"],
+        description: "Idéal pour les artisans et commerces locaux. Un site clair qui présente votre travail et vous apporte des demandes de devis.",
+        features: ["Site Vitrine 1 à 5 pages", "Fait sur mesure, rapide à charger", "Formulaire de Contact et Devis", "Optimisation Google Business Profile", "Lisible sur téléphone, pensé pour Google dans votre ville", "1re année d'hébergement incluse"],
         cta: "Découvrir l'offre",
         link: "/creation-site-artisan",
         icon: <Zap className="w-5 h-5" />,
@@ -26,7 +26,7 @@ const packages = [
         price: "1 990€",
         priceSuffix: "dès",
         description: "Votre site actuel est lent ou invisible sur Google ? Refonte complète ou boutique en ligne, pensée pour transformer vos visiteurs en clients.",
-        features: ["Refonte de site existant / Boutique en Ligne", "Audit de vitesse et SEO avant / après", "Référencement local et fiche Google", "Intégration Paiement Sécurisé", "CMS (Gestion de contenu)", "Analytics et Conformité RGPD"],
+        features: ["Refonte de site existant / Boutique en Ligne", "Audit de vitesse et SEO avant / après", "Référencement local et fiche Google", "Intégration Paiement Sécurisé", "Espace pour modifier vos textes et photos", "Statistiques de visite et conformité RGPD"],
         cta: "Demander un devis",
         link: "/contact",
         icon: <Sparkles className="w-5 h-5" />,
@@ -34,10 +34,10 @@ const packages = [
     },
     {
         name: "Pack Sérénité",
-        subtitle: "Maintenance et Assurance.",
+        subtitle: "Maintenance et tranquillité.",
         price: "49€",
         priceSuffix: "/ mois dès",
-        description: "Une assurance indispensable pour votre activité en ligne. Trois formules selon le temps d'intervention dont vous avez besoin.",
+        description: "Je m'occupe de la technique pour que votre site reste en ligne, à jour et sécurisé. Trois formules selon le temps d'intervention dont vous avez besoin.",
         features: ["Essentiel 49 €/mois : hébergement, SSL, sauvegardes, sécurité", "Pro 89 €/mois : + 1h de modifications et rapport mensuel", "Croissance 149 €/mois : + 2h et un article SEO par mois", "Surveillance de la disponibilité", "Sans engagement, résiliable chaque mois", "Support par email sous 24 h ouvrées"],
         cta: "Découvrir l'offre",
         link: "/maintenance-site-web",
@@ -66,10 +66,10 @@ const extraOffers = [
 ];
 
 const steps = [
-    { title: "Découverte", desc: "Analyse de vos besoins, audit et définition de la stratégie business.", icon: "01" },
-    { title: "Maquette", desc: "Direction artistique et maquette interactive pour valider l'expérience.", icon: "02" },
-    { title: "Développement", desc: "Intégration au pixel près, animations et développement backend robuste.", icon: "03" },
-    { title: "Mise en ligne", desc: "Tests rigoureux, mise en production et accompagnement post-lancement.", icon: "04" }
+    { title: "Premier échange", desc: "30 minutes au téléphone, en visio ou autour d'un café à Orléans. Je vous envoie ensuite un devis au prix fixe, avec les pages prévues et la date de mise en ligne.", icon: "01" },
+    { title: "Vos contenus", desc: "Vous m'envoyez vos photos et répondez à un court questionnaire sur votre activité. J'écris les textes à partir de vos réponses, vous les relisez.", icon: "02" },
+    { title: "Maquette puis site", desc: "Vous validez la page d'accueil avant que je construise le reste. Comptez 2 à 4 semaines pour un site vitrine.", icon: "03" },
+    { title: "Mise en ligne", desc: "Le site part en ligne sur votre nom de domaine, à votre nom. Je règle votre fiche Google et je vous montre comment changer vos textes et photos.", icon: "04" }
 ];
 
 export default function ServicesContent() {
@@ -203,12 +203,15 @@ export default function ServicesContent() {
             <div className="max-w-7xl mx-auto px-6 mt-32 md:mt-48">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
                     <div>
-                        <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Workflow Professionnel</span>
+                        <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Concrètement</span>
                         <h2 className="text-4xl md:text-6xl font-serif text-[var(--foreground)] mb-8 leading-tight">
-                            Une approche méticuleuse du <span className="opacity-30">Pixel au Code.</span>
+                            Comment ça <span className="opacity-30">se passe.</span>
                         </h2>
-                        <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-md">
-                            Chaque projet suit les mêmes quatre étapes, et vous validez chacune avant de passer à la suivante.
+                        <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-md mb-6">
+                            Quatre étapes, et vous validez chacune avant de passer à la suivante. Vous n&apos;avez rien de technique à faire.
+                        </p>
+                        <p className="text-base text-[var(--text-secondary)] leading-relaxed max-w-md">
+                            <span className="text-[var(--foreground)]">Paiement :</span> 30 % à la signature du devis, le reste à la mise en ligne. Paiement en plusieurs fois possible.
                         </p>
                     </div>
 
@@ -307,7 +310,7 @@ export default function ServicesContent() {
                     </div>
 
                     <div className="relative z-10 flex flex-col items-center">
-                        <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Prêt à passer au niveau supérieur ?</span>
+                        <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Un projet en tête ?</span>
                         <h2 className="text-3xl md:text-8xl font-serif mb-8 md:mb-12 tracking-tight leading-tight text-[var(--background)]">
                             Parlons de votre <br className="hidden md:block" /> <span className="opacity-40">prochain</span> site.
                         </h2>

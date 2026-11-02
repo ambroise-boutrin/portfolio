@@ -1,4 +1,4 @@
-import { projects } from "@/data/projects";
+import { projects, isClientProject } from "@/data/projects";
 import { ExternalLink, Github, AlertTriangle, Lightbulb, TrendingUp } from "lucide-react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -318,12 +318,13 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                             rel="noopener noreferrer"
                             className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-wider flex items-center gap-3 hover:scale-105 transition-transform shadow-lg hover:shadow-xl"
                         >
-                            Voir la Démo
+                            {isClientProject(project) ? "Voir le site" : "Voir la Démo"}
                             <ExternalLink size={18} />
                         </a>
                     )}
 
-                    {project.github ? (
+                    {/* Projets clients : pas de lien vers le code (le client attend un site, pas un dépôt) */}
+                    {isClientProject(project) ? null : project.github ? (
                         <a
                             href={project.github}
                             target="_blank"

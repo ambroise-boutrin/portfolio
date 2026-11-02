@@ -1,36 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ChevronDown, Check, SlidersHorizontal } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
-import { projects, type Project } from "@/data/projects";
+import { projects, isClientProject, type Project } from "@/data/projects";
 import ScrollIndicator from "@/components/ScrollIndicator";
-
-const ALL_CATEGORY = "Tous";
-const categories = [
-    ALL_CATEGORY,
-    ...Array.from(new Set(projects.map((p) => p.category)))
-];
-
-const sortOptions = [
-    { value: "default", label: "Plus récents" },
-    { value: "oldest", label: "Plus anciens" },
-    { value: "az", label: "Nom de A à Z" },
-    { value: "za", label: "Nom de Z à A" }
-];
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
     const isLightBg = ['bg-white', 'bg-[#f0f0f0]', 'bg-[#e0e0e0]'].includes(project.color);
 
     return (
         <motion.div
-            layout
             initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: Math.min(index * 0.1, 0.5), ease: [0.16, 1, 0.3, 1] }}
             className="w-full flex flex-col group h-full"
         >
@@ -104,58 +89,27 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
     );
 };
 
+const byNewest = (a: Project, b: Project) => (parseInt(b.id) || 0) - (parseInt(a.id) || 0);
+const clientProjects = projects.filter(isClientProject).sort(byNewest);
+const trainingProjects = projects.filter((p) => !isClientProject(p)).sort(byNewest);
+
+const ProjectSection = ({ title, intro, items }: { title: string; intro: string; items: Project[] }) => (
+    <section className="container mx-auto px-6 mt-16 md:mt-24 max-w-[1400px]">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 border-b border-[var(--border-color)] pb-6">
+            <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)]">
+                {title} <span className="text-[var(--text-tertiary)] text-xl md:text-2xl align-middle">{items.length}</span>
+            </h2>
+            <p className="text-sm md:text-base text-[var(--text-secondary)] max-w-md">{intro}</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {items.map((project, i) => (
+                <ProjectCard key={project.id} index={i} project={project} />
+            ))}
+        </div>
+    </section>
+);
+
 export default function ProjectsContent() {
-    const [activeCategory, setActiveCategory] = useState(ALL_CATEGORY);
-    const [sortOrder, setSortOrder] = useState("default");
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement>(null);
-
-    // Close dropdown on click outside
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-                setIsDropdownOpen(false);
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    const filteredAndSortedProjects = useMemo(() => {
-        const result = activeCategory === ALL_CATEGORY
-            ? [...projects]
-            : projects.filter((p) => p.category === activeCategory);
-
-        if (sortOrder === "az") {
-            result.sort((a, b) => a.title.localeCompare(b.title));
-        } else if (sortOrder === "za") {
-            result.sort((a, b) => b.title.localeCompare(a.title));
-        } else if (sortOrder === "oldest") {
-            result.sort((a, b) => (parseInt(a.id) || 0) - (parseInt(b.id) || 0));
-        } else {
-            result.sort((a, b) => (parseInt(b.id) || 0) - (parseInt(a.id) || 0));
-        }
-
-        return result;
-    }, [activeCategory, sortOrder]);
-
-    const categoryCounts = useMemo(() => {
-        const counts: Record<string, number> = { [ALL_CATEGORY]: projects.length };
-        projects.forEach((p) => {
-            counts[p.category] = (counts[p.category] || 0) + 1;
-        });
-        return counts;
-    }, []);
-
-    const handleCategoryChange = useCallback((category: string) => {
-        // La hauteur de page change : Lenis (autoResize) la recalcule seul via ResizeObserver
-        setActiveCategory(category);
-    }, []);
-
-    const activeSortLabel = useMemo(() => {
-        return sortOptions.find(o => o.value === sortOrder)?.label || "Trier";
-    }, [sortOrder]);
-
     return (
         <main className="relative mt-20 bg-[var(--background)] overflow-x-hidden pb-12">
             {/* Ambient Light */}
@@ -167,8 +121,8 @@ export default function ProjectsContent() {
                     <h1 className="text-5xl md:text-8xl font-serif mb-6 text-[var(--foreground)] tracking-tight">
                         Travaux<span className="text-[var(--text-secondary)]">.</span>
                     </h1>
-                    <p className="text-sm md:text-base font-mono text-[var(--text-secondary)] uppercase tracking-[0.2em] max-w-2xl mx-auto leading-relaxed">
-                        Sélection R&D et Clients &mdash; Problèmes complexes, solutions simples.
+                    <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
+                        D&apos;abord les sites et outils réalisés pour des entreprises et des associations, puis mes projets de formation.
                     </p>
                     <div className="mt-8 flex justify-center">
                         <ScrollIndicator />
@@ -176,123 +130,17 @@ export default function ProjectsContent() {
                 </div>
             </div>
 
-            {/* Sticky Filter et Sort Bar */}
-            <div className="sticky top-[64px] z-30 backdrop-blur-xl bg-[var(--background)]/80 border-y border-[var(--border-color)]">
-                <div className="container mx-auto px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
-                    
-                    {/* Category Filter Navigation */}
-                    <div className="flex items-center w-full md:w-auto overflow-x-auto no-scrollbar py-1">
-                        <div className="flex gap-1 md:gap-2 mx-auto md:mx-0">
-                            {categories.map((cat) => {
-                                const isActive = activeCategory === cat;
-                                return (
-                                    <button
-                                        key={cat}
-                                        onClick={() => handleCategoryChange(cat)}
-                                        className={`
-                                            relative px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider
-                                            transition-colors duration-300 ease-out cursor-pointer whitespace-nowrap
-                                            ${isActive ? "text-[var(--background)]" : "text-[var(--text-secondary)] hover:text-[var(--foreground)]"}
-                                        `}
-                                    >
-                                        {/* Animated background bubble */}
-                                        {isActive && (
-                                            <motion.div
-                                                layoutId="activeCategoryBg"
-                                                className="absolute inset-0 bg-[var(--foreground)] rounded-full z-0"
-                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
-                                        
-                                        <span className="relative z-10 flex items-center gap-1.5">
-                                            {cat}
-                                            <span className={`
-                                                text-[9px] font-bold px-1.5 py-0.5 rounded-full
-                                                ${isActive ? "bg-[var(--background)]/20 text-[var(--background)]" : "bg-[var(--foreground)]/5 text-[var(--text-tertiary)]"}
-                                            `}>
-                                                {categoryCounts[cat] || 0}
-                                            </span>
-                                        </span>
-                                    </button>
-                                );
-                            })}
-                        </div>
-                    </div>
+            <ProjectSection
+                title="Projets clients"
+                intro="Réalisés pour de vraies entreprises et associations, en stage ou en freelance."
+                items={clientProjects}
+            />
 
-                    {/* Premium Sorting Dropdown */}
-                    <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-[var(--border-color)] pt-3 md:pt-0">
-                        <span className="text-[11px] font-mono uppercase tracking-widest text-[var(--text-tertiary)]">
-                            {filteredAndSortedProjects.length} projet{filteredAndSortedProjects.length > 1 ? "s" : ""}
-                        </span>
-
-                        <div ref={dropdownRef} className="relative z-40">
-                            <button
-                                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                aria-expanded={isDropdownOpen}
-                                aria-haspopup="true"
-                                className="flex items-center gap-2 px-4 py-2 border border-[var(--border-color)] hover:border-[var(--foreground)] rounded-full text-xs font-mono uppercase tracking-wider text-[var(--foreground)] transition-colors duration-300 cursor-pointer"
-                            >
-                                <SlidersHorizontal size={12} className="opacity-60" />
-                                <span>{activeSortLabel}</span>
-                                <ChevronDown size={14} className={`opacity-60 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
-                            </button>
-
-                            <AnimatePresence>
-                                {isDropdownOpen && (
-                                    <motion.div
-                                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                                        transition={{ duration: 0.2, ease: "easeOut" }}
-                                        className="absolute right-0 mt-2 w-48 rounded-2xl bg-[var(--background)] border border-[var(--border-color)] shadow-2xl p-2"
-                                    >
-                                        {sortOptions.map((option) => (
-                                            <button
-                                                key={option.value}
-                                                onClick={() => {
-                                                    setSortOrder(option.value);
-                                                    setIsDropdownOpen(false);
-                                                }}
-                                                className="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-left text-xs font-mono uppercase tracking-wider text-[var(--text-secondary)] hover:text-[var(--foreground)] hover:bg-[var(--bg-secondary)] transition-colors cursor-pointer"
-                                            >
-                                                <span>{option.label}</span>
-                                                {sortOrder === option.value && <Check size={14} className="text-[var(--foreground)]" />}
-                                            </button>
-                                        ))}
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Projects Asymmetric Grid */}
-            <div className="container mx-auto px-6 mt-16 max-w-[1400px]">
-                <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    <AnimatePresence>
-                        {filteredAndSortedProjects.length > 0 ? (
-                            filteredAndSortedProjects.map((project, i) => (
-                                <ProjectCard key={project.id} index={i} project={project} />
-                            ))
-                        ) : (
-                            <motion.div
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: 20 }}
-                                className="col-span-1 md:col-span-2 flex items-center justify-center py-32 text-center w-full"
-                            >
-                                <div>
-                                    <p className="text-4xl md:text-5xl font-serif text-[var(--text-tertiary)] mb-4">∅</p>
-                                    <p className="text-sm font-mono uppercase tracking-widest text-[var(--text-secondary)]">
-                                        Aucun projet trouvé
-                                    </p>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                </motion.div>
-            </div>
+            <ProjectSection
+                title="Projets de formation"
+                intro="Réalisés pendant mes études ou sur mon temps libre, pour apprendre et tester de nouvelles techniques."
+                items={trainingProjects}
+            />
 
             {/* Next Section Cue */}
             <div className="h-[60vh] md:h-screen bg-[var(--background)] text-[var(--foreground)] flex items-center justify-center border-t border-[var(--border-color)] mt-20">

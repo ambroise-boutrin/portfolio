@@ -16,7 +16,7 @@ const pillars = [
     {
         id: "03",
         title: "Développement",
-        items: ["Next.js et React", "Contenus modifiables", "Pages légères et rapides"]
+        items: ["Fait sur mesure, sans modèle", "Textes et photos modifiables", "Pages légères et rapides"]
     },
     {
         id: "04",

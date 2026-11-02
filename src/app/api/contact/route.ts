@@ -86,7 +86,7 @@ export async function POST(request: NextRequest) {
     }
 
     try {
-        const { name, email, message, website, fillMs } = body as Record<string, unknown>;
+        const { name, email, message, phone, projectType, city, website, fillMs } = body as Record<string, unknown>;
 
         // Pot de miel : un humain ne voit pas ce champ. Réponse 200 silencieuse pour ne pas renseigner le bot.
         if (typeof website === "string" ? website.trim() !== "" : website != null) {
@@ -128,6 +128,13 @@ export async function POST(request: NextRequest) {
             );
         }
 
+        // Champs facultatifs : chaîne courte ou ignorés
+        const optional = (value: unknown, max: number) =>
+            typeof value === "string" ? value.replace(/[\r\n]+/g, " ").trim().slice(0, max) : "";
+        const safePhone = escapeHtml(optional(phone, 30));
+        const safeProjectType = escapeHtml(optional(projectType, 60));
+        const safeCity = escapeHtml(optional(city, 100));
+
         const safeName = escapeHtml(name);
         const safeEmail = escapeHtml(email);
         const safeMessage = escapeHtml(message);
@@ -144,6 +151,9 @@ export async function POST(request: NextRequest) {
                     <div style="background: white; padding: 24px; border-radius: 8px; border: 1px solid #eee;">
                         <p style="margin: 0 0 12px;"><strong>Nom :</strong> ${safeName}</p>
                         <p style="margin: 0 0 12px;"><strong>Email :</strong> <a href="mailto:${safeEmail}">${safeEmail}</a></p>
+                        ${safePhone ? `<p style="margin: 0 0 12px;"><strong>Téléphone :</strong> ${safePhone}</p>` : ""}
+                        ${safeProjectType ? `<p style="margin: 0 0 12px;"><strong>Projet :</strong> ${safeProjectType}</p>` : ""}
+                        ${safeCity ? `<p style="margin: 0 0 12px;"><strong>Ville :</strong> ${safeCity}</p>` : ""}
                         <hr style="border: none; border-top: 1px solid #eee; margin: 16px 0;" />
                         <p style="margin: 0; white-space: pre-wrap;">${safeMessage}</p>
                     </div>
