@@ -1,13 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, MessageCircle, Receipt, KeyRound, MapPin } from "lucide-react";
+import { ArrowUpRight, MessageCircle, Receipt, KeyRound, MapPin, CalendarClock, LifeBuoy } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 const facts = [
     { value: "Orléans", label: "Basé dans le Loiret" },
-    { value: "13", label: "Projets réalisés" },
+    { value: "6", label: "Projets clients" },
     { value: "MIAGE", label: "Informatique et gestion" },
     { value: "24h", label: "Délai de réponse" }
 ];
@@ -55,6 +55,16 @@ const commitments = [
         icon: <MapPin className="w-5 h-5" />,
         title: "Disponible près de chez vous",
         text: "Basé à Orléans, je peux vous rencontrer en personne dans le Loiret et le Centre-Val de Loire."
+    },
+    {
+        icon: <CalendarClock className="w-5 h-5" />,
+        title: "Disponible malgré mes études",
+        text: "Je bloque des créneaux chaque semaine pour mes clients. Je réponds sous 24 h ouvrées, et la date de mise en ligne est écrite dans le devis."
+    },
+    {
+        icon: <LifeBuoy className="w-5 h-5" />,
+        title: "Jamais bloqué",
+        text: "Si un jour je ne peux plus suivre votre site, vous gardez tous les accès et une documentation pour qu'un autre développeur reprenne sans repartir de zéro."
     }
 ];
 

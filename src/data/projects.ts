@@ -46,6 +46,18 @@ export interface Project {
     deploymentDocs?: DeploymentDoc[];
 }
 
+// Projets réalisés pour de vraies entreprises ou associations (les autres sont des projets de formation ou personnels).
+export const CLIENT_SLUGS = new Set([
+    "ene-microstation",
+    "alunisson",
+    "garanches-ecommerce",
+    "stocko-erp",
+    "complement-outlook",
+    "hound-search",
+]);
+
+export const isClientProject = (project: Pick<Project, "slug">) => CLIENT_SLUGS.has(project.slug);
+
 export const projects: Project[] = [
     {
         id: "13",
@@ -401,7 +413,7 @@ export const projects: Project[] = [
     },
     {
         id: "01",
-        title: "E-Commerce de Vins Premium",
+        title: "Garanches - Vins en ligne",
         slug: "garanches-ecommerce",
         category: "Web Fullstack",
         role: "Développeur Fullstack",
@@ -410,7 +422,7 @@ export const projects: Project[] = [
         mainTech: "Next.js / Stripe",
         color: "bg-[#111]",
         textColor: "text-white",
-        github: "https://github.com/ambroise-boutrin", // Placeholder if private
+        github: null,
         demo: "https://garanches.vercel.app/",
         logo: "/images/garanches.png",
         invertLogo: true,
