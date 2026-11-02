@@ -29,6 +29,7 @@ export default function CookieBanner() {
         localStorage.setItem("cookie_consent", "denied");
         clearAnalyticsCookies();
         setShowBanner(false);
+        window.dispatchEvent(new Event("cookie_consent_updated"));
     };
 
     return (

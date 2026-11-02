@@ -1,7 +1,7 @@
 "use client";
 
 import TransitionLink from "@/components/TransitionLink";
-import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, Phone } from "lucide-react";
 import { clearAnalyticsCookies } from "@/lib/consent";
 
 export default function Footer() {
@@ -12,6 +12,7 @@ export default function Footer() {
                 <div className="text-sm font-mono uppercase tracking-widest text-[var(--text-secondary)] text-center md:text-left order-2 md:order-1 flex flex-col gap-1">
                     <span>&copy; 2026 Ambroise Boutrin</span>
                     <span className="text-[10px] opacity-70">Orléans, France</span>
+                    <a href="tel:+33759878334" className="text-[10px] opacity-70 hover:opacity-100 hover:text-[var(--foreground)] transition-colors">Tél. 07 59 87 83 34</a>
                     <span className="text-[10px] opacity-70">SIRET : 101 033 504 00016</span>
                     <TransitionLink href="/mentions-legales" className="text-[10px] hover:text-[var(--foreground)] transition-colors underline mt-2">
                         Mentions Légales
@@ -46,6 +47,7 @@ export default function Footer() {
                 <div className="flex gap-4 text-sm font-medium items-center justify-center md:justify-end order-3 text-[var(--foreground)]">
                     <a href="https://github.com/ambroise-boutrin" target="_blank" rel="noopener noreferrer" aria-label="Github" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Github size={18} /></a>
                     <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Linkedin size={18} /></a>
+                    <a href="tel:+33759878334" aria-label="Téléphone" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Phone size={18} /></a>
                     <a href="mailto:contact@ambroise-boutrin.fr" aria-label="Email" className="p-2 rounded-full hover:bg-[var(--bg-secondary)] transition-colors"><Mail size={18} /></a>
                 </div>
 

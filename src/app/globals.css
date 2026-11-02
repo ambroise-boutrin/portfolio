@@ -68,6 +68,8 @@ body.page-transition-exit #page-transition-curtain {
     --border-color: rgba(255, 255, 255, 0.1);
     --border-hover: rgba(255, 255, 255, 0.25);
     --logo-invert: 1;
+    /* Contrôles natifs (liste déroulante, cases) en version sombre */
+    color-scheme: dark;
   }
 }
 

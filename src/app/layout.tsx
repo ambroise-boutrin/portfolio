@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import CallButton from "@/components/CallButton";
 import JsonLd from "@/components/JsonLd";
 import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
           <div className="relative z-10">
             <Footer />
             <ScrollToTop />
+            <CallButton />
           </div>
           <CookieBanner />
         </SmoothScroll>
