@@ -21,7 +21,7 @@ const pillars = [
     {
         id: "04",
         title: "Référencement",
-        items: ["SEO technique et local", "Plus de demandes de devis", "Un site qui peut évoluer"]
+        items: ["Bien placé sur Google dans votre ville", "Fiche Google à jour", "Un site qui peut évoluer"]
     }
 ];
 
@@ -38,15 +38,12 @@ export default function BentoGrid() {
                         transition={{ delay: index * 0.1, duration: 0.6 }}
                         className="flex flex-col group pr-4"
                     >
-                        <span className="text-[10px] font-mono text-[var(--text-secondary)] mb-4 block opacity-50 uppercase tracking-widest border-b border-[var(--border-color)] pb-2 w-10 group-hover:w-full transition-all duration-700">
-                            {pillar.id}
-                        </span>
                         <h3 className="text-xl font-serif text-[var(--foreground)] mb-4">
                             {pillar.title}
                         </h3>
                         <ul className="space-y-2">
                             {pillar.items.map((item, i) => (
-                                <li key={i} className="text-xs font-mono text-[var(--text-secondary)] uppercase tracking-wide opacity-70 group-hover:opacity-100 group-hover:text-[var(--foreground)] transition-opacity duration-300">
+                                <li key={i} className="text-base text-[var(--text-secondary)]">
                                     {item}
                                 </li>
                             ))}

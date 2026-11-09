@@ -80,10 +80,10 @@ export default async function MetierPage({ params }: { params: Promise<{ metier:
                 </nav>
 
                 <header className="max-w-3xl mb-20">
-                    <span className="text-xs font-mono uppercase tracking-[0.3em] text-[var(--text-tertiary)] block mb-6">{capitalize(metier.namePlural)} · Orléans et Loiret</span>
+                    <span className="text-xs text-[var(--text-tertiary)] block mb-6">{capitalize(metier.namePlural)} · Orléans et Loiret</span>
                     <h1 className="text-4xl md:text-6xl font-serif tracking-tight leading-tight mb-8">Création de site internet pour {metier.name}</h1>
                     <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-10">{metier.intro}</p>
-                    <Link href="/contact" className="inline-block px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform">
+                    <Link href="/contact" className="inline-block px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold text-sm hover:scale-105 transition-transform">
                         Parler de mon site
                     </Link>
                 </header>
@@ -167,7 +167,7 @@ export default async function MetierPage({ params }: { params: Promise<{ metier:
                         <p className="text-xl font-serif italic opacity-60 mb-2">Pack Visibilité, à partir de</p>
                         <p className="text-5xl md:text-6xl font-serif mb-4">1 490 €</p>
                         <p className="text-sm mb-8 opacity-80">800 € pour mes 3 prochains projets, en échange d&apos;un témoignage. Site de 1 à 5 pages, fiche Google et référencement local inclus.</p>
-                        <Link href="/contact" className="inline-block px-8 py-4 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform">
+                        <Link href="/contact" className="inline-block px-8 py-4 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold text-sm hover:scale-105 transition-transform">
                             Demander un devis
                         </Link>
                     </div>

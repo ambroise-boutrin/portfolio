@@ -22,15 +22,6 @@ export default function RecentProjects() {
                 {/* Header Section */}
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 md:mb-24 gap-8">
                     <div className="max-w-2xl">
-                        <motion.span
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                            className="text-[10px] font-mono text-[var(--text-secondary)] uppercase tracking-widest border-b border-[var(--border-color)] pb-2 mb-8 block w-12"
-                        >
-                            02
-                        </motion.span>
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -38,7 +29,7 @@ export default function RecentProjects() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="text-4xl md:text-6xl lg:text-7xl font-serif text-[var(--foreground)] tracking-tight mb-6 leading-tight"
                         >
-                            Travaux <span className="text-[var(--text-secondary)] italic">Sélectionnés.</span>
+                            Mes réalisations
                         </motion.h2>
                     </div>
 
@@ -51,11 +42,11 @@ export default function RecentProjects() {
                     >
                         <Link
                             href="/projets"
-                            className="group flex items-center gap-3 text-xs font-mono uppercase tracking-widest text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors"
+                            className="group flex items-center gap-3 text-sm font-medium text-[var(--foreground)] hover:text-[var(--text-secondary)] transition-colors"
                         >
                             <span className="relative overflow-hidden pb-1">
-                                <span className="block transition-transform duration-300 group-hover:-translate-y-full">Voir l’archive complète</span>
-                                <span className="absolute inset-0 top-full transition-transform duration-300 group-hover:-translate-y-full">Voir l’archive complète</span>
+                                <span className="block transition-transform duration-300 group-hover:-translate-y-full">Voir tous les projets</span>
+                                <span className="absolute inset-0 top-full transition-transform duration-300 group-hover:-translate-y-full">Voir tous les projets</span>
                                 <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[var(--foreground)] scale-x-100 group-hover:scale-x-0 origin-right transition-transform duration-300"></span>
                             </span>
                             <span className="w-8 h-8 rounded-full border border-[var(--border-color)] flex items-center justify-center group-hover:bg-[var(--foreground)] group-hover:text-[var(--background)] transition-all duration-300">
@@ -112,13 +103,6 @@ export default function RecentProjects() {
                                                 {project.title.charAt(0)}
                                             </div>
                                         )}
-
-                                        {/* Floating Badge (Tech) inside image area */}
-                                        <div className="absolute top-6 left-6 z-20 overflow-hidden rounded-full">
-                                            <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-4 py-1.5 text-[10px] font-mono uppercase tracking-widest translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                                                {project.mainTech}
-                                            </div>
-                                        </div>
                                     </div>
 
                                     <div className="flex flex-col flex-1 px-2">
@@ -128,7 +112,7 @@ export default function RecentProjects() {
                                             </h3>
                                         </div>
                                         <div className="flex items-center gap-4 mt-auto">
-                                            <span className="text-[10px] font-mono text-[var(--text-secondary)] uppercase tracking-widest opacity-70">
+                                            <span className="text-sm text-[var(--text-secondary)]">
                                                 {project.category}
                                             </span>
                                             <span className="h-px flex-1 bg-[var(--border-color)] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-700 ease-out"></span>

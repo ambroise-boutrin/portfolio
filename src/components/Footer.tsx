@@ -9,11 +9,11 @@ export default function Footer() {
         <footer className="py-8 px-6 border-t border-[var(--border-color)] mt-20 bg-[var(--background)]">
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
 
-                <div className="text-sm font-mono uppercase tracking-widest text-[var(--text-secondary)] text-center md:text-left order-2 md:order-1 flex flex-col gap-1">
+                <div className="text-sm text-[var(--text-secondary)] text-center md:text-left order-2 md:order-1 flex flex-col gap-1">
                     <span>&copy; 2026 Ambroise Boutrin</span>
-                    <span className="text-[10px] opacity-70">Orléans, France</span>
-                    <a href="tel:+33759878334" className="text-[10px] opacity-70 hover:opacity-100 hover:text-[var(--foreground)] transition-colors">Tél. 07 59 87 83 34</a>
-                    <span className="text-[10px] opacity-70">SIRET : 101 033 504 00016</span>
+                    <span className="text-xs opacity-70">Orléans, France</span>
+                    <a href="tel:+33759878334" className="text-xs opacity-70 hover:opacity-100 hover:text-[var(--foreground)] transition-colors">Tél. 07 59 87 83 34</a>
+                    <span className="text-xs opacity-70">SIRET : 101 033 504 00016</span>
                     <TransitionLink href="/mentions-legales" className="text-[10px] hover:text-[var(--foreground)] transition-colors underline mt-2">
                         Mentions Légales
                     </TransitionLink>
@@ -24,7 +24,7 @@ export default function Footer() {
                             clearAnalyticsCookies();
                             window.location.reload();
                         }}
-                        className="text-[10px] uppercase tracking-widest text-center md:text-left hover:text-[var(--foreground)] transition-colors underline cursor-pointer"
+                        className="text-xs text-center md:text-left hover:text-[var(--foreground)] transition-colors underline cursor-pointer"
                     >
                         Gérer les cookies
                     </button>

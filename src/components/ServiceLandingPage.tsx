@@ -41,7 +41,7 @@ export default function ServiceLandingPage({
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-[var(--text-tertiary)] block mb-6">
+                        <span className="text-xs text-[var(--text-tertiary)] block mb-6">
                             {targetAudience}
                         </span>
                         <h1 className="text-4xl md:text-7xl font-serif text-[var(--foreground)] mb-8 tracking-tight leading-tight">
@@ -54,7 +54,7 @@ export default function ServiceLandingPage({
                         <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                             <Link
                                 href="/contact"
-                                className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform flex items-center gap-3 w-full sm:w-auto justify-center"
+                                className="px-8 py-4 bg-[var(--foreground)] text-[var(--background)] rounded-full font-bold text-sm hover:scale-105 transition-transform flex items-center gap-3 w-full sm:w-auto justify-center"
                             >
                                 {primaryCtaText} <ArrowRight size={16} />
                             </Link>
@@ -77,7 +77,7 @@ export default function ServiceLandingPage({
             <section className="py-24 bg-[var(--bg-secondary)] border-y border-[var(--border-color)] px-6">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
-                        <span className="text-xs font-mono uppercase tracking-[0.3em] text-[var(--text-tertiary)] block mb-4">Valeur Ajoutée</span>
+                        <span className="text-xs text-[var(--text-tertiary)] block mb-4">Valeur Ajoutée</span>
                         <h2 className="text-3xl md:text-5xl font-serif text-[var(--foreground)]">Pourquoi choisir cette offre ?</h2>
                     </div>
                     
@@ -157,7 +157,7 @@ export default function ServiceLandingPage({
                         
                         <Link
                             href="/contact"
-                            className="inline-block px-10 py-5 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-wider text-sm hover:scale-105 transition-transform relative z-10"
+                            className="inline-block px-10 py-5 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold text-sm hover:scale-105 transition-transform relative z-10"
                         >
                             {primaryCtaText}
                         </Link>

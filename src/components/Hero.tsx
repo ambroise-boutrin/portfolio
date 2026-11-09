@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Github, Linkedin, MapPin } from "lucide-react";
+import { ArrowRight, MapPin } from "lucide-react";
 import ParallaxItem from "@/components/ParallaxItem";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
@@ -15,10 +15,6 @@ export default function Hero() {
     return (
         <section className="min-h-screen py-16 flex items-center justify-center relative overflow-hidden">
 
-            {/* Fond Grid Géométrique */}
-            <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-            <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,var(--background),transparent)]"></div>
-
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
 
                 {/* Qui je suis, en petit : le titre parle du client */}
@@ -33,7 +29,7 @@ export default function Hero() {
                         <span className={`block ${LINE_1}`}>Des sites qui font</span>
                     </div>
                     <div className="overflow-hidden pb-2">
-                        <span className={`block italic text-[var(--text-secondary)] ${LINE_2}`}>venir des clients.</span>
+                        <span className={`block text-[var(--text-secondary)] ${LINE_2}`}>venir des clients.</span>
                     </div>
                 </h1>
 
@@ -61,16 +57,6 @@ export default function Hero() {
                         </Link>
                     </div>
                 </ParallaxItem>
-
-                {/* Réseaux Sociaux */}
-                <div className="mt-8 flex gap-6 text-[var(--text-secondary)] justify-center pb-4">
-                    <a href="https://github.com/ambroise-boutrin" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil GitHub d'Ambroise Boutrin">
-                        <Github size={24} />
-                    </a>
-                    <a href="https://www.linkedin.com/in/ambroise-boutrin/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--foreground)] hover:scale-110 transition-all duration-300 p-2" aria-label="Profil LinkedIn d'Ambroise Boutrin">
-                        <Linkedin size={24} />
-                    </a>
-                </div>
             </div>
 
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20">

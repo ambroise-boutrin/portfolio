@@ -68,10 +68,10 @@ export default function MentionsLegales() {
                 <section className="mb-12 space-y-4">
                     <h2 className="text-2xl font-bold border-b border-[var(--border-color)] pb-4 mb-6">5. Cookies et mesure d’audience</h2>
                     <p className="text-[var(--foreground)]/80 leading-relaxed">
-                        Lors de votre première visite, un bandeau vous demande votre accord. Aucun outil de mesure n’est chargé tant que vous ne l’avez pas accepté.
+                        Le site utilise <strong className="text-[var(--foreground)]">Vercel Analytics</strong> pour compter les visites de façon anonyme : cet outil ne dépose aucun cookie et n’enregistre aucun identifiant, il ne demande donc pas votre accord.
                     </p>
                     <p className="text-[var(--foreground)]/80 leading-relaxed">
-                        Après acceptation, <strong className="text-[var(--foreground)]">Google Tag Manager</strong> et <strong className="text-[var(--foreground)]">Vercel Analytics</strong> sont chargés pour la mesure d’audience. Si vous refusez, aucun de ces outils n’est chargé.
+                        <strong className="text-[var(--foreground)]">Google Tag Manager</strong>, qui dépose des cookies, n’est chargé que si vous l’acceptez dans le bandeau affiché lors de votre première visite. Si vous refusez, il n’est pas chargé.
                     </p>
                     <p className="text-[var(--foreground)]/80 leading-relaxed">
                         Vous pouvez retirer ou modifier votre choix à tout moment via le lien <strong className="text-[var(--foreground)]">« Gérer les cookies »</strong> en bas de page.

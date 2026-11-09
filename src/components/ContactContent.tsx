@@ -77,7 +77,7 @@ export default function ContactContent() {
                 <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
                     <h1 className="text-5xl md:text-8xl font-serif mb-10 tracking-tighter text-[var(--foreground)]">
                         Parlons de <br />
-                        <span className="italic text-[var(--text-secondary)]">votre projet</span>
+                        <span className="text-[var(--text-secondary)]">votre projet</span>
                     </h1>
 
                     <p className="text-xl text-[var(--text-secondary)] mb-12 max-w-md leading-relaxed">
@@ -90,7 +90,7 @@ export default function ContactContent() {
                                 <Mail size={24} />
                             </div>
                             <div>
-                                <span className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">Email</span>
+                                <span className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Email</span>
                                 <a href="mailto:contact@ambroise-boutrin.fr" className="text-xl md:text-2xl font-serif text-[var(--foreground)]">contact@ambroise-boutrin.fr</a>
                             </div>
                         </div>
@@ -100,7 +100,7 @@ export default function ContactContent() {
                                 <Phone size={24} />
                             </div>
                             <div>
-                                <span className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">Téléphone</span>
+                                <span className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Téléphone</span>
                                 <a href="tel:+33759878334" className="text-xl md:text-2xl font-serif text-[var(--foreground)]">07 59 87 83 34</a>
                             </div>
                         </div>
@@ -110,7 +110,7 @@ export default function ContactContent() {
                                 <MapPin size={24} />
                             </div>
                             <div>
-                                <span className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-1">Localisation</span>
+                                <span className="block text-sm font-medium text-[var(--text-secondary)] mb-1">Localisation</span>
                                 <span className="text-xl md:text-2xl font-serif text-[var(--foreground)]">Orléans, France</span>
                             </div>
                         </div>
@@ -126,25 +126,25 @@ export default function ContactContent() {
                             <input type="text" id="contact-website" name="hp_field" tabIndex={-1} autoComplete="new-password" data-1p-ignore data-lpignore="true" defaultValue="" />
                         </div>
                         <div>
-                            <label htmlFor="contact-name" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Nom Complet</label>
+                            <label htmlFor="contact-name" className="block text-sm font-medium text-[var(--text-secondary)] mb-3">Nom complet</label>
                             <input type="text" id="contact-name" name="name" autoComplete="name" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Votre nom" disabled={status === "loading"} />
                         </div>
                         <div>
-                            <label htmlFor="contact-email" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Email</label>
+                            <label htmlFor="contact-email" className="block text-sm font-medium text-[var(--text-secondary)] mb-3">Email</label>
                             <input type="email" id="contact-email" name="email" autoComplete="email" required className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="votre@email.com" disabled={status === "loading"} />
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                             <div>
-                                <label htmlFor="contact-phone" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Téléphone <span className="normal-case font-normal tracking-normal">(facultatif)</span></label>
+                                <label htmlFor="contact-phone" className="block text-sm font-medium text-[var(--text-secondary)] mb-3">Téléphone <span className="normal-case font-normal tracking-normal">(facultatif)</span></label>
                                 <input type="tel" id="contact-phone" name="phone" autoComplete="tel" maxLength={30} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="06 12 34 56 78" disabled={status === "loading"} />
                             </div>
                             <div>
-                                <label htmlFor="contact-city" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Ville <span className="normal-case font-normal tracking-normal">(facultatif)</span></label>
+                                <label htmlFor="contact-city" className="block text-sm font-medium text-[var(--text-secondary)] mb-3">Ville <span className="normal-case font-normal tracking-normal">(facultatif)</span></label>
                                 <input type="text" id="contact-city" name="city" autoComplete="address-level2" maxLength={100} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Orléans" disabled={status === "loading"} />
                             </div>
                         </div>
                         <div>
-                            <label htmlFor="contact-type" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Votre projet</label>
+                            <label htmlFor="contact-type" className="block text-sm font-medium text-[var(--text-secondary)] mb-3">Votre projet</label>
                             <select id="contact-type" name="projectType" defaultValue="" className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors text-[var(--foreground)] [&_option]:bg-[var(--background)] [&_option]:text-[var(--foreground)]" disabled={status === "loading"}>
                                 <option value="">Choisir (facultatif)</option>
                                 <option value="Créer un site">Créer un site</option>
@@ -157,7 +157,7 @@ export default function ContactContent() {
                             </select>
                         </div>
                         <div>
-                            <label htmlFor="contact-message" className="block text-xs font-bold uppercase tracking-widest text-[var(--text-secondary)] mb-3">Message</label>
+                            <label htmlFor="contact-message" className="block text-sm font-medium text-[var(--text-secondary)] mb-3">Message</label>
                             <textarea ref={messageRef} id="contact-message" name="message" required rows={4} className="w-full bg-transparent border-b border-[var(--border-color)] pb-4 text-xl focus:outline-none focus:border-[var(--foreground)] transition-colors resize-none text-[var(--foreground)] placeholder-[var(--text-secondary)]/50" placeholder="Parlez-moi de votre projet..." disabled={status === "loading"}></textarea>
                         </div>
 
@@ -195,7 +195,7 @@ export default function ContactContent() {
                         <button
                             type="submit"
                             disabled={status === "loading"}
-                            className="w-full bg-[var(--foreground)] text-[var(--background)] py-5 md:py-6 rounded-full font-bold text-base md:text-lg uppercase tracking-widest hover:opacity-90 transition-opacity flex items-center justify-center gap-3 group disabled:opacity-60 disabled:cursor-not-allowed"
+                            className="w-full bg-[var(--foreground)] text-[var(--background)] py-5 md:py-6 rounded-full font-bold text-base md:text-lg hover:opacity-90 transition-opacity flex items-center justify-center gap-3 group disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             {status === "loading" ? (
                                 <>

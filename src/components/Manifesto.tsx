@@ -8,10 +8,6 @@ export default function Manifesto() {
     return (
         <section id="manifesto" className="relative min-h-screen flex flex-col justify-center py-20 overflow-hidden">
 
-            {/* Background Texture over the whole section */}
-            <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-[url('/images/noise.svg')] opacity-20 mix-blend-soft-light"></div>
-            </div>
 
 
             <div className="container mx-auto px-6 relative z-10">
@@ -26,20 +22,14 @@ export default function Manifesto() {
                         transition={{ duration: 0.8 }}
                         className="w-full md:w-1/3 aspect-[3/4] relative group"
                     >
-                        <div className="absolute inset-0 border border-[var(--border-color)] rounded-sm translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-                        <div className="absolute inset-0 border border-[var(--border-color)] rounded-sm bg-[var(--background)] overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-                            {/* Placeholder Image - User can replace src */}
-                            <Image
+                        <div className="absolute inset-0 border border-[var(--border-color)] rounded-lg bg-[var(--background)] overflow-hidden">
+                                                        <Image
                                 src="/images/IMG_4128.jpeg"
                                 alt="Ambroise Boutrin"
                                 fill
                                 sizes="(min-width: 768px) 33vw, 100vw"
-                                className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
+                                className="object-cover"
                             />
-                            {/* Fallback visual if no image */}
-                            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                                <span className="text-[var(--foreground)]/10 font-serif text-9xl">A.</span>
-                            </div>
                         </div>
                     </motion.div>
 
@@ -51,7 +41,7 @@ export default function Manifesto() {
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="text-3xl md:text-6xl lg:text-7xl font-serif text-[var(--foreground)] leading-[1.1] mb-6 md:mb-8 text-balance"
                         >
-                            Je crée des sites et des outils web <span className="text-[var(--text-secondary)] italic">sur mesure.</span>
+                            Je crée des sites et des outils web sur mesure
                         </motion.h2>
 
                         <motion.div
@@ -67,10 +57,6 @@ export default function Manifesto() {
                                 Je m&apos;occupe du design comme du code, de la maquette à la mise en ligne.
                                 Mon objectif : un site simple à utiliser, qui donne envie de vous contacter.
                             </p>
-                            <div className="flex items-center gap-4 pt-4">
-                                <span className="h-px w-12 bg-[var(--border-color)]"></span>
-                                <span className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)]">Ambroise Boutrin</span>
-                            </div>
                         </motion.div>
                     </div>
 
