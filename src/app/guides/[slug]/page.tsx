@@ -72,7 +72,7 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                 </p>
 
                 <div className="p-6 md:p-8 rounded-3xl bg-[var(--bg-secondary)] border border-[var(--border-color)] mb-16">
-                    <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)] mb-3">La réponse courte</p>
+                    <p className="text-xs text-[var(--text-tertiary)] mb-3">La réponse courte</p>
                     <p className="text-lg md:text-xl leading-relaxed">{guide.answer}</p>
                 </div>
 

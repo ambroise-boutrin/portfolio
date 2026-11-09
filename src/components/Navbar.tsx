@@ -130,7 +130,7 @@ export default function Navbar() {
                             transition={{ delay: 0.5 }}
                             className="mb-6"
                         >
-                            <p className="text-sm font-mono uppercase text-[var(--text-secondary)] mb-2">Socials</p>
+                            <p className="text-sm text-[var(--text-secondary)] mb-2">Réseaux</p>
                             <div className="flex gap-4">
                                 <a href="https://github.com/ambroise-boutrin" className="text-[var(--foreground)] text-lg underline">GitHub</a>
                                 <a href="https://www.linkedin.com/in/ambroise-boutrin/" className="text-[var(--foreground)] text-lg underline">LinkedIn</a>

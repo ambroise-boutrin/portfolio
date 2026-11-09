@@ -15,11 +15,8 @@ export default function HomeOffers() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
                     <div className="max-w-2xl">
-                        <span className="text-[10px] font-mono text-[var(--text-secondary)] uppercase tracking-widest border-b border-[var(--border-color)] pb-2 mb-8 block w-12">
-                            03
-                        </span>
                         <h2 className="text-4xl md:text-6xl lg:text-7xl font-serif text-[var(--foreground)] tracking-tight leading-tight">
-                            Mes <span className="text-[var(--text-secondary)] italic">Tarifs.</span>
+                            Mes tarifs
                         </h2>
                     </div>
                     <p className="text-base md:text-lg text-[var(--text-secondary)] font-light max-w-sm md:pb-4">
@@ -31,9 +28,9 @@ export default function HomeOffers() {
                     {offers.map((offer) => (
                         <li key={offer.name} className="border-b border-[var(--border-color)]">
                             <Link href={offer.href} className="group grid grid-cols-1 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)_12rem] items-baseline gap-2 md:gap-8 py-8">
-                                <span className="text-2xl md:text-4xl font-serif text-[var(--foreground)] group-hover:italic transition-all">{offer.name}</span>
+                                <span className="text-2xl md:text-4xl font-serif text-[var(--foreground)] group-hover:text-[var(--text-secondary)] transition-colors">{offer.name}</span>
                                 <span className="text-[var(--text-secondary)] font-light">{offer.detail}</span>
-                                <span className="flex items-center gap-3 text-sm font-mono uppercase tracking-widest text-[var(--foreground)] whitespace-nowrap md:justify-end">
+                                <span className="flex items-center gap-3 text-base font-medium text-[var(--foreground)] whitespace-nowrap md:justify-end">
                                     {offer.price}
                                     <ArrowUpRight size={14} className="text-[var(--text-tertiary)] group-hover:text-[var(--foreground)] group-hover:rotate-45 transition-all duration-300" />
                                 </span>

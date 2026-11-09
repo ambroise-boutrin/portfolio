@@ -25,7 +25,7 @@ export default function GuidesPage() {
                 })),
             }} />
             <div className="max-w-4xl mx-auto">
-                <span className="text-xs font-mono uppercase tracking-[0.3em] text-[var(--text-tertiary)] block mb-6">Guides</span>
+                <span className="text-xs text-[var(--text-tertiary)] block mb-6">Guides</span>
                 <h1 className="text-4xl md:text-7xl font-serif tracking-tight mb-6">Les réponses à vos questions sur le web</h1>
                 <p className="text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-16 max-w-2xl">
                     Prix, refonte, visibilité sur Google : des réponses directes, sans jargon, pour les artisans, commerçants et TPE.
@@ -37,7 +37,7 @@ export default function GuidesPage() {
                             href={`/guides/${guide.slug}`}
                             className="block p-8 rounded-3xl border border-[var(--border-color)] hover:border-[var(--foreground)] transition-colors"
                         >
-                            <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)] mb-3">{guide.readingMinutes} min de lecture</p>
+                            <p className="text-xs text-[var(--text-tertiary)] mb-3">{guide.readingMinutes} min de lecture</p>
                             <h2 className="text-2xl md:text-3xl font-serif mb-3">{guide.title}</h2>
                             <p className="text-[var(--text-secondary)] leading-relaxed">{guide.description}</p>
                         </Link>

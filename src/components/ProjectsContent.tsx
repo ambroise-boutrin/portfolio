@@ -45,7 +45,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
                     {/* Tech tag floating on image */}
                     <div className="absolute top-4 left-4 z-20 overflow-hidden rounded-full">
-                        <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-3.5 py-1 text-[9px] font-mono uppercase tracking-widest translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-3.5 py-1 text-xs translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
                             {project.mainTech}
                         </div>
                     </div>
@@ -66,7 +66,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                     </div>
 
                     {/* Subtitle/Category */}
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] opacity-60 mb-4 block">
+                    <span className="text-xs opacity-60 mb-4 block">
                         {project.category}
                     </span>
 
@@ -78,7 +78,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                     {/* Tech list footer */}
                     <div className="flex flex-wrap gap-1.5 justify-start mt-auto">
                         {project.tech.map((t: string, i: number) => (
-                            <span key={i} className={`px-3 py-1 rounded-full text-[9px] md:text-[10px] font-mono tracking-wider uppercase ${isLightBg ? 'bg-[var(--foreground)]/5 text-[var(--foreground)]/70' : 'bg-white/10 text-white/90'}`}>
+                            <span key={i} className={`px-3 py-1 rounded-full text-xs md:text-xs ${isLightBg ? 'bg-[var(--foreground)]/5 text-[var(--foreground)]/70' : 'bg-white/10 text-white/90'}`}>
                                 {t}
                             </span>
                         ))}
@@ -119,7 +119,7 @@ export default function ProjectsContent() {
             <div className="container mx-auto px-6 pt-24 md:pt-32 mb-8 md:mb-12">
                 <div className="text-center">
                     <h1 className="text-5xl md:text-8xl font-serif mb-6 text-[var(--foreground)] tracking-tight">
-                        Travaux<span className="text-[var(--text-secondary)]">.</span>
+                        Réalisations
                     </h1>
                     <p className="text-base md:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed">
                         D&apos;abord les sites et outils réalisés pour des entreprises et des associations, puis mes projets de formation.

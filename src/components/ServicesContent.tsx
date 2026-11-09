@@ -96,7 +96,7 @@ export default function ServicesContent() {
                         transition={{ duration: 0.8 }}
                     >
                         <h1 className="text-4xl md:text-9xl font-serif mb-6 md:mb-8 tracking-tight">
-                            Services<span className="opacity-30">.</span>
+                            Services
                         </h1>
                         <p className="text-lg md:text-3xl text-[var(--text-secondary)] max-w-3xl leading-relaxed font-light">
                             Trois offres claires pour créer, refaire ou entretenir <span className="text-[var(--foreground)] font-normal">le site de votre entreprise</span>.
@@ -123,13 +123,13 @@ export default function ServicesContent() {
                             </div>
                             <div>
                                 <h3 className="text-2xl font-serif text-[var(--foreground)]">{pkg.name}</h3>
-                                <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)]">{pkg.subtitle}</p>
+                                <p className="text-xs text-[var(--text-tertiary)]">{pkg.subtitle}</p>
                             </div>
                         </div>
 
                         <div className="mb-8 flex items-baseline gap-2">
                             <span className="text-4xl md:text-5xl font-serif text-[var(--foreground)]">{pkg.price}</span>
-                            {pkg.priceSuffix && <span className="text-sm font-mono text-[var(--text-tertiary)] uppercase tracking-wider">{pkg.priceSuffix}</span>}
+                            {pkg.priceSuffix && <span className="text-sm text-[var(--text-tertiary)]">{pkg.priceSuffix}</span>}
                         </div>
 
                         {pkg.launchOffer && (
@@ -157,7 +157,7 @@ export default function ServicesContent() {
 
                         <Link
                             href={pkg.link}
-                            className={`w-full py-4 flex items-center justify-center gap-3 text-xs font-mono uppercase tracking-[0.2em] transition-all duration-500 rounded-xl border ${pkg.isPopular
+                            className={`w-full py-4 flex items-center justify-center gap-3 text-xs transition-all duration-500 rounded-xl border ${pkg.isPopular
                                     ? 'bg-[var(--foreground)] text-[var(--background)] border-[var(--foreground)] hover:bg-transparent hover:text-[var(--foreground)] shadow-lg'
                                     : 'border-[var(--border-color)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)]'
                                 }`}
@@ -186,12 +186,12 @@ export default function ServicesContent() {
                                 </div>
                                 <h3 className="text-2xl font-serif text-[var(--foreground)]">{offer.name}</h3>
                             </div>
-                            <p className="text-xs font-mono uppercase tracking-widest text-[var(--text-tertiary)] mb-3">{offer.price}</p>
+                            <p className="text-xs text-[var(--text-tertiary)] mb-3">{offer.price}</p>
                             <p className="text-[var(--text-secondary)] text-sm leading-relaxed max-w-md">{offer.description}</p>
                         </div>
                         <Link
                             href={offer.link}
-                            className="shrink-0 px-6 py-4 flex items-center justify-center gap-3 text-xs font-mono uppercase tracking-[0.2em] rounded-xl border border-[var(--border-color)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-all duration-500"
+                            className="shrink-0 px-6 py-4 flex items-center justify-center gap-3 text-xs rounded-xl border border-[var(--border-color)] text-[var(--foreground)] hover:bg-[var(--foreground)] hover:text-[var(--background)] transition-all duration-500"
                         >
                             {offer.cta} <ArrowUpRight size={14} />
                         </Link>
@@ -203,9 +203,9 @@ export default function ServicesContent() {
             <div className="max-w-7xl mx-auto px-6 mt-32 md:mt-48">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
                     <div>
-                        <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">Concrètement</span>
+                        <span className="text-xs text-[var(--text-tertiary)] block mb-6">Concrètement</span>
                         <h2 className="text-4xl md:text-6xl font-serif text-[var(--foreground)] mb-8 leading-tight">
-                            Comment ça <span className="opacity-30">se passe.</span>
+                            Comment ça se passe
                         </h2>
                         <p className="text-lg text-[var(--text-secondary)] leading-relaxed max-w-md mb-6">
                             Quatre étapes, et vous validez chacune avant de passer à la suivante. Vous n&apos;avez rien de technique à faire.
@@ -243,7 +243,7 @@ export default function ServicesContent() {
             {/* FAQ Section */}
             <div className="max-w-4xl mx-auto px-6 mt-32 md:mt-48">
                 <div className="text-center mb-16">
-                    <span className="text-xs font-mono text-[var(--text-tertiary)] uppercase tracking-[0.3em] block mb-6">FAQ</span>
+                    <span className="text-xs text-[var(--text-tertiary)] block mb-6">FAQ</span>
                     <h2 className="text-4xl md:text-5xl font-serif text-[var(--foreground)] leading-tight">
                         Questions Fréquentes
                     </h2>
@@ -310,7 +310,7 @@ export default function ServicesContent() {
                     </div>
 
                     <div className="relative z-10 flex flex-col items-center">
-                        <span className="text-[10px] md:text-xs font-mono opacity-40 uppercase tracking-[0.4em] block mb-6 md:mb-8 text-[var(--background)]">Un projet en tête ?</span>
+                        <span className="text-xs md:text-xs opacity-40 block mb-6 md:mb-8 text-[var(--background)]">Un projet en tête ?</span>
                         <h2 className="text-3xl md:text-8xl font-serif mb-8 md:mb-12 tracking-tight leading-tight text-[var(--background)]">
                             Parlons de votre <br className="hidden md:block" /> <span className="opacity-40">prochain</span> site.
                         </h2>
@@ -318,7 +318,7 @@ export default function ServicesContent() {
                         <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center w-full md:w-auto">
                             <Link
                                 href="/contact"
-                                className="w-full md:w-auto px-10 md:px-12 py-5 md:py-6 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold uppercase tracking-[0.2em] text-xs md:text-sm hover:scale-105 transition-transform shadow-2xl flex items-center justify-center gap-3 group"
+                                className="w-full md:w-auto px-10 md:px-12 py-5 md:py-6 bg-[var(--background)] text-[var(--foreground)] rounded-full font-bold text-xs md:text-sm hover:scale-105 transition-transform shadow-2xl flex items-center justify-center gap-3 group"
                             >
                                 Commencer un projet <ArrowUpRight size={20} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                             </Link>
