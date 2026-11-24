@@ -21,24 +21,24 @@ export default function Hero() {
 
             <div className="flex flex-col items-center justify-center text-center z-10 relative px-4">
 
-                {/* Qui je suis, en petit : le titre parle du client */}
+                {/* Métier et ville, en petit au-dessus du nom */}
                 <div className="flex items-center gap-2 text-[var(--foreground)] text-xs sm:text-sm font-medium uppercase tracking-wide mb-6">
                     <MapPin size={16} />
-                    <span>Ambroise Boutrin · Développeur web à Orléans</span>
+                    <span>Développeur web à Orléans</span>
                 </div>
 
                 {/* Titre Principal */}
-                <h1 className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[var(--foreground)] leading-[0.95] tracking-tighter mb-4">
+                <h1 className="font-serif text-5xl sm:text-6xl md:text-8xl lg:text-9xl text-[var(--foreground)] leading-[0.9] tracking-tighter mb-4">
                     <div className="overflow-hidden">
-                        <span className={`block ${LINE_1}`}>Des sites qui font</span>
+                        <span className={`block ${LINE_1}`}>Ambroise</span>
                     </div>
                     <div className="overflow-hidden pb-2">
-                        <span className={`block italic text-[var(--text-secondary)] ${LINE_2}`}>venir des clients.</span>
+                        <span className={`block italic text-[var(--text-secondary)] ${LINE_2}`}>Boutrin</span>
                     </div>
                 </h1>
 
                 <p className="text-lg md:text-2xl font-light mb-8 text-[var(--foreground)] mt-4 max-w-3xl">
-                    Pour les artisans, commerçants et TPE du Loiret : un site clair, trouvé sur Google, qui donne envie de vous appeler. Le prix est fixé avant de commencer.
+                    Des sites qui font venir des clients aux artisans, commerçants et TPE du Loiret : clairs, trouvés sur Google, qui donnent envie de vous appeler. Le prix est fixé avant de commencer.
                 </p>
 
                 {/* Boutons d'action */}
