@@ -41,10 +41,7 @@ export default function ProjectJsonLd({ project }: { project: ProjectData }) {
         "name": project.title,
         "description": project.description,
         "url": `https://www.ambroise-boutrin.fr/projets/${project.slug}`,
-        "author": {
-            "@type": "Person",
-            "name": "Ambroise Boutrin"
-        },
+        "author": { "@id": "https://www.ambroise-boutrin.fr/#person" },
         ...(project.image ? { "image": `https://www.ambroise-boutrin.fr${project.image}` } : {})
     };
 

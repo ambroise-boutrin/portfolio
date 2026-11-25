@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  /* AVIF d'abord (plus léger), WebP sinon */
+  images: {
+    formats: ["image/avif", "image/webp"],
+  },
   /* Documents privés servis par une route protégée, hors de public/ */
   outputFileTracingIncludes: {
     "/prive/guide-azure-stack": ["./private/**/*"],

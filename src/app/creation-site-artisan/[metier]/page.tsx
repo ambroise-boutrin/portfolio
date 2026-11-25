@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CheckCircle2, Phone } from "lucide-react";
 import { metiers, getMetier } from "@/data/metiers";
-import { pageMetadata, SITE_URL } from "@/lib/seo";
+import { fitTitle, pageMetadata, SITE_URL } from "@/lib/seo";
 import { JsonLdScript } from "@/components/JsonLd";
 
 export function generateStaticParams() {
@@ -15,8 +15,12 @@ export async function generateMetadata({ params }: { params: Promise<{ metier: s
     const metier = getMetier(slug);
     if (!metier) return { title: "Page introuvable" };
     return pageMetadata({
-        title: `Création de site internet pour ${metier.name} à Orléans | Ambroise Boutrin`,
-        description: `Site internet pour ${metier.namePlural} à Orléans et dans le Loiret : ${metier.needs.map((n) => n.title.toLowerCase()).join(", ")}. Dès 1 490 €, par un développeur web local.`,
+        title: fitTitle(
+            `Création site internet ${metier.name} à Orléans | Ambroise Boutrin`,
+            `Site internet ${metier.name} à Orléans | Ambroise Boutrin`,
+            `Site internet pour ${metier.name} à Orléans`,
+        ),
+        description: `Site internet pour ${metier.namePlural} à Orléans et dans le Loiret : ${metier.needs.slice(0, 2).map((n) => n.title.toLowerCase()).join(", ")}. Dès 1 490 €.`,
         path: `/creation-site-artisan/${slug}`,
     });
 }

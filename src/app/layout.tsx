@@ -10,8 +10,8 @@ import { SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Ambroise Boutrin | Développeur web freelance à Orléans, création de sites internet",
-  description: "Développeur web freelance à Orléans (45). Création de sites internet pour artisans, commerçants et PME : site vitrine dès 1 490 €, refonte, e-commerce, maintenance et applications métier.",
+  title: "Développeur web freelance à Orléans | Ambroise Boutrin",
+  description: "Développeur web freelance à Orléans (45) : sites internet pour artisans, commerçants et PME, refonte, e-commerce et applications métier. Prix fixé d'avance.",
   keywords: ["Développeur web Orléans", "Création site internet Orléans", "Création site vitrine artisan", "Freelance web Loiret", "Refonte site internet Orléans", "Application métier PME", "Développeur Next.js", "Ambroise Boutrin"],
   authors: [{ name: "Ambroise Boutrin", url: SITE_URL }],
   creator: "Ambroise Boutrin",

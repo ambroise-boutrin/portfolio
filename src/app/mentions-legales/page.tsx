@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { pageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = pageMetadata({
-    title: 'Mentions Légales | Ambroise Boutrin',
+    title: 'Mentions légales | Ambroise Boutrin, développeur web',
     description: 'Mentions légales du site ambroise-boutrin.fr : éditeur, hébergement, propriété intellectuelle, données personnelles et cookies.',
     path: '/mentions-legales',
 });

@@ -6,8 +6,8 @@ import { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-    title: "Création de site internet pour artisan à Orléans dès 1 490 € | Ambroise Boutrin",
-    description: "Site vitrine pour artisans et TPE à Orléans et dans le Loiret : 1 à 5 pages, formulaire de devis, fiche Google optimisée, SEO local. Dès 1 490 €, livré en 2 à 4 semaines.",
+    title: "Création site internet artisan à Orléans | Ambroise Boutrin",
+    description: "Site vitrine pour artisans et TPE du Loiret : 1 à 5 pages, formulaire de devis, fiche Google et référencement local. Dès 1 490 €, en ligne en 2 à 4 semaines.",
     path: "/creation-site-artisan",
 });
 
