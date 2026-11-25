@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
-    const metadata = pageMetadata({
+    return pageMetadata({
         title: fitTitle(
             `${project.title} | Réalisation web d'Ambroise Boutrin, Orléans`,
             `${project.title} | Réalisation d'Ambroise Boutrin, Orléans`,
@@ -36,12 +36,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         path: `/projets/${slug}`,
         images: project.image ? [{ url: project.image, alt: project.imageAlt }] : undefined,
     });
-    // Projets de formation : visibles dans le portfolio, mais pas proposés à Google
-    // (pages courtes, éloignées de ce que cherchent les clients, qui diluent le site).
-    if (!isClientProject(project)) {
-        metadata.robots = { index: false, follow: true };
-    }
-    return metadata;
 }
 import ProjectJsonLd from "@/components/ProjectJsonLd";
 
