@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { guides, getGuide } from "@/data/guides";
@@ -101,6 +102,19 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
                         ))}
                     </div>
                 </section>
+
+                {/* Auteur : qui écrit, avec quelle expérience (E-E-A-T) */}
+                <aside className="flex gap-5 items-start p-6 md:p-8 rounded-3xl border border-[var(--border-color)] mb-16" aria-label="L'auteur">
+                    <Image src="/images/IMG_4128.jpeg" alt="Ambroise Boutrin" width={64} height={64} className="rounded-full object-cover w-16 h-16 shrink-0" />
+                    <div>
+                        <p className="font-bold mb-1">Ambroise Boutrin</p>
+                        <p className="text-[var(--text-secondary)] leading-relaxed mb-3">
+                            Développeur web freelance à Orléans. Je crée des sites et des outils pour des artisans, commerçants et PME du Loiret,
+                            comme le site d&apos;ENE Micro-Station, spécialiste de l&apos;assainissement. Formé en BTS SIO, en Licence MIAGE à l&apos;Université d&apos;Orléans.
+                        </p>
+                        <Link href="/a-propos" className="text-sm underline hover:text-[var(--foreground)]">En savoir plus sur mon parcours</Link>
+                    </div>
+                </aside>
 
                 <div className="p-8 md:p-10 rounded-3xl bg-[var(--foreground)] text-[var(--background)] text-center mb-20">
                     <p className="text-xl md:text-2xl font-serif mb-6">{guide.cta.text}</p>

@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import { projects } from '@/data/projects'
+import { projects, isClientProject } from '@/data/projects'
 import { guides } from '@/data/guides'
 import { metiers } from '@/data/metiers'
 import { SITE_URL } from '@/lib/seo'
@@ -24,7 +24,8 @@ const LAST_MODIFIED = {
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = SITE_URL
 
-    const projectUrls = projects.map((project) => ({
+    // Seuls les projets clients sont proposés à Google (les projets de formation sont en noindex).
+    const projectUrls = projects.filter(isClientProject).map((project) => ({
         url: `${baseUrl}/projets/${project.slug}`,
         lastModified: LAST_MODIFIED.projects,
         changeFrequency: 'monthly' as const,

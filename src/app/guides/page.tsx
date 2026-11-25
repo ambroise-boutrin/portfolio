@@ -5,8 +5,8 @@ import { pageMetadata, SITE_URL } from "@/lib/seo";
 import { JsonLdScript } from "@/components/JsonLd";
 
 export const metadata: Metadata = pageMetadata({
-    title: "Guides pour artisans et TPE : site internet, Google, prix | Ambroise Boutrin",
-    description: "Guides pratiques pour artisans, commerçants et TPE : prix d'un site internet, quand refaire son site, fiche Google Business Profile. Réponses claires par un développeur web à Orléans.",
+    title: "Guides site internet pour artisans et TPE | Ambroise Boutrin",
+    description: "Guides pratiques pour artisans et TPE : prix d'un site internet, quand le refaire, fiche Google Business Profile. Des réponses claires, sans jargon.",
     path: "/guides",
 });
 

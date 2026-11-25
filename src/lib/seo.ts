@@ -36,3 +36,13 @@ export function pageMetadata({
         },
     };
 }
+
+// Google affiche environ 60 caractères de titre et 155 de description.
+// fitTitle prend la première variante entre 50 et 60 caractères, sinon la plus longue
+// qui tient en 60, sinon la dernière (la plus courte, à écrire en dernier).
+export function fitTitle(...candidates: string[]): string {
+    const ideal = candidates.find((t) => t.length >= 50 && t.length <= 60);
+    if (ideal) return ideal;
+    const fitting = candidates.filter((t) => t.length <= 60).sort((a, b) => b.length - a.length);
+    return fitting[0] ?? candidates[candidates.length - 1];
+}

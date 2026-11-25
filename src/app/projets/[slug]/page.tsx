@@ -1,12 +1,13 @@
 import { projects, isClientProject } from "@/data/projects";
 import { ExternalLink, Github, AlertTriangle, Lightbulb, TrendingUp } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 
 import { Metadata } from "next";
-import { pageMetadata } from "@/lib/seo";
+import { fitTitle, pageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
     return projects.map((project) => ({
@@ -24,12 +25,23 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         };
     }
 
-    return pageMetadata({
-        title: `${project.title} | Projet web d'Ambroise Boutrin`,
+    const metadata = pageMetadata({
+        title: fitTitle(
+            `${project.title} | Réalisation web d'Ambroise Boutrin, Orléans`,
+            `${project.title} | Réalisation d'Ambroise Boutrin, Orléans`,
+            `${project.title} | Projet web d'Ambroise Boutrin`,
+            `${project.title} | Ambroise Boutrin`,
+        ),
         description: project.description,
         path: `/projets/${slug}`,
         images: project.image ? [{ url: project.image, alt: project.imageAlt }] : undefined,
     });
+    // Projets de formation : visibles dans le portfolio, mais pas proposés à Google
+    // (pages courtes, éloignées de ce que cherchent les clients, qui diluent le site).
+    if (!isClientProject(project)) {
+        metadata.robots = { index: false, follow: true };
+    }
+    return metadata;
 }
 import ProjectJsonLd from "@/components/ProjectJsonLd";
 
@@ -73,6 +85,8 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
         notFound();
     }
 
+    const otherClientProjects = projects.filter((p) => isClientProject(p) && p.slug !== project.slug);
+
     return (
         <main className="min-h-screen bg-[var(--background)]">
             <ProjectJsonLd project={project} />
@@ -80,6 +94,11 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
             {/* Hero Section */}
             <header className="bg-[var(--background)] text-[var(--foreground)] pt-32 pb-20 mb-20 transition-colors duration-300 border-b border-[var(--border-color)]">
                 <div className="px-6 container mx-auto max-w-6xl">
+                    <nav className="text-sm text-[var(--text-tertiary)] mb-8" aria-label="Fil d'Ariane">
+                        <Link href="/projets" className="hover:text-[var(--foreground)] transition-colors">Réalisations</Link>
+                        <span className="mx-2">/</span>
+                        <span>{project.title}</span>
+                    </nav>
                     <div className="flex flex-col gap-6 mb-12">
                         <div className="flex flex-wrap gap-4 items-center mb-4">
                             <span className="px-4 py-1.5 bg-[var(--foreground)] text-[var(--background)] rounded-full text-xs font-bold uppercase tracking-wider">
@@ -340,6 +359,27 @@ export default async function ProjectDetail({ params }: { params: Promise<{ slug
                         </div>
                     )}
                 </div>
+
+                {/* Maillage interne : chaque réalisation renvoie vers les autres projets clients et les offres */}
+                <nav className="mt-24 pt-10 border-t border-[var(--border-color)]" aria-label="Autres réalisations et offres">
+                    <h2 className="text-xl font-serif mb-6 text-[var(--foreground)]">Autres réalisations clients</h2>
+                    <ul className="flex flex-wrap gap-3 mb-10">
+                        {otherClientProjects.map((p) => (
+                            <li key={p.slug}>
+                                <Link href={`/projets/${p.slug}`} className="inline-block px-5 py-2 rounded-full border border-[var(--border-color)] hover:border-[var(--foreground)] transition-colors text-sm">
+                                    {p.title}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                    <p className="text-[var(--text-secondary)] leading-relaxed">
+                        Un projet du même genre ? Voir les offres{" "}
+                        <Link href="/creation-site-artisan" className="underline hover:text-[var(--foreground)]">site vitrine</Link>,{" "}
+                        <Link href="/application-metier-pme" className="underline hover:text-[var(--foreground)]">application métier</Link> et{" "}
+                        <Link href="/maintenance-site-web" className="underline hover:text-[var(--foreground)]">maintenance</Link>, ou{" "}
+                        <Link href="/contact" className="underline hover:text-[var(--foreground)]">écrivez-moi</Link>.
+                    </p>
+                </nav>
             </section>
 
         </main>

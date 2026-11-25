@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-    title: "Maintenance de site internet dès 49 €/mois | Ambroise Boutrin, Orléans",
-    description: "Hébergement, sauvegardes, sécurité et mises à jour de votre site web. Formules Essentiel 49 €, Pro 89 € et Croissance 149 € par mois, par un développeur web à Orléans.",
+    title: "Maintenance site internet dès 49 €/mois | Ambroise Boutrin",
+    description: "Hébergement, sauvegardes, sécurité et mises à jour de votre site. Formules à 49 €, 89 € et 149 € par mois, par un développeur web basé à Orléans.",
     path: "/maintenance-site-web",
 });
 

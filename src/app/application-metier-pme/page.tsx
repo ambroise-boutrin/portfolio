@@ -4,8 +4,8 @@ import { Metadata } from "next";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-    title: "Application métier sur mesure pour PME à Orléans | Ambroise Boutrin",
-    description: "Remplacez vos fichiers Excel par un outil sur mesure : ERP, portail client, automatisation. Développement d'applications métier pour PME, dès 5 000 €, par un développeur basé à Orléans.",
+    title: "Application métier sur mesure pour PME | Ambroise Boutrin",
+    description: "Remplacez vos fichiers Excel par un outil sur mesure : ERP, portail client, automatisations. Application métier pour PME dès 5 000 €, à Orléans.",
     path: "/application-metier-pme",
 });
 
